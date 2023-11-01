@@ -13,11 +13,14 @@ public class NavMeshMover : MonoBehaviour
     private bool isMoving = true;
     public float navMeshSpeed;
 
+    private Animator animator;
+
 
     private void Start()
     {
         
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();    
         agent.speed = navMeshSpeed;
         if (waypoints.Count > 0)
         {
@@ -29,7 +32,9 @@ public class NavMeshMover : MonoBehaviour
     {
         if (isMoving && !agent.pathPending && agent.remainingDistance < 0.5f)
         {
+            
             isMoving = false;  // Stop checking in this cycle
+            animator.SetBool("isWalking", false);
             StartCoroutine(WaitAndMove());
             // We need to play idle animation
         }
@@ -39,7 +44,7 @@ public class NavMeshMover : MonoBehaviour
     IEnumerator WaitAndMove()
     {
         yield return new WaitForSeconds(waitTime);
-
+       
         // Proceed to the next waypoint.
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count; // Loop back to the first waypoint if we're at the last one.
         MoveToPoint(waypoints[currentWaypointIndex].position);
@@ -47,8 +52,11 @@ public class NavMeshMover : MonoBehaviour
 
     public void MoveToPoint(Vector3 point)
     {
+       
         agent.SetDestination(point);
         isMoving = true;
+        animator.SetBool("isWalking", true);
+
         // We need to play walk animation
     }
 
