@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RejskortStanderFunctions : MonoBehaviour
 {
-    public Light Blåtlys; // Reference til lyset på standeren.RejsekortStanderUD -> Sphere -> Light
+    public Light Blaatlys; // Reference til lyset pï¿½ standeren.RejsekortStanderUD -> Sphere -> Light
     public AudioSource GodkendtLyd; // Reference til Audiosource med godkendt lyd
     public AudioSource AfvistLyd; // Reference til Audiosource med afvist lyd
     public Material OkText; // Material til Godkendt
     public Material AfvistText; // Material Til afvist
-    public Renderer ScreenText; // Reference til det object der skal have ændret materiale
+    public Renderer ScreenText; // Reference til det object der skal have ï¿½ndret materiale
 
     private Material originalMaterial;
     private bool isTriggered = false;
@@ -32,15 +32,15 @@ public class RejskortStanderFunctions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Trigger når skolekortet rammer triggeren
-        if (!other.CompareTag("Skolekort")) // Husk at check at skolekortet har en collider med trigger på og er tagged med "Skolekort"
+        // Trigger nï¿½r skolekortet rammer triggeren
+        if (!other.CompareTag("Skolekort")) // Husk at check at skolekortet har en collider med trigger pï¿½ og er tagged med "Skolekort"
         {
-            Blåtlys.enabled = false; // Slukker lyset ved Trigger
+            Blaatlys.enabled = false; // Slukker lyset ved Trigger
             GodkendtLyd.enabled = true; // Enable AudioSource med godkendt lyd.
             GodkendtLyd.Play(); // Play godkendt lyd
-            isTriggered = true; // Sætter isTriggered til true 
+            isTriggered = true; // Sï¿½tter isTriggered til true 
 
-            // Skift materiale på ScreenText til OkText
+            // Skift materiale pï¿½ ScreenText til OkText
             if (ScreenText != null && OkText != null)
             {
                 ScreenText.material = OkText;
@@ -49,11 +49,11 @@ public class RejskortStanderFunctions : MonoBehaviour
         }
         else
         {
-            Blåtlys.enabled = false;
+            Blaatlys.enabled = false;
             AfvistLyd.enabled = true; // Enable AudioSource med afvist lyd.
             AfvistLyd.Play(); // Play afvist lyd
 
-            // Skift materiale på ScreenText til AfvistText
+            // Skift materiale pï¿½ ScreenText til AfvistText
             if (ScreenText != null && AfvistText != null)
             {
                 ScreenText.material = AfvistText;
@@ -66,7 +66,7 @@ public class RejskortStanderFunctions : MonoBehaviour
     {
         if (isTriggered)
         {
-            StartCoroutine(ResetLightAndAudio()); //venter 5 sekunder før standeren er klar igen
+            StartCoroutine(ResetLightAndAudio()); //venter 5 sekunder fï¿½r standeren er klar igen
         }
     }
 
@@ -75,13 +75,13 @@ public class RejskortStanderFunctions : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f); // vent  5 seconds. adjust som det passer
 
-        Blåtlys.enabled = true; // Tænder lyset igen ved Trigger Exit
+        Blaatlys.enabled = true; // Tï¿½nder lyset igen ved Trigger Exit
         GodkendtLyd.enabled = false; // Disable godkendts lyd
         AfvistLyd.enabled = false; // Disable afvist lyd
         isTriggered = false;
 
 
-        // Skift materiale på ScreenText til originalMaterial
+        // Skift materiale pï¿½ ScreenText til originalMaterial
         if (ScreenText != null)
         {
             ScreenText.material = originalMaterial;
