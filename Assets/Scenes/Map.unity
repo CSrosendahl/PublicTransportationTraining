@@ -236,7 +236,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6037736, g: 0.47143242, b: 0.11050192, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -341,17 +341,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 00f3cb7c6c4c446d1a71ea492645daa6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.758358
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00f3cb7c6c4c446d1a71ea492645daa6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.861036
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00f3cb7c6c4c446d1a71ea492645daa6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 57.940647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00f3cb7c6c4c446d1a71ea492645daa6,
         type: 3}
@@ -1121,11 +1121,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d0a3f165668d6479753de0914415cf, type: 3}
+
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 683338932}
   - {fileID: 98600385}
   - {fileID: 259227511}
   - {fileID: 1887314450}
