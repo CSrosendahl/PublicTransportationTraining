@@ -10,7 +10,7 @@ public class AfgangsScreen : MonoBehaviour
 
     private Renderer objectRenderer;
     private int currentMaterialIndex = 0;
-    private float timeSinceLastMaterialChange = 0.0f;
+    public float timeSinceLastMaterialChange = 0.0f;
 
     
     void Start()
@@ -37,11 +37,25 @@ public class AfgangsScreen : MonoBehaviour
 
         timeSinceLastMaterialChange += Time.deltaTime;
 
+
+
         if (timeSinceLastMaterialChange >= materialChangeInterval)
         {
             timeSinceLastMaterialChange = 0.0f;
             currentMaterialIndex = (currentMaterialIndex + 1) % materials.Length;
             objectRenderer.material = materials[currentMaterialIndex];
+
+
+            if (!TrainSpawner.instance.hasSpawned)
+            {
+
+                TrainSpawner.instance.Spor5_SpawnTrain(); // Spawning spor5train when materials change
+                TrainSpawner.instance.hasSpawned = true;
+
+                Debug.Log(TrainSpawner.instance.hasSpawned);
+            }
         }
+
+        Debug.Log("Material changed");
     }
 }
