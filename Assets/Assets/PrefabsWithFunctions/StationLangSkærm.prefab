@@ -117,37 +117,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16
+      value: -0.676291
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 6.81627
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.82
+      value: 6.112726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5041071
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5041071
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.4958589
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4958588
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -89.055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
@@ -207,9 +207,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0ecc7f3854d85ca45a5c444c1ed7a024, type: 2}
   - {fileID: 2100000, guid: 434656f8949a4ca4493862d43eb3b1b1, type: 2}
   - {fileID: 2100000, guid: 1e89fe264bcbe4c448ac75f7786328b0, type: 2}
-  materialChangeInterval: 60
-  currentMaterialIndex: 0
-  timeSinceLastMaterialChange: 0
+  materialChangeInterval: 10
 --- !u!4 &648314749205977409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
