@@ -7,11 +7,10 @@ public class AfgangsScreen : MonoBehaviour
     public GameObject ScreenObject;
     public Material[] materials;
     public float materialChangeInterval = 120.0f; // 2 minutes i sekunder
-    
 
     private Renderer objectRenderer;
-    public int currentMaterialIndex = 0;
-    public float timeSinceLastMaterialChange = 0.0f;
+    private int currentMaterialIndex = 0;
+    private float timeSinceLastMaterialChange = 0.0f;
 
     
     void Start()
@@ -33,7 +32,6 @@ public class AfgangsScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
         if (materials.Length == 0 || objectRenderer == null)
             return;
 
@@ -41,25 +39,9 @@ public class AfgangsScreen : MonoBehaviour
 
         if (timeSinceLastMaterialChange >= materialChangeInterval)
         {
-           
-
             timeSinceLastMaterialChange = 0.0f;
             currentMaterialIndex = (currentMaterialIndex + 1) % materials.Length;
             objectRenderer.material = materials[currentMaterialIndex];
-
-           
-
-            if (!TrainSpawner.instance.hasSpawned)
-            {
-               
-                TrainSpawner.instance.Spor5_SpawnTrain(); // Spawning spor5train when materials change
-                TrainSpawner.instance.hasSpawned = true;
-
-                Debug.Log(TrainSpawner.instance.hasSpawned);
-            }
-           
-
-
         }
     }
 }
