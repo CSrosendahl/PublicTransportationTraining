@@ -8,10 +8,11 @@ public class HandPresence : MonoBehaviour
     public InputDeviceCharacteristics controllerCharacteristics;    
     private InputDevice targetDevice;
     public Animator handAnimator;
-
+    public GameObject skoleKort;
     void Start()
     {
         TryInitialize();
+        skoleKort.SetActive(false);
     }
 
     void TryInitialize()
@@ -27,13 +28,25 @@ public class HandPresence : MonoBehaviour
 
     void UpdateHandAnimation()
     {
-        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
             handAnimator.SetFloat("Trigger", triggerValue);
+
+            if (triggerValue > 0.1f) // You can adjust the threshold based on your input sensitivity
+            {
+                skoleKort.SetActive(true);
+            }
+            else
+            {
+                skoleKort.SetActive(false);
+            }
+
+            Debug.Log(triggerValue);
         }
         else
         {
             handAnimator.SetFloat("Trigger", 0);
+            
         }
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
