@@ -11,6 +11,7 @@ public class AfgangsScreen : MonoBehaviour
     private Renderer objectRenderer;
     private int currentMaterialIndex = 0;
     public float timeSinceLastMaterialChange = 0.0f;
+    public bool canSpawnTrain = false;
 
     
     void Start()
@@ -46,7 +47,7 @@ public class AfgangsScreen : MonoBehaviour
             objectRenderer.material = materials[currentMaterialIndex];
 
 
-            if (!TrainSpawner.instance.hasSpawned)
+            if (!TrainSpawner.instance.hasSpawned && canSpawnTrain)
             {
 
                 TrainSpawner.instance.Spor5_SpawnTrain(); // Spawning spor5train when materials change
