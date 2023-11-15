@@ -15,4 +15,4 @@ MonoBehaviour:
   trainID: 3
   trainPrefab: {fileID: 3282605018728798403, guid: 7740216c76b90fc458a8fb196c7ae7ae,
     type: 3}
-  spawnPosition: {x: -231.1, y: -7.2, z: -2.92}
+  spawnPosition: {x: -300, y: -7.2, z: -2.92}

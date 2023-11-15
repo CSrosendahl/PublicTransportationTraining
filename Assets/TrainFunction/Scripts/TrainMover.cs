@@ -24,7 +24,8 @@ public class TrainMover : MonoBehaviour
         
         // Set the first destination as the current one and start moving
         currentDestination = boardingDestination;
-        StartCoroutine(StartMoving());
+        //StartCoroutine(StartMoving());
+        isMoving = true;
     }
 
     void Update()

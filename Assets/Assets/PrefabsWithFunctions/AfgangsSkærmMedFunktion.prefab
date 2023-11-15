@@ -3805,25 +3805,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   departures:
   - stationName: Farum
+    ID: 0
     image: {fileID: 2800000, guid: 162cf3f1d2b97a04a95fa9f12e1ff5ea, type: 3}
-    trackNumber: 3
+    trackNumber: 4
   - stationName: "\xD8sterport"
+    ID: 1
     image: {fileID: 2800000, guid: c0a09a90146c3194b9175049415a40a3, type: 3}
-    trackNumber: 4
-  - stationName: Buddinge
-    image: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
-    trackNumber: 2
-  - stationName: Klampenborg
-    image: {fileID: 2800000, guid: 162cf3f1d2b97a04a95fa9f12e1ff5ea, type: 3}
     trackNumber: 3
-  - stationName: "H\xF8je Taastrup"
-    image: {fileID: 2800000, guid: c0a09a90146c3194b9175049415a40a3, type: 3}
-    trackNumber: 4
-  - stationName: Frederikssund
+  - stationName: Buddinge
+    ID: 2
     image: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
-    trackNumber: 2
+    trackNumber: 5
+  - stationName: Klampenborg
+    ID: 3
+    image: {fileID: 2800000, guid: 162cf3f1d2b97a04a95fa9f12e1ff5ea, type: 3}
+    trackNumber: 4
+  - stationName: "H\xF8je Taastrup"
+    ID: 4
+    image: {fileID: 2800000, guid: c0a09a90146c3194b9175049415a40a3, type: 3}
+    trackNumber: 5
+  - stationName: Frederikssund
+    ID: 5
+    image: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
+    trackNumber: 3
   maxDeparturesToShow: 6
-  changeInterval: 2
+  changeInterval: 40
 --- !u!1 &8587053010341540688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,17 +4133,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.793
+      value: 24.938562
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.066
+      value: 2.7550619
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.12
+      value: -14.987077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8b86a9d790de40ab53b46b75fc148,
         type: 3}
@@ -4191,11 +4197,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5035545110723304405}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4b8b86a9d790de40ab53b46b75fc148,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1026095810374303325}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b8b86a9d790de40ab53b46b75fc148, type: 3}
 --- !u!4 &4822172134227468228 stripped
 Transform:
@@ -4203,30 +4205,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4999406239694141487}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5305271891619612030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4b8b86a9d790de40ab53b46b75fc148,
-    type: 3}
-  m_PrefabInstance: {fileID: 4999406239694141487}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1026095810374303325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5305271891619612030}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aef5e41fd7f66d4fb3deddd9784c5aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScreenObject: {fileID: 1651201547216790278}
-  materials:
-  - {fileID: 2100000, guid: 2204cf017e9946147a8f92f3d9589c2b, type: 2}
-  - {fileID: 2100000, guid: 0ecc7f3854d85ca45a5c444c1ed7a024, type: 2}
-  - {fileID: 2100000, guid: 434656f8949a4ca4493862d43eb3b1b1, type: 2}
-  - {fileID: 2100000, guid: 1e89fe264bcbe4c448ac75f7786328b0, type: 2}
-  materialChangeInterval: 10
-  timeSinceLastMaterialChange: 0
-  canSpawnTrain: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using System.Collections;
 
 public class DepartureBoardScript : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class DepartureBoardScript : MonoBehaviour
         public int ID;
         public Texture image;
         public int trackNumber;
+
+        public int GetID()
+        {
+            return ID;
+        }
     }
 
     public List<DepartureInfo> departures; // List of departure information.
@@ -23,6 +29,7 @@ public class DepartureBoardScript : MonoBehaviour
     private List<TextMeshPro> timeRemainingTextList; // List for time remaining on each row.
     private List<int> currentDepartureIndices;
     private float timer;
+    public bool canSpawn;
 
     void Start()
     {
@@ -72,6 +79,7 @@ public class DepartureBoardScript : MonoBehaviour
             // Set the time remaining text.
             float timeRemaining = i * changeInterval - timer;
             timeRemainingTextList[i].text = $"{Mathf.Ceil(timeRemaining)}min.";
+            
         }
     }
 
@@ -83,12 +91,66 @@ public class DepartureBoardScript : MonoBehaviour
         {
             timer = 0f;
 
+           
+
             for (int i = 0; i < maxDeparturesToShow; i++)
             {
                 currentDepartureIndices[i] = (currentDepartureIndices[i] + 1) % departures.Count;
+             
+
+            }
+            int topIndex = currentDepartureIndices[0];
+            int topID = departures[topIndex].GetID();
+
+
+            if(canSpawn)
+            {
+                TrainManager.instance.SpawnTrain(topID);
+
+                StartCoroutine(SpawnDelayedTrainsAfterTopID());
+
+             
             }
 
+          
             UpdateDepartureDisplay();
         }
     }
+
+    private IEnumerator SpawnDelayedTrainsAfterTopID() // These are filler trains for immersion
+    {
+        yield return new WaitForSeconds(Random.Range(1f, 2f));
+
+        int topIndex = currentDepartureIndices[0];
+        int topID = departures[topIndex].GetID();
+
+        if (topID == 0)
+        {
+            TrainManager.instance.SpawnTrain(1);
+        }
+        else if (topID == 1)
+        {
+            TrainManager.instance.SpawnTrain(2);
+        }
+        else if (topID == 2)
+        {
+            TrainManager.instance.SpawnTrain(3);
+        }
+        else if (topID == 3)
+        {
+            TrainManager.instance.SpawnTrain(4);
+        }
+        else if (topID == 4)
+        {
+            TrainManager.instance.SpawnTrain(5);
+        }
+        else if (topID == 5)
+        {
+            TrainManager.instance.SpawnTrain(0);
+        }
+
+    }
+
+
+
 }
