@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7233534953003890033}
   - component: {fileID: 9171966707029871230}
   m_Layer: 0
-  m_Name: Train_Spor5
+  m_Name: Train 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6de1cbfcaab06e4d9fafaba5edeef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardingDestination: {fileID: 191280005993787841, guid: bcf9a63c718541c488b610997bcb0164,
+  boardingDestination: {fileID: 7251177582388005855, guid: 549c28fe341f075489657dfa80f8fd3b,
     type: 3}
-  exitDestination: {fileID: 2942973916761887805, guid: 0e8af943e6933e244a75edca15bc87f4,
+  exitDestination: {fileID: 2836287522099167934, guid: 5db72be9998122f449e95e6c27397291,
     type: 3}
   maxSpeed: 10
   acceleration: 5

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7251177582388005855}
   m_Layer: 0
-  m_Name: Spor6_Boarding
+  m_Name: Boarding_Spor4
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 817735600925604942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.01, y: -5.95, z: -65}
+  m_LocalPosition: {x: -31.37, y: -7.2, z: -2.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

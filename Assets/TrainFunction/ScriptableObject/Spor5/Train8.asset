@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c380a21140fbea146aa5d13726950b0a, type: 3}
+  m_Name: Train8
+  m_EditorClassIdentifier: 
+  trainID: 8
+  trainPrefab: {fileID: 3282605018728798403, guid: fad7a481798ffff498ddc9ed415f5137,
+    type: 3}
+  spawnPosition: {x: 190.33, y: -7.2, z: 3.274}

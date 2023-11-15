@@ -11,7 +11,9 @@ public class AfgangsScreen : MonoBehaviour
     private Renderer objectRenderer;
     private int currentMaterialIndex = 0;
     public float timeSinceLastMaterialChange = 0.0f;
-    public bool canSpawnTrain = false;
+
+    public int trainIndex;
+   
 
     
     void Start()
@@ -46,15 +48,15 @@ public class AfgangsScreen : MonoBehaviour
             currentMaterialIndex = (currentMaterialIndex + 1) % materials.Length;
             objectRenderer.material = materials[currentMaterialIndex];
 
+            TrainManager.instance.SpawnTrain(trainIndex);
+            //if (!TrainManager.instance.hasSpawned)
+            //{
+              
+            //    TrainManager.instance.SpawnTrain(trainIndex);
+            //    TrainManager.instance.hasSpawned = true;
 
-            if (!TrainSpawner.instance.hasSpawned && canSpawnTrain)
-            {
-
-                TrainSpawner.instance.Spor5_SpawnTrain(); // Spawning spor5train when materials change
-                TrainSpawner.instance.hasSpawned = true;
-
-                Debug.Log(TrainSpawner.instance.hasSpawned);
-            }
+            //    //Debug.Log(TrainManager.instance.hasSpawned);
+            //}
         }
 
         Debug.Log("Material changed");

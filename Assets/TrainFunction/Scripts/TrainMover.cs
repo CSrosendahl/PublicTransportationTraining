@@ -77,7 +77,7 @@ public class TrainMover : MonoBehaviour
 
         if(currentDestination == exitDestination)
         {
-            TrainSpawner.instance.hasSpawned = false; // Allow the train spawner to spawn a new train
+            TrainManager.instance.hasSpawned = false; // Allow the train spawner to spawn a new train
             Destroy(gameObject);
         } else
         {
