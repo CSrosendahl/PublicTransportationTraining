@@ -16,11 +16,13 @@ public class NavMeshMover : MonoBehaviour
     private Animator animator;
 
 
+
+
     private void Start()
     {
         
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
         agent.speed = navMeshSpeed;
         if (waypoints.Count > 0)
         {
@@ -38,6 +40,8 @@ public class NavMeshMover : MonoBehaviour
             StartCoroutine(WaitAndMove());
             // We need to play idle animation
         }
+
+        
     }
 
 
@@ -56,9 +60,9 @@ public class NavMeshMover : MonoBehaviour
         agent.SetDestination(point);
         isMoving = true;
         animator.SetBool("isWalking", true);
+        
 
         // We need to play walk animation
     }
-
 
 }
