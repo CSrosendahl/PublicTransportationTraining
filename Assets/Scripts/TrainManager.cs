@@ -40,6 +40,7 @@ public class TrainManager : MonoBehaviour
       
         // Instantiate the train with the desired rotation
         Instantiate(trainDataList[trainIndex].trainPrefab, trainDataList[trainIndex].spawnPosition, rotation);
+
     }
 
   
