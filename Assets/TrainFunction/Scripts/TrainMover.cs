@@ -6,6 +6,7 @@ public class TrainMover : MonoBehaviour
     public Transform boardingDestination;
     public Transform exitDestination;
     private Transform currentDestination;
+    public TrainData trainData;
    
 
     public float maxSpeed = 1.0f; // The maximum speed of the train
