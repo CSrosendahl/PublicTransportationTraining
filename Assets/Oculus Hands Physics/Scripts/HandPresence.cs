@@ -6,13 +6,18 @@ using UnityEngine.XR;
 public class HandPresence : MonoBehaviour
 {
     public InputDeviceCharacteristics controllerCharacteristics;    
-    private InputDevice targetDevice;
-    public Animator handAnimator;
-    public GameObject skoleKort;
+    private InputDevice targetDeviceRight; // Controller for right hand
+    private InputDevice targetDeviceLeft; // Controller for left hand
+    public Animator rightHandAnimator;
+    public Animator leftHandAnimator;
+    public GameObject skoleKort; // Object triggered by right hand (e.g., school card)
+    public GameObject phoneObject; // Object triggered by left hand (e.g., phone)
+
     void Start()
     {
         TryInitialize();
         skoleKort.SetActive(false);
+        phoneObject.SetActive(false);
     }
 
     void TryInitialize()
@@ -20,55 +25,58 @@ public class HandPresence : MonoBehaviour
         List<InputDevice> devices = new List<InputDevice>();
 
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-        if (devices.Count > 0)
+        foreach (var device in devices)
         {
-            targetDevice = devices[0];
+            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Right))
+            {
+                targetDeviceRight = device;
+            }
+            else if (device.characteristics.HasFlag(InputDeviceCharacteristics.Left))
+            {
+                targetDeviceLeft = device;
+            }
         }
     }
 
     void UpdateHandAnimation()
     {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
-        {
-            handAnimator.SetFloat("Trigger", triggerValue);
+        UpdateObjectActivation(targetDeviceRight, rightHandAnimator, skoleKort, CommonUsages.trigger);
+        UpdateObjectActivation(targetDeviceLeft, leftHandAnimator, phoneObject, CommonUsages.grip);
+    }
 
-            if (triggerValue > 0.1f) // You can adjust the threshold based on your input sensitivity
+    void UpdateObjectActivation(InputDevice device, Animator animator, GameObject obj, InputFeatureUsage<float> usage)
+    {
+        if (device == null || !device.isValid)
+        {
+            return;
+        }
+
+        if (device.TryGetFeatureValue(usage, out float value))
+        {
+            animator.SetFloat(usage.name, value);
+
+            if (usage == CommonUsages.trigger && value > 0.1f)
             {
-                skoleKort.SetActive(true);
+                obj.SetActive(true);
+            }
+            else if (usage == CommonUsages.grip && value > 0.5f)
+            {
+                obj.SetActive(true);
             }
             else
             {
-                skoleKort.SetActive(false);
+                obj.SetActive(false);
             }
-
-            Debug.Log(triggerValue);
         }
         else
         {
-            handAnimator.SetFloat("Trigger", 0);
-            
-        }
-
-        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
-        {
-            handAnimator.SetFloat("Grip", gripValue);
-        }
-        else
-        {
-            handAnimator.SetFloat("Grip", 0);
+            animator.SetFloat(usage.name, 0);
+            obj.SetActive(false);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!targetDevice.isValid)
-        {
-            TryInitialize();
-        }
-        else
-        {
-            UpdateHandAnimation();
-        }
+        UpdateHandAnimation();
     }
 }
