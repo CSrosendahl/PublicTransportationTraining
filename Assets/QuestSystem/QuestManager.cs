@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,8 @@ public class QuestManager : MonoBehaviour
 
     public List<QuestData> questTemplates; // List of quest templates with different train IDs
     public QuestData currentQuest; // The player's current quest
-    public Text questInfoText; // Reference to the Text UI element
+   // public Text questInfoText; // Reference to the Text UI element
+    public TextMeshPro questText;
    
 
     private void Start()
@@ -48,18 +50,11 @@ public class QuestManager : MonoBehaviour
     private void DisplayQuestInfo(QuestData quest)
     {
         // Update the UI to display the quest information, including the train ID
-        questInfoText.text = "Quest Name: " + quest.questName + "\n"
-                           + "Quest Description: " + quest.questDescription + "\n";
+        questText.text = quest.questDescription + "\n";
                           
     }
 
   
-    // make a test debug function
-    public void DebugQuest()
-    {
-        Debug.Log("Quest Name: " + currentQuest.questName + "\n"
-                                      + "Quest Description: " + currentQuest.questDescription + "\n");
-    }
 
 }
 
