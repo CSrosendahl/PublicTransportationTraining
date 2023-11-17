@@ -78,8 +78,11 @@ public class DepartureBoardScript : MonoBehaviour
 
             // Set the time remaining text.
             float timeRemaining = i * changeInterval - timer;
-            timeRemainingTextList[i].text = $"{Mathf.Ceil(timeRemaining)}min.";
-            
+            int minutes = Mathf.FloorToInt(timeRemaining / 60);
+            int seconds = Mathf.FloorToInt(timeRemaining % 60);
+
+            timeRemainingTextList[i].text = $"{minutes}min. {seconds}sek.";
+
         }
     }
 
