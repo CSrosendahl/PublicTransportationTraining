@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 278b20120c369164ea76dffdf8514e6f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 box
+    second: {fileID: 2100000, guid: a00e8d654a42b054d8ba2fdafc6ca7c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 ground
+    second: {fileID: 2100000, guid: 79e23bcdf759694478b5d77f76cd9ec5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 metal panel
+    second: {fileID: 2100000, guid: d16eb1361fac5784aadcb73f34daa3b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 1 bark
+    second: {fileID: 2100000, guid: cb54dc5d6de91a4418588d8fcb113879, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 1 leaf 1
+    second: {fileID: 2100000, guid: 669a77a65b140f64aa7d05487944e5a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 1 leaf 2
+    second: {fileID: 2100000, guid: 44fe78a9fce0c9548a388382ace2f802, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 1 leaf 3
+    second: {fileID: 2100000, guid: 04a11ae6da66ab34397eeb17c3001b6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 1 leaf 4
+    second: {fileID: 2100000, guid: 7c9c4df2d58745d4d88c02b67d5d5417, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 2 bark
+    second: {fileID: 2100000, guid: 561f6e0e6f7e2774abb3a299bc14385f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 2 leaf_
+    second: {fileID: 2100000, guid: 4ea82e46a87868340b65d5a49d1f435f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 3 bark
+    second: {fileID: 2100000, guid: 45f6db6eedff5d24c8b1008e656d65e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 3 leaf 1
+    second: {fileID: 2100000, guid: 29a8f3df3ae40994faa91931143f9132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 3 leaf 2
+    second: {fileID: 2100000, guid: cd3931fd9ebd4194197841fc64c135c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 3 leaf 3
+    second: {fileID: 2100000, guid: 99e8f1ecdf9f1204380ce6a52ba0d9d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 3 leaf 4
+    second: {fileID: 2100000, guid: 75d11ba49e305fd4e84640f2755a4db6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 4 bark
+    second: {fileID: 2100000, guid: 574ed187b266a8d4aa72d15ba7252b5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 4 leaf 1
+    second: {fileID: 2100000, guid: 04dac0c0e1492554c952b2b063a1ee5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 4 leaf 2
+    second: {fileID: 2100000, guid: 438ba7c57612c0d488d1f0ac1b9b2365, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 4 leaf 3
+    second: {fileID: 2100000, guid: 2361aca395b08004ab074191e2ddd8de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 4 leaf 4
+    second: {fileID: 2100000, guid: 13d88609e6d19964389fd707c44d460f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 5 bark
+    second: {fileID: 2100000, guid: 069839b1874165b49b5162d270a424f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 5 leaf 1
+    second: {fileID: 2100000, guid: c2770ded3acdd1940856ed55b2858590, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 5 leaf 2
+    second: {fileID: 2100000, guid: fdd31def0fe09aa4b9b87272a7a805bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 5 leaf 3
+    second: {fileID: 2100000, guid: f7ea60a86eb97f6479fb3efbcbcbf6bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 5 leaf 4
+    second: {fileID: 2100000, guid: 478ed3dd29db773429e0bb9cecb5ecae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collection plant vol 241 plant 6 leaf
+    second: {fileID: 2100000, guid: 5f4850745c56de34081c6ebbc31fe735, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
