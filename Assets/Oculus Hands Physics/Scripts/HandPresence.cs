@@ -5,51 +5,80 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
-    public InputDeviceCharacteristics controllerCharacteristics;
-    private InputDevice targetDevice;
-    public Animator handAnimator;
-    public GameObject skoleKort;
+    public InputDeviceCharacteristics leftControllerCharacteristics;
+    public InputDeviceCharacteristics rightControllerCharacteristics;
+    private InputDevice leftController;
+    private InputDevice rightController;
+    public Animator leftHandAnimator;
+    public Animator rightHandAnimator;
+    public GameObject phone;     // Reference to the phone GameObject (in your left hand)
+    public GameObject skoleKort; // Reference to the skoleKort GameObject (in your right hand)
+
     void Start()
     {
         TryInitialize();
         skoleKort.SetActive(false);
+        phone.SetActive(false);
     }
 
     void TryInitialize()
     {
         List<InputDevice> devices = new List<InputDevice>();
 
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+        // Initialize the left controller
+        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices);
         if (devices.Count > 0)
         {
-            targetDevice = devices[0];
+            leftController = devices[0];
+        }
+
+        // Initialize the right controller
+        devices.Clear();
+        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+        if (devices.Count > 0)
+        {
+            rightController = devices[0];
         }
     }
 
-    void UpdateHandAnimation()
+    void UpdateHandAnimation(InputDevice device, Animator handAnimator)
     {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        if (device.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
             handAnimator.SetFloat("Trigger", triggerValue);
 
-            if (triggerValue > 0.1f) // You can adjust the threshold based on your input sensitivity
+
+            if (triggerValue > 0.1f)
             {
-                skoleKort.SetActive(true);
+                // Check which hand the device belongs to and activate/deactivate accordingly
+                if (handAnimator == leftHandAnimator)
+                {
+                    phone.SetActive(true);
+                }
+                else if (handAnimator == rightHandAnimator)
+                {
+                    skoleKort.SetActive(true);
+                }
             }
             else
             {
-                skoleKort.SetActive(false);
+                // Check which hand the device belongs to and activate/deactivate accordingly
+                if (handAnimator == leftHandAnimator)
+                {
+                    phone.SetActive(false);
+                }
+                else if (handAnimator == rightHandAnimator)
+                {
+                    skoleKort.SetActive(false);
+                }
             }
-
-            Debug.Log(triggerValue);
         }
         else
         {
             handAnimator.SetFloat("Trigger", 0);
-
         }
 
-        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+        if (device.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
             handAnimator.SetFloat("Grip", gripValue);
         }
@@ -62,13 +91,14 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!targetDevice.isValid)
+        if (!leftController.isValid || !rightController.isValid)
         {
             TryInitialize();
         }
         else
         {
-            UpdateHandAnimation();
+            UpdateHandAnimation(leftController, leftHandAnimator);
+            UpdateHandAnimation(rightController, rightHandAnimator);
         }
     }
 }

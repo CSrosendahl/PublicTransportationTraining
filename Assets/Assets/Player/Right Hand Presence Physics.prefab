@@ -50,8 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerCharacteristics: 576
-  handAnimator: {fileID: 4530534852847403810}
+  leftControllerCharacteristics: 320
+  rightControllerCharacteristics: 576
+  leftHandAnimator: {fileID: 0}
+  rightHandAnimator: {fileID: 4530534852847403810}
+  phone: {fileID: 0}
   skoleKort: {fileID: 1790942278543045977}
 --- !u!54 &2315953446967232984
 Rigidbody:
@@ -124,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538593228393543857}
   m_Layer: 7
-  m_Name: AttachPoint
+  m_Name: AttachPointRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
