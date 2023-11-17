@@ -34,6 +34,10 @@ public class RejskortStanderFunctions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
+        if(other.CompareTag("Player"))
+        {
+            return;
+        }
 
         // Trigger n�r skolekortet rammer triggeren
         if (other.CompareTag("Skolekort") && canInteract) // Husk at check at skolekortet har en collider med trigger p� og er tagged med "Skolekort"

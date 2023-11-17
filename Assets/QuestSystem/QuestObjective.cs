@@ -21,9 +21,10 @@ public class QuestObjective : MonoBehaviour
                     questManager.CompleteQuest(questManager.currentQuest);
                 }else
                 {
-                    Debug.Log("Wrong train bip bop chokolade mand");
+                    Debug.Log("Wrong train bip bop chokolade mand/Pawæ");
                 }
             }
         }
+        Debug.Log("Trigger entered");
     }
 }

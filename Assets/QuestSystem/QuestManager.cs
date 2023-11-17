@@ -38,6 +38,7 @@ public class QuestManager : MonoBehaviour
         // Fade out/Blackscreen/Sound/Prompt....
         currentQuest = null;
         DisplayQuestInfo(currentQuest);
+        Debug.Log("COMPLETED QUUUUUEST");
     }
 
     private QuestData GetRandomQuest()
