@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7d85f372552e854d946f7661bc7446d, type: 2}
+  - {fileID: 2100000, guid: 3a79e56e2fe80f64f93ccad61a7d9671, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 016a3c60946ea4043a52bb0e3e6a3ce6, type: 2}
+  - {fileID: 2100000, guid: 16b3743ee9e8f62449e15cb79d032910, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,17 +238,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26c1fa43464ad76418fbf23aecf88e72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.00506
+      value: 0.451
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c1fa43464ad76418fbf23aecf88e72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.297083
+      value: 2.314
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c1fa43464ad76418fbf23aecf88e72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 68.1001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26c1fa43464ad76418fbf23aecf88e72,
         type: 3}
@@ -288,7 +288,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 26c1fa43464ad76418fbf23aecf88e72,
         type: 3}
       propertyPath: m_Name
-      value: LoftSkilt
+      value: LoftSkiltspo3-4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
