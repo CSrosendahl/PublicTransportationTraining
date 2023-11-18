@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class TrainMover : MonoBehaviour
 {
@@ -7,7 +8,9 @@ public class TrainMover : MonoBehaviour
     public Transform exitDestination;
     private Transform currentDestination;
     public TrainData trainData;
-    
+  
+    //public DepartureBoardScript departureInfo;
+   
    
 
     public float maxSpeed = 1.0f; // The maximum speed of the train
@@ -20,11 +23,53 @@ public class TrainMover : MonoBehaviour
 
     public float currentSpeed = 0f; // Current speed of the train
     private bool isMoving = false;
-    public bool questObjective;
+
+    public bool questObjective; // Filler trains will not be a quest objective, and will drive straight through the station
+
+
+    
+    public TMP_Text[] stationText; // TextObjects
+    public GameObject[] lineImage; // Gameobjects that hold renderer for lineImages
+
+    public string overrideStationName; // Override station names in case the train is not part of the quest to avoid confusion
+    public Material overridelineMaterial; // Override lineMaterial in case the train is not part of the quest to avoid confusion
+
+
+
 
     void Start()
     {
-        
+      //  GameObject departureInfoObject = GameObject.Find("DepartureInfoFunction");
+
+        // Get the DepartureInfo component from the GameObject
+       // departureInfo = departureInfoObject.GetComponent<DepartureBoardScript>();
+
+
+        for (int i = 0; i < stationText.Length; i++)
+        {
+           
+            if (questObjective)
+            {
+                stationText[i].text = trainData.trainName; 
+            }
+            else
+            {
+                stationText[i].text = overrideStationName;
+            }
+        }
+        for (int i = 0; i < lineImage.Length; i++)
+        {
+            if(questObjective)
+            {
+                lineImage[i].GetComponent<MeshRenderer>().material = trainData.trainLineMaterial;
+            }
+            else
+            {
+                lineImage[i].GetComponent<MeshRenderer>().material = overridelineMaterial;
+            }
+           
+        }
+       
         // Set the first destination as the current one and start moving
         currentDestination = boardingDestination;
         //StartCoroutine(StartMoving());
@@ -33,10 +78,12 @@ public class TrainMover : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
+        if (isMoving )
         {
             MoveTrain();
+
         }
+      
     }
 
     IEnumerator StartMoving()
@@ -67,10 +114,15 @@ public class TrainMover : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, currentDestination.position, currentSpeed * Time.deltaTime);
 
         // If the train is close enough to the current destination, stop and start waiting
-        if (distanceToDestination <= stopDistance && currentSpeed <= 1f)
+        if (distanceToDestination <= stopDistance && currentSpeed <= 1f && questObjective)
         {
+ 
             isMoving = false; // Stop the train
             StartCoroutine(WaitAtDestination());
+
+        }else if(!questObjective)
+        {
+            MoveToExitDestination(); // The filler trains move directly through the station without stopping
         }
     }
 
@@ -91,5 +143,11 @@ public class TrainMover : MonoBehaviour
         }
 
        
+    }
+    public void MoveToExitDestination()
+    {
+        currentDestination = exitDestination; // Set the exit destination as the current destination
+        currentSpeed = maxSpeed; // Set the speed to maximum for acceleration
+        isMoving = true; // Allow the train to start moving again
     }
 }

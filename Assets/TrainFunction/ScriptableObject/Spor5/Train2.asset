@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train2
   m_EditorClassIdentifier: 
   trainID: 3
+  trainName: Buddinge
+  trainLineMaterial: {fileID: 2100000, guid: 3f2625dc5816f2d49b3fb6fae0a82dfa, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: fb2d38b7defb4ea46ada607460f0c8a7,
     type: 3}
   spawnPosition: {x: 255, y: -7.2, z: 3.274}

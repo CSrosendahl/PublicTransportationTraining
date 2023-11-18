@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train1
   m_EditorClassIdentifier: 
   trainID: 1
+  trainName: "\xD8sterport"
+  trainLineMaterial: {fileID: 2100000, guid: b6c15a03bc6f5b5499ef9a0f945f6ecb, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: 530152e5ce4a9344494c4ba4735e254b,
     type: 3}
   spawnPosition: {x: -300, y: -7.2, z: -15.96}

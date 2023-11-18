@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train5
   m_EditorClassIdentifier: 
   trainID: 0
+  trainName: Frederikssund
+  trainLineMaterial: {fileID: 2100000, guid: 3f2625dc5816f2d49b3fb6fae0a82dfa, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: 51a0c5abbf8bb864686b858e2ba793c6,
     type: 3}
   spawnPosition: {x: -300, y: -7.2, z: -15.96}

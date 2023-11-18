@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train0
   m_EditorClassIdentifier: 
   trainID: 2
+  trainName: Klampenborg
+  trainLineMaterial: {fileID: 2100000, guid: cbff82781fff1db41b963e9261d2fee2, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: d1dc581a85158b44490e699d0ab3da6e,
     type: 3}
   spawnPosition: {x: -300, y: -7.2, z: -2.92}

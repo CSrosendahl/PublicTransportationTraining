@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train3
   m_EditorClassIdentifier: 
   trainID: 3
+  trainName: Farum
+  trainLineMaterial: {fileID: 2100000, guid: cbff82781fff1db41b963e9261d2fee2, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: 7740216c76b90fc458a8fb196c7ae7ae,
     type: 3}
   spawnPosition: {x: -300, y: -7.2, z: -2.92}

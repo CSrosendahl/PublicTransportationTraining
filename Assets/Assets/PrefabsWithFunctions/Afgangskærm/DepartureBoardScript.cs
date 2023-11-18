@@ -14,6 +14,7 @@ public class DepartureBoardScript : MonoBehaviour
         public Texture image;
         public int trackNumber;
 
+
         public int GetID()
         {
             return ID;
@@ -38,6 +39,8 @@ public class DepartureBoardScript : MonoBehaviour
         UpdateDepartureDisplay();
 
         InvokeRepeating("ChangeDepartures", 0f, 1f); // Update every second for time remaining.
+
+       
     }
 
     void InitializeDepartureDisplay()
@@ -79,13 +82,21 @@ public class DepartureBoardScript : MonoBehaviour
 
             // Set the time remaining text.
             float timeRemaining = i * changeInterval - timer;
-            int minutes = Mathf.FloorToInt(timeRemaining / 60);
-            int seconds = Mathf.FloorToInt(timeRemaining % 60);
 
-            timeRemainingTextList[i].text = $"{minutes}min. {seconds}sek.";
-
+            if (timeRemaining < 60f)
+            {
+                // Display ½ for less than 1 min remaining.
+                timeRemainingTextList[i].text = "½";
+            }
+            else
+            {
+                // Display whole numbers with no seconds.
+                int minutes = Mathf.FloorToInt(timeRemaining / 60);
+                timeRemainingTextList[i].text = $"{minutes}min.";
+            }
         }
     }
+
 
     void ChangeDepartures()
     {

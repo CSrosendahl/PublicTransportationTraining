@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Train4
   m_EditorClassIdentifier: 
   trainID: 4
+  trainName: "H\xF8je Taastrup"
+  trainLineMaterial: {fileID: 2100000, guid: b6c15a03bc6f5b5499ef9a0f945f6ecb, type: 2}
   trainPrefab: {fileID: 3282605018728798403, guid: 70c2e2861af8dc9449367842890c6fb1,
     type: 3}
   spawnPosition: {x: 255, y: -7.2, z: 3.274}

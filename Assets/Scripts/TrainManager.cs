@@ -36,6 +36,7 @@ public class TrainManager : MonoBehaviour
         GameObject newTrain = Instantiate(trainDataList[trainIndex].trainPrefab, trainDataList[trainIndex].spawnPosition, rotation);
         TrainMover trainMover = newTrain.GetComponent<TrainMover>();
         trainMover.questObjective = false; // Set questObjective to false for the spawned train
+       // trainMover.signText[0].text = "Out of order";
 
         // If needed, remove certain components from the train here to avoid confusing for the user.
         // For example, remove signs, or add a "Out of order" sign on the train.
