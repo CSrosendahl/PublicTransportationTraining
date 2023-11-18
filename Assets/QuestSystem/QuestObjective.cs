@@ -15,10 +15,12 @@ public class QuestObjective : MonoBehaviour
             if (questManager.currentQuest != null)
             {
                 // Check if the player's quest is the same as the objective's quest
-                if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID)
+                if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID
+                    && parent.GetComponent<TrainMover>().questObjective)
                 {
                     // Complete the quest
                     questManager.CompleteQuest(questManager.currentQuest);
+                  
                 }else
                 {
                     Debug.Log("Wrong train bip bop chokolade mand/Pawæ");

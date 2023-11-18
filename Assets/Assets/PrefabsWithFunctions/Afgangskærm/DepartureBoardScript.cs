@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class DepartureBoardScript : MonoBehaviour
 {
@@ -108,8 +109,9 @@ public class DepartureBoardScript : MonoBehaviour
 
             if(canSpawn)
             {
+                
                 TrainManager.instance.SpawnTrain(topID);
-
+               
                 StartCoroutine(SpawnDelayedTrainsAfterTopID());
 
              
@@ -129,27 +131,28 @@ public class DepartureBoardScript : MonoBehaviour
 
         if (topID == 0)
         {
-            TrainManager.instance.SpawnTrain(1);
+            TrainManager.instance.SpawnTrainFiller(1);
+            
         }
         else if (topID == 1)
         {
-            TrainManager.instance.SpawnTrain(2);
+            TrainManager.instance.SpawnTrainFiller(2);
         }
         else if (topID == 2)
         {
-            TrainManager.instance.SpawnTrain(3);
+            TrainManager.instance.SpawnTrainFiller(3);
         }
         else if (topID == 3)
         {
-            TrainManager.instance.SpawnTrain(4);
+            TrainManager.instance.SpawnTrainFiller(4);
         }
         else if (topID == 4)
         {
-            TrainManager.instance.SpawnTrain(5);
+            TrainManager.instance.SpawnTrainFiller(5);
         }
         else if (topID == 5)
         {
-            TrainManager.instance.SpawnTrain(0);
+            TrainManager.instance.SpawnTrainFiller(0);
         }
 
     }

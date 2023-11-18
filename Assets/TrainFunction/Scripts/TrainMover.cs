@@ -7,6 +7,7 @@ public class TrainMover : MonoBehaviour
     public Transform exitDestination;
     private Transform currentDestination;
     public TrainData trainData;
+    
    
 
     public float maxSpeed = 1.0f; // The maximum speed of the train
@@ -19,6 +20,7 @@ public class TrainMover : MonoBehaviour
 
     public float currentSpeed = 0f; // Current speed of the train
     private bool isMoving = false;
+    public bool questObjective;
 
     void Start()
     {
