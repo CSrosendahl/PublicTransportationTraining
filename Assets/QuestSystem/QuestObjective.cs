@@ -23,6 +23,7 @@ public class QuestObjective : MonoBehaviour
                   
                 }else
                 {
+                    questManager.WrongQuestObjective();
                     Debug.Log("Wrong train bip bop chokolade mand/Pawæ");
                 }
             }

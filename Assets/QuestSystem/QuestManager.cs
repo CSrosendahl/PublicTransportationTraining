@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
@@ -36,9 +37,20 @@ public class QuestManager : MonoBehaviour
     {
         // Complete quest, and end the game
         // Fade out/Blackscreen/Sound/Prompt....
-        currentQuest = null;
-        DisplayQuestInfo(currentQuest);
+        // DisplayQuestInfo(currentQuest);
+
+        // Wait 2 second, fade to black into new scene.
+
         Debug.Log("COMPLETED QUUUUUEST");
+        currentQuest = null;
+
+    }
+
+    public void WrongQuestObjective()
+    {
+        // Play sound, wrong train.
+        Debug.Log("Wrong train");
+
     }
 
     private QuestData GetRandomQuest()
@@ -54,6 +66,10 @@ public class QuestManager : MonoBehaviour
         questText.text = quest.questDescription + "\n";
                           
     }
+
+  
+
+
 
   
 
