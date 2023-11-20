@@ -63,7 +63,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckExit Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5636767533889702238, guid: c70607c792e460c4d9ece98b85ccf181, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

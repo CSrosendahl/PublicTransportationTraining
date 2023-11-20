@@ -494,10 +494,13 @@ MonoBehaviour:
   audioSource: {fileID: 4667734158377577783}
   godkendtClip: {fileID: 8300000, guid: cdce391c17d8e044aa28c5479b10aae9, type: 3}
   afvistClip: {fileID: 8300000, guid: 30b57bca1aec758408778f9146bc017e, type: 3}
-  OkText: {fileID: 2100000, guid: 3d880656e86f1bd42a1b63a165e7dfa8, type: 2}
-  AfvistText: {fileID: 2100000, guid: c26f0ffee41b58f47998a36428b856b9, type: 2}
+  checkedIn_GodRejse: {fileID: 2100000, guid: 1beef7dec57e5a947844f82786c28b35, type: 2}
+  checkedIn_alreadyCheckedIn: {fileID: 2100000, guid: c85af2bab47c1b54c98e56ebda449643,
+    type: 2}
+  checkedOut_GodRejse: {fileID: 0}
+  checkedOut_alreadyCheckedOut: {fileID: 0}
   ScreenText: {fileID: 4583198134098981950}
-  canInteract: 0
+  checkIndStander: 0
 --- !u!82 &4667734158377577783
 AudioSource:
   m_ObjectHideFlags: 0

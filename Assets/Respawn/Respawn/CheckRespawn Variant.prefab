@@ -63,7 +63,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckRespawn Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4790136166927669510, guid: 26b761aec902a1e4b8a8d73b2774131a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

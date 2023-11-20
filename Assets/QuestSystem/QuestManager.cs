@@ -23,7 +23,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        AcceptQuest();
+        //AcceptQuest();
     }
     public void AcceptQuest()
     {
