@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndGameOnTrigger : MonoBehaviour
+public class ExitGame : MonoBehaviour
 {
     public string targetSceneName = "Map"; // The scene to load after ending the game (optional)
 
