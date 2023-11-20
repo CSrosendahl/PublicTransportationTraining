@@ -10,15 +10,20 @@ public class RejskortStanderFunctions : MonoBehaviour
     public AudioClip godkendtClip;
     public AudioClip afvistClip;
 
-    public Material OkText; // Material til Godkendt
-    public Material AfvistText; // Material Til afvist
+    public Material checkedIn_GodRejse; // Material til Godkendt
+    public Material checkedIn_alreadyCheckedIn; // Material Til afvist
+    public Material checkedOut_GodRejse; // Material til Godkendt
+    public Material checkedOut_alreadyCheckedOut; // Material Til afvist
+
     public Renderer ScreenText; // Reference til det object der skal have �ndret materiale
   
 
     private Material originalMaterial;
    
-    public bool canInteract;
+    private bool canInteract;
     private bool isCoroutineRunning = false;
+    public bool checkIndStander;
+
 
     private void Start()
     {
@@ -34,65 +39,134 @@ public class RejskortStanderFunctions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
-       // if(other.CompareTag("Player"))
-        //{
-          //  return;
-        //}
 
-      
-
-        // Trigger n�r skolekortet rammer triggeren
-        if (other.CompareTag("Skolekort") && canInteract) // Husk at check at skolekortet har en collider med trigger p� og er tagged med "Skolekort"
+        if(checkIndStander)
         {
-            audioSource.clip = godkendtClip;
-            Blaatlys.enabled = false; // Slukker lyset ved Trigger
-           // GodkendtLyd.enabled = true; // Enable AudioSource med godkendt lyd.
-            audioSource.Play();
-            //.Play(); // Play godkendt lyd
-            //isTriggered = true; // S�tter isTriggered til true
-            canInteract = false;
-
-            Debug.Log("Godkendt");
-
-            // Skift materiale p� ScreenText til OkText
-            if (ScreenText != null && OkText != null)
+            if (canInteract)
             {
-                ScreenText.material = OkText;
+                if (other.CompareTag("Skolekort"))
+                {
+                    if (GameManager.instance.hasCheckedIn)
+                    {
+                        // Already checked in
+                        HandleAlreadyCheckedIn();
+                    }
+                    else
+                    {
+                        // Perform check-in
+                        HandleCheckIn();
+                    }
+                }
             }
-
-            StartCoroutine(ResetLightAndAudio());
-
+            else
+            {
+                Debug.Log("Cannot interact");
+            }
         }
-        //else
-        //{
-        //    if (canInteract)
-        //    {
-        //        Blaatlys.enabled = false;
-        //        // AfvistLyd.enabled = true; // Enable AudioSource med afvist lyd.
-        //        // AfvistLyd.Play(); // Play afvist lyd
-        //        audioSource.clip = afvistClip;
-        //        audioSource.Play();
-        //        canInteract = false;
-        //        Debug.Log("Afvist");
-                
+        else
+        {
+            if (canInteract)
+            {
+                if (other.CompareTag("Skolekort"))
+                {
+                    if (GameManager.instance.hasCheckedIn)
+                    {
+                        // Already checked in
 
-        //        // Skift materiale p� ScreenText til AfvistText
-        //        if (ScreenText != null && AfvistText != null)
-        //        {
-        //            ScreenText.material = AfvistText;
-        //        }
+                       
+                        HandleCheckOut();
+                    }
+                    else
+                    {
+                        HandleAlreadyCheckedOut();
+                        // Perform check-in
 
-        //        StartCoroutine(ResetLightAndAudio());
-        //    }
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Cannot interact");
+            }
+        }
 
-        //}
+       
+
     }
+
+    private void HandleAlreadyCheckedIn()
+    {
+        Blaatlys.enabled = false;
+        audioSource.clip = afvistClip;
+        audioSource.Play();
+        canInteract = false;
+        Debug.Log("Already checked in");
+
+        // Change material on ScreenText to AfvistText
+        if (ScreenText != null && checkedIn_alreadyCheckedIn != null)
+        {
+            ScreenText.material = checkedIn_alreadyCheckedIn;
+        }
+        StartCoroutine(ResetLightAndAudio());
+    }
+    private void HandleCheckIn()
+    {
+        audioSource.clip = godkendtClip;
+        Blaatlys.enabled = false;
+        audioSource.Play();
+        canInteract = false;
+        GameManager.instance.hasCheckedIn = true;
+        Debug.Log("Godkendt");
+
+        // Change material on ScreenText to OkText
+        if (ScreenText != null && checkedIn_GodRejse != null)
+        {
+            ScreenText.material = checkedIn_GodRejse;
+        }
+
+        StartCoroutine(ResetLightAndAudio());
+    }
+
+    private void HandleAlreadyCheckedOut()
+    {
+        Blaatlys.enabled = false;
+        audioSource.clip = afvistClip;
+        audioSource.Play();
+        canInteract = false;
+        Debug.Log("Already checked out");
+
+        // Change material on ScreenText to AfvistText
+        if (ScreenText != null && checkedIn_alreadyCheckedIn != null)
+        {
+            ScreenText.material = checkedOut_alreadyCheckedOut;
+        }
+        StartCoroutine(ResetLightAndAudio());
+    }
+    private void HandleCheckOut()
+    {
+        audioSource.clip = godkendtClip;
+        Blaatlys.enabled = false;
+        audioSource.Play();
+        canInteract = false;
+        GameManager.instance.hasCheckedIn = false;
+        Debug.Log("Godkendt");
+
+        // Change material on ScreenText to OkText
+        if (ScreenText != null && checkedIn_GodRejse != null)
+        {
+            ScreenText.material = checkedOut_GodRejse;
+        }
+
+        StartCoroutine(ResetLightAndAudio());
+    }
+
+
+
 
     private void OnTriggerExit(Collider other)
     {
        
-            StartCoroutine(ResetLightAndAudio()); //venter 3 sekunder f�r standeren er klar igen
+      StartCoroutine(ResetLightAndAudio()); //venter X sekunder f�r standeren er klar igen
        
     }
 

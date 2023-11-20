@@ -86,7 +86,7 @@ public class DepartureBoardScript : MonoBehaviour
             if (timeRemaining < 60f)
             {
                 // Display � for less than 1 min remaining.
-                timeRemainingTextList[i].text = "�";
+                timeRemainingTextList[i].text = "½min.";
             }
             else
             {

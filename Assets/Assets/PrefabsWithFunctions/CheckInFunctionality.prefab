@@ -606,7 +606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 57a4ea1328a3b1d439473b060df8c15e, type: 2}
+      objectReference: {fileID: 2100000, guid: cd434a3d7efa1f54198ea12ec9d9af6f, type: 2}
     - target: {fileID: -7029948723529949830, guid: efccb6d3917414f4287661bc6bcf93b2,
         type: 3}
       propertyPath: m_Name
@@ -763,10 +763,10 @@ MonoBehaviour:
   audioSource: {fileID: 4783277230335525686}
   godkendtClip: {fileID: 8300000, guid: cdce391c17d8e044aa28c5479b10aae9, type: 3}
   afvistClip: {fileID: 8300000, guid: 30b57bca1aec758408778f9146bc017e, type: 3}
-  OkText: {fileID: 2100000, guid: 3d880656e86f1bd42a1b63a165e7dfa8, type: 2}
-  AfvistText: {fileID: 2100000, guid: c26f0ffee41b58f47998a36428b856b9, type: 2}
+  OkText: {fileID: 2100000, guid: 1beef7dec57e5a947844f82786c28b35, type: 2}
+  AfvistText: {fileID: 2100000, guid: c85af2bab47c1b54c98e56ebda449643, type: 2}
   ScreenText: {fileID: 4431094386693983150}
-  canInteract: 0
+  checkIndStander: 1
 --- !u!82 &4783277230335525686
 AudioSource:
   m_ObjectHideFlags: 0
