@@ -40,6 +40,8 @@ public class RejskortStanderFunctions : MonoBehaviour
           //  return;
         //}
 
+      
+
         // Trigger n�r skolekortet rammer triggeren
         if (other.CompareTag("Skolekort") && canInteract) // Husk at check at skolekortet har en collider med trigger p� og er tagged med "Skolekort"
         {
@@ -62,30 +64,29 @@ public class RejskortStanderFunctions : MonoBehaviour
             StartCoroutine(ResetLightAndAudio());
 
         }
-        else
-        {
-            if (canInteract)
-            {
-                Blaatlys.enabled = false;
-                // AfvistLyd.enabled = true; // Enable AudioSource med afvist lyd.
-                // AfvistLyd.Play(); // Play afvist lyd
-                audioSource.clip = afvistClip;
-                audioSource.Play();
-                canInteract = false;
-                Debug.Log("Afvist");
+        //else
+        //{
+        //    if (canInteract)
+        //    {
+        //        Blaatlys.enabled = false;
+        //        // AfvistLyd.enabled = true; // Enable AudioSource med afvist lyd.
+        //        // AfvistLyd.Play(); // Play afvist lyd
+        //        audioSource.clip = afvistClip;
+        //        audioSource.Play();
+        //        canInteract = false;
+        //        Debug.Log("Afvist");
                 
 
-                // Skift materiale p� ScreenText til AfvistText
-                if (ScreenText != null && AfvistText != null)
-                {
-                    ScreenText.material = AfvistText;
-                }
+        //        // Skift materiale p� ScreenText til AfvistText
+        //        if (ScreenText != null && AfvistText != null)
+        //        {
+        //            ScreenText.material = AfvistText;
+        //        }
 
-                StartCoroutine(ResetLightAndAudio());
-            }
+        //        StartCoroutine(ResetLightAndAudio());
+        //    }
 
-
-        }
+        //}
     }
 
     private void OnTriggerExit(Collider other)

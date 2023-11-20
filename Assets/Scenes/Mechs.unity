@@ -318,7 +318,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2153462614827616467, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3, type: 3}
 --- !u!1 &536450153
 GameObject:
@@ -419,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 536450153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.237, y: 1.057, z: 0.442}
+  m_LocalPosition: {x: -1.205, y: 1.057, z: 0.442}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -443,6 +447,7 @@ GameObject:
   - component: {fileID: 1089129832}
   - component: {fileID: 1089129831}
   - component: {fileID: 1089129830}
+  - component: {fileID: 1089129834}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -465,7 +470,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -536,6 +541,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089129834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089129829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2b2afa438213c4d89f1a91a38f1001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: Map
 --- !u!1 &1375784261
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Hand Presence Physics
       objectReference: {fileID: 0}
+    - target: {fileID: 2315953446967232984, guid: d605a82db6ec5d5438fd1702c742b3fb,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4852322406456413538, guid: d605a82db6ec5d5438fd1702c742b3fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1115,6 +1138,11 @@ PrefabInstance:
       propertyPath: rightHandAnimator
       value: 
       objectReference: {fileID: 5930550148712162601}
+    - target: {fileID: 6456365524796824435, guid: 889a40a7bd7955142b71bd37640858a8,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727233304975611048, guid: 889a40a7bd7955142b71bd37640858a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1173,7 +1201,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2145045334991046233, guid: 889a40a7bd7955142b71bd37640858a8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 889a40a7bd7955142b71bd37640858a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
