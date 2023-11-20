@@ -85,8 +85,8 @@ public class DepartureBoardScript : MonoBehaviour
 
             if (timeRemaining < 60f)
             {
-                // Display ½ for less than 1 min remaining.
-                timeRemainingTextList[i].text = "½";
+                // Display ï¿½ for less than 1 min remaining.
+                timeRemainingTextList[i].text = "ï¿½";
             }
             else
             {
@@ -128,7 +128,7 @@ public class DepartureBoardScript : MonoBehaviour
              
             }
 
-          
+            StartCoroutine(DelayedCode(25));
             UpdateDepartureDisplay();
         }
     }
@@ -168,6 +168,11 @@ public class DepartureBoardScript : MonoBehaviour
 
     }
 
+    private IEnumerator DelayedCode(int waitTime) // These are filler trains for immersion
+    {
+        yield return new WaitForSeconds(waitTime);
+
+    }
 
 
 }

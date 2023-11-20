@@ -16,8 +16,9 @@ public class RejskortStanderFunctions : MonoBehaviour
   
 
     private Material originalMaterial;
-    private bool isTriggered = false;
+   
     public bool canInteract;
+    private bool isCoroutineRunning = false;
 
     private void Start()
     {
@@ -34,10 +35,10 @@ public class RejskortStanderFunctions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
-        if(other.CompareTag("Player"))
-        {
-            return;
-        }
+       // if(other.CompareTag("Player"))
+        //{
+          //  return;
+        //}
 
         // Trigger n�r skolekortet rammer triggeren
         if (other.CompareTag("Skolekort") && canInteract) // Husk at check at skolekortet har en collider med trigger p� og er tagged med "Skolekort"
@@ -47,7 +48,7 @@ public class RejskortStanderFunctions : MonoBehaviour
            // GodkendtLyd.enabled = true; // Enable AudioSource med godkendt lyd.
             audioSource.Play();
             //.Play(); // Play godkendt lyd
-            isTriggered = true; // S�tter isTriggered til true
+            //isTriggered = true; // S�tter isTriggered til true
             canInteract = false;
 
             Debug.Log("Godkendt");
@@ -57,6 +58,8 @@ public class RejskortStanderFunctions : MonoBehaviour
             {
                 ScreenText.material = OkText;
             }
+
+            StartCoroutine(ResetLightAndAudio());
 
         }
         else
@@ -70,12 +73,15 @@ public class RejskortStanderFunctions : MonoBehaviour
                 audioSource.Play();
                 canInteract = false;
                 Debug.Log("Afvist");
+                
 
                 // Skift materiale p� ScreenText til AfvistText
                 if (ScreenText != null && AfvistText != null)
                 {
                     ScreenText.material = AfvistText;
                 }
+
+                StartCoroutine(ResetLightAndAudio());
             }
 
 
@@ -84,27 +90,31 @@ public class RejskortStanderFunctions : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isTriggered || !canInteract)
-        {
+       
             StartCoroutine(ResetLightAndAudio()); //venter 3 sekunder f�r standeren er klar igen
-        }
+       
     }
 
     //Coroutine som resetter standeren
     private IEnumerator ResetLightAndAudio()
     {
-        yield return new WaitForSeconds(3.0f); // vent  5 seconds. adjust som det passer
+        if (!isCoroutineRunning)
+    {
+        isCoroutineRunning = true; // Set the flag to indicate the coroutine is running
 
-        Blaatlys.enabled = true; // T�nder lyset igen ved Trigger Exit
-        isTriggered = false;
+        yield return new WaitForSeconds(4.0f);
+
+        Blaatlys.enabled = true;
+        
         canInteract = true;
 
-
-        // Skift materiale p� ScreenText til originalMaterial
         if (ScreenText != null)
         {
             ScreenText.material = originalMaterial;
         }
+
+        isCoroutineRunning = false; // Reset the flag when the coroutine is done
+    }
 
     }
 
