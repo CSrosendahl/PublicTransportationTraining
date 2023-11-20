@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject;
     private void Start()
     {
-        SpawnControlPanel();
+        CompleteQuestArea();
     }
 
     public void DisableNPC()

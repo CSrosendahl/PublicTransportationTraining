@@ -9,7 +9,7 @@ public class RespawnSceneSwitcher : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Check if the collider is from the player's hand
         {
-            SceneManager.LoadScene(targetSceneName); // Load the target scene
+            GameManager.instance.SpawnIndgang(); // Load the target scene
         }
     }
 }
