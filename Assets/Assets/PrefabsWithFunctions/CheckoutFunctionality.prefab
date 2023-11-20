@@ -352,7 +352,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 731442663e2fbf54a94dd96ef5c70fa2, type: 2}
+      objectReference: {fileID: 2100000, guid: 9cb28d097fe0c874cb7ee6f2ba32d2a0, type: 2}
     - target: {fileID: -7029948723529949830, guid: efccb6d3917414f4287661bc6bcf93b2,
         type: 3}
       propertyPath: m_Name
@@ -494,11 +494,11 @@ MonoBehaviour:
   audioSource: {fileID: 4667734158377577783}
   godkendtClip: {fileID: 8300000, guid: cdce391c17d8e044aa28c5479b10aae9, type: 3}
   afvistClip: {fileID: 8300000, guid: 30b57bca1aec758408778f9146bc017e, type: 3}
-  checkedIn_GodRejse: {fileID: 2100000, guid: 1beef7dec57e5a947844f82786c28b35, type: 2}
-  checkedIn_alreadyCheckedIn: {fileID: 2100000, guid: c85af2bab47c1b54c98e56ebda449643,
+  checkedIn_GodRejse: {fileID: 2100000, guid: 2ba28409879dbbb43a6f4692915506ae, type: 2}
+  checkedIn_alreadyCheckedIn: {fileID: 2100000, guid: 11539ac96ad81c34897a23ab6459924e,
     type: 2}
-  checkedOut_GodRejse: {fileID: 2100000, guid: 4bc6d6f846eb3774ca91ced6160e8364, type: 2}
-  checkedOut_alreadyCheckedOut: {fileID: 2100000, guid: 4bc6d6f846eb3774ca91ced6160e8364,
+  checkedOut_GodRejse: {fileID: 2100000, guid: 86d6d687682fd1b48974a205b2a87dab, type: 2}
+  checkedOut_alreadyCheckedOut: {fileID: 2100000, guid: 6633335496e8f9a4b96a7703741084fa,
     type: 2}
   ScreenText: {fileID: 4583198134098981950}
   checkIndStander: 0

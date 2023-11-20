@@ -19,6 +19,10 @@ public class QuestManager : MonoBehaviour
     public QuestData currentQuest; // The player's current quest
    // public Text questInfoText; // Reference to the Text UI element
     public TextMeshPro questText;
+
+    public AudioClip questFailedSound;
+    public AudioClip questCompleteSound;
+    public AudioSource audioSource;
    
 
     private void Start()
@@ -40,9 +44,11 @@ public class QuestManager : MonoBehaviour
         // DisplayQuestInfo(currentQuest);
 
         // Wait 2 second, fade to black into new scene.
-
+        GameManager.instance.CompleteQuestArea();
+        audioSource.clip = questCompleteSound;
+        audioSource.Play();
         Debug.Log("COMPLETED QUUUUUEST");
-        currentQuest = null;
+      //currentQuest = null;
 
     }
 
@@ -50,6 +56,8 @@ public class QuestManager : MonoBehaviour
     {
         // Play sound, wrong train.
         Debug.Log("Wrong train");
+        audioSource.clip = questFailedSound;
+        audioSource.Play();
 
     }
 

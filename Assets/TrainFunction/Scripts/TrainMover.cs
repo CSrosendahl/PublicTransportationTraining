@@ -103,6 +103,7 @@ public class TrainMover : MonoBehaviour
         {
             // Decelerate quickly to the speed of 1f
             currentSpeed = Mathf.Max(currentSpeed - quickDecelerationRate * Time.deltaTime, 1f);
+            // Train slowing down, arrival
         }
         else if (currentSpeed < maxSpeed && distanceToDestination >= decelerationDistance)
         {
@@ -113,10 +114,13 @@ public class TrainMover : MonoBehaviour
         // Move the train towards the current destination
         transform.position = Vector3.MoveTowards(transform.position, currentDestination.position, currentSpeed * Time.deltaTime);
 
+        // Play train move sound here
+
         // If the train is close enough to the current destination, stop and start waiting
         if (distanceToDestination <= stopDistance && currentSpeed <= 1f && questObjective)
         {
  
+            
             isMoving = false; // Stop the train
             StartCoroutine(WaitAtDestination());
 
@@ -141,6 +145,7 @@ public class TrainMover : MonoBehaviour
             currentDestination = (currentDestination == boardingDestination) ? exitDestination : boardingDestination;
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
+            // Play start sound 
         }
 
        
