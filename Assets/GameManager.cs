@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public bool hasCheckedIn;
 
     public AudioMixer audioMixer;
-    public GameObject disableNPCs;
+    public GameObject NPCState;
 
     public Transform spawnIndgang;
     public Transform spawnControlPanel;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void DisableNPC()
     {
-       disableNPCs.SetActive(false);
+       NPCState.SetActive(false);
     }
     public void DisableAudioMixer()
     {
@@ -49,14 +49,15 @@ public class GameManager : MonoBehaviour
         {
             QuestManager.instance.currentQuest = null;
         }
-        
+       
         QuestManager.instance.AcceptQuest();
+        playerObject.transform.position = spawnIndgang.position;
 
     }
     public void SpawnIndgang()
     {
         playerObject.transform.position = spawnIndgang.position;
-        StartGame();
+       
     }
     public void SpawnControlPanel()
     {
