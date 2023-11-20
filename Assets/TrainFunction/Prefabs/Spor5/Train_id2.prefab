@@ -2688,7 +2688,6 @@ MonoBehaviour:
   exitDestination: {fileID: 2942973916761887805, guid: 0e8af943e6933e244a75edca15bc87f4,
     type: 3}
   trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
-  departureInfo: {fileID: 0}
   maxSpeed: 10
   acceleration: 5
   quickDecelerationRate: 6

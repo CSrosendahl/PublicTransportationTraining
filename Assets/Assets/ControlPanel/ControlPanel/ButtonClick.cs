@@ -41,6 +41,7 @@ public class ButtonClick : MonoBehaviour
             Debug.Log("Start Game");
             animator.SetTrigger("ChangeColorTrigger");
             GameManager.instance.StartGame();
+
             break;
         default:
             Debug.Log("Unhandled button click");

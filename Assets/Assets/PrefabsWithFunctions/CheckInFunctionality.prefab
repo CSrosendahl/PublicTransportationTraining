@@ -766,8 +766,9 @@ MonoBehaviour:
   checkedIn_GodRejse: {fileID: 2100000, guid: 1beef7dec57e5a947844f82786c28b35, type: 2}
   checkedIn_alreadyCheckedIn: {fileID: 2100000, guid: c85af2bab47c1b54c98e56ebda449643,
     type: 2}
-  checkedOut_GodRejse: {fileID: 0}
-  checkedOut_alreadyCheckedOut: {fileID: 0}
+  checkedOut_GodRejse: {fileID: 2100000, guid: 4bc6d6f846eb3774ca91ced6160e8364, type: 2}
+  checkedOut_alreadyCheckedOut: {fileID: 2100000, guid: 4bc6d6f846eb3774ca91ced6160e8364,
+    type: 2}
   ScreenText: {fileID: 4431094386693983150}
   checkIndStander: 1
 --- !u!82 &4783277230335525686

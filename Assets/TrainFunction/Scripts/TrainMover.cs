@@ -128,7 +128,7 @@ public class TrainMover : MonoBehaviour
 
     IEnumerator WaitAtDestination()
     {
-        yield return new WaitForSeconds(waitTime);
+       
         // Set the new destination and reset the speed for acceleration
 
         if(currentDestination == exitDestination)
@@ -137,6 +137,7 @@ public class TrainMover : MonoBehaviour
             Destroy(gameObject);
         } else
         {
+            yield return new WaitForSeconds(waitTime);
             currentDestination = (currentDestination == boardingDestination) ? exitDestination : boardingDestination;
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
