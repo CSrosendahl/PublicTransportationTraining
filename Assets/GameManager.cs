@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject;
     private void Start()
     {
-        SpawnControlPanel();
+       SpawnControlPanel();
+      
        
     }
 
