@@ -25,15 +25,14 @@ public class GameManager : MonoBehaviour
 
     public Material onButton;
     public Material offButton;
-
+    public GameObject NPCButton;
+    public GameObject SoundButton;
 
     public GameObject NPCState;
 
     public GameObject AudioMixerGameObject;
 
-    public GameObject NPCButton;
-
-    public GameObject SoundButton;
+   
 
     public Transform spawnIndgang;
     public Transform spawnControlPanel;
@@ -44,16 +43,38 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject;
     private void Start()
     {
-    SpawnControlPanel();
+        SpawnControlPanel();
     }
 
     public void DisableNPC()
     {
-    NPCState.SetActive(!NPCState.activeSelf);
+        NPCState.SetActive(!NPCState.activeSelf);
+        if (NPCState.activeSelf == true)
+        {
+            
+            NPCButton.GetComponent<Renderer>().material = offButton;
+        }
+        else
+        {
+            NPCButton.GetComponent<Renderer>().material = onButton;
+        }
+
+       
     }
     public void DisableAudioMixer()
     {
         AudioMixerGameObject.SetActive(!AudioMixerGameObject.activeSelf);
+
+        if (AudioMixerGameObject.activeSelf == true)
+        {
+            SoundButton.GetComponent<Renderer>().material = offButton;
+        }
+        else
+        {
+            SoundButton.GetComponent<Renderer>().material = onButton;
+           
+        }
+       
     }
 
     public void StartGame()

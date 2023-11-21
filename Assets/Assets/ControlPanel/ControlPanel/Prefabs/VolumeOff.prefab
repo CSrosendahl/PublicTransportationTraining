@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 4332298364619754973}
   - component: {fileID: 8808330649112194061}
   - component: {fileID: 5408783431064875782}
-  - component: {fileID: 3665649131119060708}
   m_Layer: 0
   m_Name: VolumeOff
   m_TagString: Untagged
@@ -115,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.34, y: -4.4, z: 20.99}
-  m_LocalScale: {x: 5.23, y: 0.42, z: 5.23}
+  m_LocalScale: {x: 0.6073599, y: 0.0487746, z: 0.6073599}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6406164834723363847}
@@ -149,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b4e49a9dfcf60054ab3035b6593ffcc9, type: 2}
+  - {fileID: 2100000, guid: 15bfb9b5096884fa1b804dae72db798d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,26 +205,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa6a83469a69784081943c3b70b3956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonID: 2
-  animator: {fileID: 0}
---- !u!95 &3665649131119060708
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652110778509477536}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: edbf49585c1dcea4d8a786b763acecfa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  buttonID: 1
