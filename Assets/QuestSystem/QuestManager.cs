@@ -23,8 +23,8 @@ public class QuestManager : MonoBehaviour
     public AudioClip questFailedSound;
     public AudioClip questCompleteSound;
     public AudioSource audioSource;
-   
 
+    
     private void Start()
     {
         //AcceptQuest();
