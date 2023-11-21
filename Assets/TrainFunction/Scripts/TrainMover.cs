@@ -88,7 +88,6 @@ public class TrainMover : MonoBehaviour
         }
       
     }
-
     IEnumerator StartMoving()
     {
         // Wait before starting to move

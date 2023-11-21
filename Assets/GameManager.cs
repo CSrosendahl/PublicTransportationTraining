@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     public static GameManager instance;
+    
 
     private void Awake()
     {
@@ -26,11 +27,13 @@ public class GameManager : MonoBehaviour
     public Transform spawnControlPanel;
     public Transform completeQuestArea;
 
+    public HandPresencePhysics[] handPhysicsScript;
+
     public GameObject playerObject;
     private void Start()
     {
         SpawnControlPanel();
-       // StartGame();
+       
     }
 
     public void DisableNPC()
@@ -45,6 +48,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
 
+        for (int i = 0; i < handPhysicsScript.Length; i++)
+        {
+            handPhysicsScript[i].enabled = false;
+        }
+
         hasCheckedIn = false;
         if(QuestManager.instance.currentQuest != null)
         {
@@ -54,25 +62,55 @@ public class GameManager : MonoBehaviour
         QuestManager.instance.AcceptQuest();
         playerObject.transform.position = spawnIndgang.position;
 
+      StartCoroutine(EnableHandPhysicsAfterDelay());
+
     }
     public void SpawnIndgang()
     {
-        playerObject.transform.position = spawnIndgang.position;
+        for (int i = 0; i < handPhysicsScript.Length; i++)
+        {
+            handPhysicsScript[i].enabled = false;
+        }
        
+
+        playerObject.transform.position = spawnIndgang.position;
+
+        StartCoroutine(EnableHandPhysicsAfterDelay());
+
     }
     public void SpawnControlPanel()
     {
+        for (int i = 0; i < handPhysicsScript.Length; i++)
+        {
+            handPhysicsScript[i].enabled = false;
+        }
         playerObject.transform.position = spawnControlPanel.position;
+        StartCoroutine(EnableHandPhysicsAfterDelay());
     }
     public void CompleteQuestArea()
     {
+        for (int i = 0; i < handPhysicsScript.Length; i++)
+        {
+            handPhysicsScript[i].enabled = false;
+        }
         playerObject.transform.position = completeQuestArea.position;
+        StartCoroutine(EnableHandPhysicsAfterDelay());
     }
     public void QuitGame()
     {
         Application.Quit();
     }
-   
 
 
+    private IEnumerator EnableHandPhysicsAfterDelay()
+    {
+        // Wait for a short delay (you can adjust the duration as needed).
+        yield return new WaitForSeconds(0.1f); // Adjust the duration as needed.
+
+        for (int i = 0; i < handPhysicsScript.Length; i++)
+        {
+            handPhysicsScript[i].enabled = true;
+        }
+
+    }
 }

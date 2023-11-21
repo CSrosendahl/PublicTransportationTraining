@@ -24,6 +24,7 @@ public class DepartureBoardScript : MonoBehaviour
     //public List<DepartureInfo> departures; // List of departure information.
    // public int maxDeparturesToShow = 6; // Maximum number of departures to display.
     public float changeInterval = 60f; // Time interval in seconds.
+    public int lastSpawnedTrainID;
 
     private List<TextMeshPro> stationNameTextList;
     private List<TextMeshPro> trackNumberTextList;
@@ -40,8 +41,7 @@ public class DepartureBoardScript : MonoBehaviour
         UpdateDepartureDisplay();
 
         InvokeRepeating("ChangeDepartures", 0f, 1f); // Update every second for time remaining.
-
-       
+   
     }
 
     void InitializeDepartureDisplay()
@@ -62,7 +62,6 @@ public class DepartureBoardScript : MonoBehaviour
                 imageRendererList.Add(departureObject.Find("ImageQuad").GetComponent<Renderer>());
                 timeRemainingTextList.Add(departureObject.Find("Time").GetComponent<TextMeshPro>()); // Add time remaining TextMeshPro.
                 currentDepartureIndices.Add(i % TrainManager.instance.trainDataList.Count); // Initialize with sequential indices.
-
               
             }
             else
@@ -84,8 +83,6 @@ public class DepartureBoardScript : MonoBehaviour
             stationNameTextList[i].text = TrainManager.instance.trainDataList[departureIndex].trainName;
             trackNumberTextList[i].text = TrainManager.instance.trainDataList[departureIndex].track.ToString();
             imageRendererList[i].material.mainTexture = TrainManager.instance.trainDataList[departureIndex].texture;
-
-
 
             //  stationNameTextList[i].text = departures[departureIndex].stationName;
             //    trackNumberTextList[i].text = departures[departureIndex].trackNumber.ToString();
@@ -109,78 +106,80 @@ public class DepartureBoardScript : MonoBehaviour
     }
 
 
-   void ChangeDepartures()
-{
-    timer += 1f;
-
-    if (timer >= changeInterval)
+    void ChangeDepartures()
     {
-        timer = 0f;
+        timer += 1f;
 
-        if (canSpawn)
+        if (timer >= changeInterval)
         {
-            // Get the index of the train to spawn (the top index)
-            int topIndex = currentDepartureIndices[0];
+            timer = 0f;
 
-            // Increment the top index to point to the next train
-            topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
-
-            // Update the departure indices with the new top index
-            for (int i = 0; i < currentDepartureIndices.Count; i++)
+            if (canSpawn)
             {
-                currentDepartureIndices[i] = topIndex;
+                // Get the index of the train to spawn (the top index)
+                int topIndex = currentDepartureIndices[0];
 
-                // Increment the top index for the next iteration
+                // Increment the top index to point to the next train
                 topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
-            }
+
+                // Find the ID of the train to be spawned
+                int trainID = TrainManager.instance.trainDataList[topIndex].trainID;
+                lastSpawnedTrainID = trainID;
+
+                // Update the departure indices with the new top index
+                for (int i = 0; i < currentDepartureIndices.Count; i++)
+                {
+                    currentDepartureIndices[i] = topIndex;
+
+                    // Increment the top index for the next iteration
+                    topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
+                }
 
                 // Spawn the train at the new top index
-           
-            TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at index 0
+
+                TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at index 0
+                StartCoroutine(SpawnDelayedTrainsAfterTopID());
+
+            }
+
+            // Update the departure display
+            UpdateDepartureDisplay();
+        }
+    }
+
+
+    private IEnumerator SpawnDelayedTrainsAfterTopID() // These are filler trains for immersion
+    {
+        yield return new WaitForSeconds(Random.Range(1f, 2f));
+
+
+        if (lastSpawnedTrainID == 0)
+        {
+            TrainManager.instance.SpawnTrainFiller(2);
+
+        }
+        else if (lastSpawnedTrainID == 1)
+        {
+            TrainManager.instance.SpawnTrainFiller(3);
+        }
+        else if (lastSpawnedTrainID == 2)
+        {
+            TrainManager.instance.SpawnTrainFiller(5);
+        }
+        else if (lastSpawnedTrainID == 3)
+        {
+            TrainManager.instance.SpawnTrainFiller(4);
+        }
+        else if (lastSpawnedTrainID == 4)
+        {
+            TrainManager.instance.SpawnTrainFiller(1);
+        }
+        else if (lastSpawnedTrainID == 5)
+        {
+            TrainManager.instance.SpawnTrainFiller(0);
         }
 
-        // Update the departure display
-        UpdateDepartureDisplay();
     }
-}
-
-
-
-
-    //private IEnumerator SpawnDelayedTrainsAfterTopID() // These are filler trains for immersion
-    //{
-    //    yield return new WaitForSeconds(Random.Range(1f, 2f));
-
-    //    int topIndex = currentDepartureIndices[0];
-    //    int topID = departures[topIndex].GetID();
-
-    //    if (topID == 0)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(1);
-
-    //    }
-    //    else if (topID == 1)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(2);
-    //    }
-    //    else if (topID == 2)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(3);
-    //    }
-    //    else if (topID == 3)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(4);
-    //    }
-    //    else if (topID == 4)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(5);
-    //    }
-    //    else if (topID == 5)
-    //    {
-    //        TrainManager.instance.SpawnTrainFiller(0);
-    //    }
-
-    //}
 
     private IEnumerator DelayedCode(int waitTime) // These are filler trains for immersion
     {

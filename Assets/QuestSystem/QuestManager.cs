@@ -25,17 +25,10 @@ public class QuestManager : MonoBehaviour
     public AudioClip questCompleteSound;
     public AudioSource audioSource;
 
-    public float fadeDuration = 2.0f; // Duration of the fade in seconds
-    public Material fadeToBlackMaterial;
-
-
-
     private void Start()
     {
         //AcceptQuest();
-      
-
-
+  
 
 
     }
@@ -60,7 +53,7 @@ public class QuestManager : MonoBehaviour
         audioSource.Play();
 
         Debug.Log("COMPLETED QUUUUUEST");
-        AcceptQuest();
+      
       //currentQuest = null;
 
     }
