@@ -4,8 +4,10 @@ using UnityEngine;
 public class TrainData : ScriptableObject
 {
     public int trainID;
+    public int track;
     public string trainName;
     public Material trainLineMaterial;
+    public Texture texture;
     public GameObject trainPrefab;
     public Vector3 spawnPosition;
 

@@ -19,34 +19,34 @@ public class ButtonClick : MonoBehaviour
         }
     }
 
-   void ButtonClicked(int id)
-{
-    // Udfør handling baseret på knappens ID
-    switch (id)
+    void ButtonClicked(int id)
     {
-        case 1:
-            // Handling for knap 1
-            Debug.Log("Disable Sound");
-            animator.SetTrigger("ChangeColorTrigger");
-            GameManager.instance.DisableAudioMixer();
-            break;
-        case 2:
-            // Handling for knap 2
-            Debug.Log("Disable NPC");
-            animator.SetTrigger("ChangeColorTrigger");
-            GameManager.instance.NPCState.SetActive(false);
+        // Udfør handling baseret på knappens ID
+        switch (id)
+        {
+            case 1:
+                // Handling for knap 1
+                Debug.Log("Disable Sound");
+                animator.SetTrigger("ChangeColorTrigger");
+                GameManager.instance.DisableAudioMixer();
                 break;
-        case 3:
-            // Handling for knap 3
-            Debug.Log("Start Game");
-            animator.SetTrigger("ChangeColorTrigger");
-            GameManager.instance.StartGame();
+            case 2:
+                // Handling for knap 2
+                Debug.Log("Disable NPC");
+                animator.SetTrigger("ChangeColorTrigger");
+                GameManager.instance.NPCState.SetActive(false);
+                break;
+            case 3:
+                // Handling for knap 3
+                Debug.Log("Start Game");
+                animator.SetTrigger("ChangeColorTrigger");
+                GameManager.instance.StartGame();
 
-            break;
-        default:
-            Debug.Log("Unhandled button click");
-            break;
+                break;
+            default:
+                Debug.Log("Unhandled button click");
+                break;
+        }
     }
-}
 
 }

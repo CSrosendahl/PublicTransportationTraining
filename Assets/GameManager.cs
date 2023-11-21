@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SpawnControlPanel();
+       // StartGame();
     }
 
     public void DisableNPC()

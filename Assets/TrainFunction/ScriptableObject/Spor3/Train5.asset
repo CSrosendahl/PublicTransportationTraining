@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c380a21140fbea146aa5d13726950b0a, type: 3}
   m_Name: Train5
   m_EditorClassIdentifier: 
-  trainID: 0
+  trainID: 5
+  track: 3
   trainName: Frederikssund
   trainLineMaterial: {fileID: 2100000, guid: 3f2625dc5816f2d49b3fb6fae0a82dfa, type: 2}
+  texture: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
   trainPrefab: {fileID: 3282605018728798403, guid: 51a0c5abbf8bb864686b858e2ba793c6,
     type: 3}
   spawnPosition: {x: -300, y: -7.2, z: -15.96}

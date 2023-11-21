@@ -34,15 +34,17 @@ public class TrainMover : MonoBehaviour
     public string overrideStationName; // Override station names in case the train is not part of the quest to avoid confusion
     public Material overridelineMaterial; // Override lineMaterial in case the train is not part of the quest to avoid confusion
 
+    public int trainDataID;
 
 
 
     void Start()
     {
-      //  GameObject departureInfoObject = GameObject.Find("DepartureInfoFunction");
+        //  GameObject departureInfoObject = GameObject.Find("DepartureInfoFunction");
 
         // Get the DepartureInfo component from the GameObject
-       // departureInfo = departureInfoObject.GetComponent<DepartureBoardScript>();
+        // departureInfo = departureInfoObject.GetComponent<DepartureBoardScript>();
+       
 
 
         for (int i = 0; i < stationText.Length; i++)
@@ -74,6 +76,7 @@ public class TrainMover : MonoBehaviour
         currentDestination = boardingDestination;
         //StartCoroutine(StartMoving());
         isMoving = true;
+        trainDataID = trainData.trainID;
     }
 
     void Update()
