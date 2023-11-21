@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public Transform spawnControlPanel;
     public Transform completeQuestArea;
 
-    public HandPresencePhysics[] handPhysicsScript;
+    public GameObject[] handsPhysicsObject;
 
     public GameObject playerObject;
     private void Start()
@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
 
-        for (int i = 0; i < handPhysicsScript.Length; i++)
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
-            handPhysicsScript[i].enabled = false;
+            handsPhysicsObject[i].SetActive(false);
         }
 
         hasCheckedIn = false;
@@ -68,11 +68,11 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnIndgang()
     {
-        for (int i = 0; i < handPhysicsScript.Length; i++)
+
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
-            handPhysicsScript[i].enabled = false;
+            handsPhysicsObject[i].SetActive(false);
         }
-       
 
         playerObject.transform.position = spawnIndgang.position;
 
@@ -81,18 +81,18 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnControlPanel()
     {
-        for (int i = 0; i < handPhysicsScript.Length; i++)
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
-            handPhysicsScript[i].enabled = false;
+            handsPhysicsObject[i].SetActive(false);
         }
         playerObject.transform.position = spawnControlPanel.position;
         StartCoroutine(EnableHandPhysicsAfterDelay());
     }
     public void CompleteQuestArea()
     {
-        for (int i = 0; i < handPhysicsScript.Length; i++)
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
-            handPhysicsScript[i].enabled = false;
+            handsPhysicsObject[i].SetActive(false);
         }
         playerObject.transform.position = completeQuestArea.position;
         StartCoroutine(EnableHandPhysicsAfterDelay());
@@ -106,11 +106,11 @@ public class GameManager : MonoBehaviour
     private IEnumerator EnableHandPhysicsAfterDelay()
     {
         // Wait for a short delay (you can adjust the duration as needed).
-        yield return new WaitForSeconds(0.1f); // Adjust the duration as needed.
+        yield return new WaitForSeconds(0.3f); // Adjust the duration as needed.
 
-        for (int i = 0; i < handPhysicsScript.Length; i++)
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
-            handPhysicsScript[i].enabled = true;
+            handsPhysicsObject[i].SetActive(true);
         }
 
     }

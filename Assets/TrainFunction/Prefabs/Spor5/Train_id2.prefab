@@ -2717,6 +2717,7 @@ MonoBehaviour:
   overrideStationName: Regional Tog
   overridelineMaterial: {fileID: 2100000, guid: d2d2b9d296d07bc479a1db9370d9d3b9,
     type: 2}
+  trainDataID: 0
 --- !u!1 &3370477388372148747
 GameObject:
   m_ObjectHideFlags: 0

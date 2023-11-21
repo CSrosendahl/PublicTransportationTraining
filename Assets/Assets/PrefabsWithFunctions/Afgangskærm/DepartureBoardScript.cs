@@ -138,7 +138,7 @@ public class DepartureBoardScript : MonoBehaviour
                 // Spawn the train at the new top index
 
                 TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at index 0
-                StartCoroutine(SpawnDelayedTrainsAfterTopID());
+              //  StartCoroutine(SpawnDelayedTrainsAfterTopID());
 
             }
 
