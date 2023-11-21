@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioVolumeController : MonoBehaviour
 {
-public BoxCollider boxCollider1;
+    public AudioMixer audioMixer; // Reference to the Audio Mixer
+    public AudioMixerSnapshot muteSnapshot; // Reference to the "Train Off" snapshot
+    public AudioMixerSnapshot unmuteSnapshot; // Reference to the "All On" snapshot
+
+    public BoxCollider boxCollider1;
     public BoxCollider boxCollider2;
+    public BoxCollider boxCollider3;
+
     public AudioSource audioSource1;
     public AudioSource audioSource2;
 
@@ -13,9 +20,9 @@ public BoxCollider boxCollider1;
 
     void Update()
     {
-        if (boxCollider1 == null || boxCollider2 == null || audioSource1 == null || audioSource2 == null)
+        if (boxCollider1 == null || boxCollider2 == null || boxCollider3 == null || audioSource1 == null || audioSource2 == null || audioMixer == null || muteSnapshot == null || unmuteSnapshot == null)
         {
-            Debug.LogWarning("Please assign boxCollider1, boxCollider2, audioSource1, and audioSource2 in the Unity Editor.");
+            Debug.LogWarning("Please assign boxCollider1, boxCollider2, boxCollider3, audioSource1, audioSource2, audioMixer, muteSnapshot, and unmuteSnapshot in the Unity Editor.");
             return;
         }
 
@@ -29,28 +36,42 @@ public BoxCollider boxCollider1;
 
         bool insideCollider1 = boxCollider1.bounds.Contains(mainCamera.transform.position);
         bool insideCollider2 = boxCollider2.bounds.Contains(mainCamera.transform.position);
+        bool insideCollider3 = boxCollider3.bounds.Contains(mainCamera.transform.position);
 
-        // Adjust the volume of both audio sources based on proximity
-        AdjustVolumeBasedOnProximity(insideCollider1, insideCollider2);
+        // Adjust the volume and snapshots based on proximity
+        AdjustVolumeAndSnapshots(insideCollider1, insideCollider2, insideCollider3);
+       // Debug.Log(mainCamera.transform.position);
     }
 
-    void AdjustVolumeBasedOnProximity(bool insideCollider1, bool insideCollider2)
+    void AdjustVolumeAndSnapshots(bool insideCollider1, bool insideCollider2, bool insideCollider3)
     {
-        if (insideCollider1 && !insideCollider2)
+        if (insideCollider1 && !insideCollider2 && !insideCollider3)
         {
-            // Player is inside collider 1, make audioSource1 audible and audioSource2 inaudible
+            // Player is inside collider 1, transition to the mute snapshot
+            muteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
             audioSource1.volume = 1.0f;
             audioSource2.volume = 0.0f;
+            Debug.Log("Muting the train");
         }
-        else if (insideCollider2 && !insideCollider1)
+        else if (insideCollider2 && !insideCollider1 && !insideCollider3)
         {
-            // Player is inside collider 2, make audioSource2 audible and audioSource1 inaudible
+            // Player is inside collider 2, transition to the unmute snapshot
+            unmuteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
             audioSource1.volume = 0.0f;
             audioSource2.volume = 1.0f;
+            Debug.Log("Unmuting the train");
+        }
+        else if (!insideCollider1 && !insideCollider2 && insideCollider3)
+        {
+            // Player is inside collider 3, transition to the mute snapshot
+            muteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
+            audioSource1.volume = 1.0f;
+            audioSource2.volume = 0.0f;
+            Debug.Log("Muting the train");
         }
         else
         {
-            // Player is outside both colliders, adjust volume based on proximity with a minimum volume
+            // Player is outside all colliders, adjust volume based on proximity
             float distanceToCollider1 = Vector3.Distance(Camera.main.transform.position, boxCollider1.bounds.ClosestPoint(Camera.main.transform.position));
             float distanceToCollider2 = Vector3.Distance(Camera.main.transform.position, boxCollider2.bounds.ClosestPoint(Camera.main.transform.position));
             float maxDistance = Mathf.Max(distanceToCollider1, distanceToCollider2);
@@ -62,6 +83,10 @@ public BoxCollider boxCollider1;
             // Set the volume of the audio sources based on proximity
             audioSource1.volume = volume1;
             audioSource2.volume = volume2;
+
+            // Transition to the unmute snapshot
+            unmuteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
+            Debug.Log("Unmuting the train");
         }
     }
 }

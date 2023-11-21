@@ -11,7 +11,6 @@ public class VelocitySoundController : MonoBehaviour
     private float fadeDuration = 1.0f; // Adjust the fade duration as needed
 
     private bool isMoving;
-
     void Start()
     {
         // Assuming the parent object is the immediate parent of the train prefab
@@ -39,14 +38,14 @@ public class VelocitySoundController : MonoBehaviour
                 // Start fading in the moving sound
                 StartCoroutine(FadeIn(movingSound, fadeDuration));
                 StartCoroutine(FadeOut(notMovingSound, fadeDuration));
-                Debug.Log("Object is moving - Velocity: " + currentVelocity);
+              //  Debug.Log("Object is moving - Velocity: " + currentVelocity);
             }
             else
             {
                 // Start fading in the not moving sound
                 StartCoroutine(FadeIn(notMovingSound, fadeDuration));
                 StartCoroutine(FadeOut(movingSound, fadeDuration));
-                Debug.Log("Object is not moving - Velocity: " + currentVelocity);
+               // Debug.Log("Object is not moving - Velocity: " + currentVelocity);
             }
         }
 

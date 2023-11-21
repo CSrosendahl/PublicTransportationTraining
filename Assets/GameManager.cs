@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     public static GameManager instance;
-    
 
     private void Awake()
     {
@@ -16,12 +15,25 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     public bool hasCheckedIn;
 
     public AudioMixer audioMixer;
+
+
+    public Material onButton;
+    public Material offButton;
+
+
     public GameObject NPCState;
+
+    public GameObject AudioMixerGameObject;
+
+    public GameObject NPCButton;
+
+    public GameObject SoundButton;
 
     public Transform spawnIndgang;
     public Transform spawnControlPanel;
@@ -32,18 +44,16 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject;
     private void Start()
     {
-       SpawnControlPanel();
-      
-       
+    SpawnControlPanel();
     }
 
     public void DisableNPC()
     {
-       NPCState.SetActive(false);
+    NPCState.SetActive(!NPCState.activeSelf);
     }
     public void DisableAudioMixer()
     {
-        audioMixer.SetFloat("MasterVolume", -80f);
+        AudioMixerGameObject.SetActive(!AudioMixerGameObject.activeSelf);
     }
 
     public void StartGame()
