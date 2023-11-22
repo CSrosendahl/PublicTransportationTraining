@@ -20,28 +20,21 @@ public class GameManager : MonoBehaviour
 
     public bool hasCheckedIn;
     public float trainSpawnInterval;
+    public GameObject playerObject;
 
-    public AudioMixer audioMixer;
-
-
-    public Material onButton;
-    public Material offButton;
-    public GameObject NPCButton;
-    public GameObject SoundButton;
-
-    public GameObject NPCState;
-
-    public GameObject AudioMixerGameObject;
+    [HideInInspector] public AudioMixer audioMixer;
+    [HideInInspector] public Material onButton;
+    [HideInInspector] public Material offButton;
+    [HideInInspector] public GameObject NPCButton;
+    [HideInInspector] public GameObject SoundButton;
+    [HideInInspector] public GameObject NPCState;
+    [HideInInspector] public GameObject AudioMixerGameObject;
+    [HideInInspector] public Transform spawnIndgang;
+    [HideInInspector] public Transform spawnControlPanel;
+    [HideInInspector] public Transform completeQuestArea;
+    [HideInInspector] public GameObject[] handsPhysicsObject;
 
    
-
-    public Transform spawnIndgang;
-    public Transform spawnControlPanel;
-    public Transform completeQuestArea;
-
-    public GameObject[] handsPhysicsObject;
-
-    public GameObject playerObject;
     private void Start()
     {
         SpawnControlPanel();
