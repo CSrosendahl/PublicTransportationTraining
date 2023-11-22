@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator EnableHandPhysicsAfterDelay()
     {
         // Wait for a short delay (you can adjust the duration as needed).
-        yield return new WaitForSeconds(0.3f); // Adjust the duration as needed.
+        yield return new WaitForSeconds(1f); // Adjust the duration as needed.
 
         for (int i = 0; i < handsPhysicsObject.Length; i++)
         {
