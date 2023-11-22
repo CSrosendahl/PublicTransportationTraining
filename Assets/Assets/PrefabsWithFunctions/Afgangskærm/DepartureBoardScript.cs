@@ -2,11 +2,11 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.VisualScripting;
+using Unity.Collections;
 
 public class DepartureBoardScript : MonoBehaviour
 {
-   // [System.Serializable]
+    // [System.Serializable]
     //public class DepartureInfo
     //{
     //    public string stationName;
@@ -22,8 +22,9 @@ public class DepartureBoardScript : MonoBehaviour
     //}
 
     //public List<DepartureInfo> departures; // List of departure information.
-   // public int maxDeparturesToShow = 6; // Maximum number of departures to display.
-    public float changeInterval = 60f; // Time interval in seconds.
+    // public int maxDeparturesToShow = 6; // Maximum number of departures to display.
+  //  [ReadOnly]
+    private float changeInterval = 60f; // Change the time in gamemanager
     public int lastSpawnedTrainID;
 
     private List<TextMeshPro> stationNameTextList;
@@ -39,6 +40,8 @@ public class DepartureBoardScript : MonoBehaviour
     {
         InitializeDepartureDisplay();
         UpdateDepartureDisplay();
+
+        changeInterval = GameManager.instance.trainSpawnInterval;
 
         InvokeRepeating("ChangeDepartures", 0f, 1f); // Update every second for time remaining.
    
@@ -114,8 +117,7 @@ public class DepartureBoardScript : MonoBehaviour
         {
             timer = 0f;
 
-            if (canSpawn)
-            {
+            
                 // Get the index of the train to spawn (the top index)
                 int topIndex = currentDepartureIndices[0];
 
@@ -136,15 +138,20 @@ public class DepartureBoardScript : MonoBehaviour
                 }
 
                 // Spawn the train at the new top index
-
-                TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at index 0
+                if(canSpawn)
+                {
+                    TrainManager.instance.SpawnTrain(currentDepartureIndices[0]);
+                }
+              // Spawn the train at index 0
               //  StartCoroutine(SpawnDelayedTrainsAfterTopID());
 
-            }
+            
 
             // Update the departure display
             UpdateDepartureDisplay();
+           
         }
+        changeInterval = GameManager.instance.trainSpawnInterval;
     }
 
 

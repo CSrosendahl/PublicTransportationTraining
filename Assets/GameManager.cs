@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool hasCheckedIn;
+    public float trainSpawnInterval;
 
     public AudioMixer audioMixer;
 

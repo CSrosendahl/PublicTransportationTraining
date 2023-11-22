@@ -40,7 +40,7 @@ public class ButtonClick : MonoBehaviour
                 // Handling for knap 3
                 Debug.Log("Start Game");
                // animator.SetTrigger("ChangeColorTrigger");
-                GameManager.instance.StartGame();
+                GameManager.instance.CompleteQuestArea();
 
                 break;
             default:

@@ -16,12 +16,18 @@ public class QuestObjective : MonoBehaviour
             {
                 if(parent.GetComponent<TrainMover>().questObjective)
                 {
-                    if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID)
+                    if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
 
                     {
                         // Complete the quest
                         questManager.CompleteQuest(questManager.currentQuest);
 
+                    }
+                    else if(questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
+                    {
+                        Debug.Log("Correct train, but you are not checked in");
+                        questManager.CompleteQuest(questManager.currentQuest);
+                        // Make new function for this
                     }
                     else
                     {
