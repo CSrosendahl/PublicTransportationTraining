@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     public bool hasCheckedIn;
     public float trainSpawnInterval;
 
-    public AudioMixer audioMixer;
-
 
     public Material onButton;
     public Material offButton;
@@ -32,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject NPCState;
 
     public GameObject AudioMixerGameObject;
+    public GameObject NPCAudioMixerGameObject;
 
    
 
@@ -42,14 +41,19 @@ public class GameManager : MonoBehaviour
     public GameObject[] handsPhysicsObject;
 
     public GameObject playerObject;
+
     private void Start()
     {
         SpawnControlPanel();
+        AudioListener.volume = 1f;
+
+        Debug.Log("Sound is on");
     }
 
     public void DisableNPC()
     {
         NPCState.SetActive(!NPCState.activeSelf);
+
         if (NPCState.activeSelf == true)
         {
             
@@ -64,9 +68,17 @@ public class GameManager : MonoBehaviour
     }
     public void DisableAudioMixer()
     {
-        AudioMixerGameObject.SetActive(!AudioMixerGameObject.activeSelf);
+        // AudioMixerGameObject.SetActive(!AudioMixerGameObject.activeSelf);
+        // NPCAudioMixerGameObject.SetActive(!NPCAudioMixerGameObject.activeSelf);
 
-        if (AudioMixerGameObject.activeSelf == true)
+        // Toggle the audio listener's volume between 0 and 1
+        AudioListener.volume = 1 - AudioListener.volume;
+
+        Debug.Log("Sound is " + (AudioListener.volume > 0 ? "on" : "off"));
+
+        
+
+        if (AudioListener.volume == 1f)
         {
             SoundButton.GetComponent<Renderer>().material = offButton;
         }
