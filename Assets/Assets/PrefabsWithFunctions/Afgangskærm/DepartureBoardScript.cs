@@ -116,7 +116,7 @@ public class DepartureBoardScript : MonoBehaviour
         if (timer >= changeInterval)
         {
             timer = 0f;
-
+         
             
                 // Get the index of the train to spawn (the top index)
                 int topIndex = currentDepartureIndices[0];
