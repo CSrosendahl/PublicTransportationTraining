@@ -12,7 +12,7 @@ public class QuestObjective : MonoBehaviour
             // Get a reference to the QuestManager component
             QuestManager questManager = QuestManager.instance;
             // Check if the player has a quest
-            if(!GameManager.instance.trainIsMoving)
+            if(!parent.GetComponent<TrainMover>().isMoving)
             {
                 if (questManager.currentQuest != null)
                 {

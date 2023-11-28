@@ -22,7 +22,7 @@ public class TrainMover : MonoBehaviour
 
 
     public float currentSpeed = 0f; // Current speed of the train
-    private bool isMoving = false;
+    public bool isMoving = false;
 
     public bool questObjective; // Filler trains will not be a quest objective, and will drive straight through the station
 
@@ -44,8 +44,8 @@ public class TrainMover : MonoBehaviour
 
         // Get the DepartureInfo component from the GameObject
         // departureInfo = departureInfoObject.GetComponent<DepartureBoardScript>();
-       
 
+      
 
         for (int i = 0; i < stationText.Length; i++)
         {
@@ -144,12 +144,10 @@ public class TrainMover : MonoBehaviour
             Destroy(gameObject);
         } else
         {
-            GameManager.instance.trainIsMoving = false;
             yield return new WaitForSeconds(waitTime);
             currentDestination = (currentDestination == boardingDestination) ? exitDestination : boardingDestination;
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
-            GameManager.instance.trainIsMoving = true;
             // Play start sound 
         }
 
