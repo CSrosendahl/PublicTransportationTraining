@@ -124,7 +124,7 @@ public class TrainMover : MonoBehaviour
  
             
             isMoving = false; // Stop the train
-            GameManager.instance.trainIsMoving = false;
+           
             StartCoroutine(WaitAtDestination());
 
         }else if(!questObjective)
@@ -144,6 +144,7 @@ public class TrainMover : MonoBehaviour
             Destroy(gameObject);
         } else
         {
+            GameManager.instance.trainIsMoving = false;
             yield return new WaitForSeconds(waitTime);
             currentDestination = (currentDestination == boardingDestination) ? exitDestination : boardingDestination;
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
