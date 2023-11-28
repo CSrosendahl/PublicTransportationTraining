@@ -22,6 +22,7 @@ public class QuestManager : MonoBehaviour
     public TextMeshPro questText;
     public MeshRenderer questInfoOnPhone;
     public TextMeshPro questCompletedOrFail;
+
     public Material[] linjeMaterial; // Optimize thiiiiiiis!
 
     public AudioClip questFailedSound;
@@ -32,6 +33,9 @@ public class QuestManager : MonoBehaviour
     {
         //AcceptQuest();
   
+     
+        questText.text = "";
+        questInfoOnPhone.enabled = false;
 
 
     }
@@ -78,6 +82,7 @@ public class QuestManager : MonoBehaviour
 
     private QuestData GetRandomQuest()
     {
+        questInfoOnPhone.enabled = true;
         // Randomly select a quest template from the list
         int randomIndex = Random.Range(0, questTemplates.Count);
         return questTemplates[randomIndex];
@@ -86,11 +91,13 @@ public class QuestManager : MonoBehaviour
     private void DisplayQuestInfo(QuestData quest)
     {
         // Update the UI to display the quest information, including the train ID
-        questText.text = quest.questDescription + "\n";
+       
         if(currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
-        }else
+            questText.text = quest.questDescription + "\n";
+        }
+        else
         {
             
             questInfoOnPhone.enabled = false;
