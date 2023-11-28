@@ -12,32 +12,36 @@ public class QuestObjective : MonoBehaviour
             // Get a reference to the QuestManager component
             QuestManager questManager = QuestManager.instance;
             // Check if the player has a quest
-            if (questManager.currentQuest != null)
+            if(!GameManager.instance.trainIsMoving)
             {
-                if(parent.GetComponent<TrainMover>().questObjective)
+                if (questManager.currentQuest != null)
                 {
-                    if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
+                    if (parent.GetComponent<TrainMover>().questObjective)
+                    {
+                        if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
 
-                    {
-                        // Complete the quest
-                        questManager.CompleteQuest(questManager.currentQuest);
+                        {
+                            // Complete the quest
+                            questManager.CompleteQuest(questManager.currentQuest);
 
+                        }
+                        else if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
+                        {
+                            Debug.Log("Correct train, but you are not checked in");
+                            questManager.CompleteQuest(questManager.currentQuest);
+                            // Make new function for this
+                        }
+                        else
+                        {
+                            questManager.WrongQuestObjective();
+                            Debug.Log("Wrong train bip bop chokolade mand/Pawæ");
+                        }
                     }
-                    else if(questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
-                    {
-                        Debug.Log("Correct train, but you are not checked in");
-                        questManager.CompleteQuest(questManager.currentQuest);
-                        // Make new function for this
-                    }
-                    else
-                    {
-                        questManager.WrongQuestObjective();
-                        Debug.Log("Wrong train bip bop chokolade mand/Pawæ");
-                    }
+                    // Check if the player's quest is the same as the objective's quest
+
                 }
-                // Check if the player's quest is the same as the objective's quest
-             
             }
+          
         }
         Debug.Log("Trigger entered");
     }

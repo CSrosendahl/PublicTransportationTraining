@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool hasCheckedIn;
+    public bool trainIsMoving;
     public float trainSpawnInterval;
     public GameObject playerObject;
 
