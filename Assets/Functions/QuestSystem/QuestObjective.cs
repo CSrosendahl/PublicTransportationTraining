@@ -22,6 +22,7 @@ public class QuestObjective : MonoBehaviour
 
                         {
                             // Complete the quest
+                            Debug.Log("Correct train and you are checked in");
                             questManager.CompleteQuest(questManager.currentQuest);
 
                         }
@@ -29,12 +30,12 @@ public class QuestObjective : MonoBehaviour
                         {
                             Debug.Log("Correct train, but you are not checked in");
                             questManager.CompleteQuest(questManager.currentQuest);
-                            // Make new function for this
+                            // TODO: Make new function for this.
                         }
                         else
                         {
                             questManager.WrongQuestObjective();
-                            Debug.Log("Wrong train bip bop chokolade mand/Pawæ");
+                            Debug.Log("Wrong train");
                         }
                     }
                     // Check if the player's quest is the same as the objective's quest
@@ -43,6 +44,6 @@ public class QuestObjective : MonoBehaviour
             }
           
         }
-        Debug.Log("Trigger entered");
+      
     }
 }

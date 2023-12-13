@@ -4,14 +4,13 @@ using TMPro;
 
 public class TrainMover : MonoBehaviour
 {
-    public Transform boardingDestination;
-    public Transform exitDestination;
-    private Transform currentDestination;
-    public TrainData trainData;
+    // This script is attached to every train prefab. It handles the movement of the train, and the text and line images on the train
+
+    public Transform boardingDestination; // The destination of the train when it is boarding
+    public Transform exitDestination; // The destination of the train when it has been boarded
+    private Transform currentDestination; // The current destination of the train
+    public TrainData trainData; // TrainData asset
   
-    //public DepartureBoardScript departureInfo;
-   
-   
 
     public float maxSpeed = 1.0f; // The maximum speed of the train
     public float acceleration = 0.5f; // How quickly the train accelerates
@@ -22,7 +21,7 @@ public class TrainMover : MonoBehaviour
 
 
     public float currentSpeed = 0f; // Current speed of the train
-    public bool isMoving = false;
+    public bool isMoving = false; // Is the train moving?
 
     public bool questObjective; // Filler trains will not be a quest objective, and will drive straight through the station
 
@@ -40,13 +39,7 @@ public class TrainMover : MonoBehaviour
 
     void Start()
     {
-        //  GameObject departureInfoObject = GameObject.Find("DepartureInfoFunction");
-
-        // Get the DepartureInfo component from the GameObject
-        // departureInfo = departureInfoObject.GetComponent<DepartureBoardScript>();
-
-      
-
+ 
         for (int i = 0; i < stationText.Length; i++)
         {
            
@@ -74,7 +67,7 @@ public class TrainMover : MonoBehaviour
        
         // Set the first destination as the current one and start moving
         currentDestination = boardingDestination;
-        //StartCoroutine(StartMoving());
+      
         isMoving = true;
         trainDataID = trainData.trainID;
     }
@@ -88,13 +81,7 @@ public class TrainMover : MonoBehaviour
         }
       
     }
-    IEnumerator StartMoving()
-    {
-        // Wait before starting to move
-        yield return new WaitForSeconds(waitTime);
-        isMoving = true;
-    }
-
+   
     void MoveTrain()
     {
         // Calculate the distance to the current destination
@@ -130,6 +117,7 @@ public class TrainMover : MonoBehaviour
         }else if(!questObjective)
         {
             MoveToExitDestination(); // The filler trains move directly through the station without stopping
+                                    // currently not in use since we do not have any filler trains being spawned.
         }
     }
 
@@ -140,7 +128,7 @@ public class TrainMover : MonoBehaviour
 
         if(currentDestination == exitDestination)
         {
-            TrainManager.instance.hasSpawned = false; // Allow the train spawner to spawn a new train
+            TrainManager.instance.hasSpawned = false; // Allow the train spawner to spawn a new train (currently not being used, should be removed)
             Destroy(gameObject);
         } else
         {
@@ -159,4 +147,12 @@ public class TrainMover : MonoBehaviour
         currentSpeed = maxSpeed; // Set the speed to maximum for acceleration
         isMoving = true; // Allow the train to start moving again
     }
+
+
+    //IEnumerator StartMoving()
+    //{
+    //    // Wait before starting to move
+    //    yield return new WaitForSeconds(waitTime);
+    //    isMoving = true;
+    //}
 }

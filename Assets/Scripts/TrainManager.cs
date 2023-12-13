@@ -6,6 +6,7 @@ public class TrainManager : MonoBehaviour
 {
     public static TrainManager instance;
 
+    // Singleton pattern used for TrainManager. This means that there can only be one instance of the TrainManager class
     private void Awake()
     {
         instance = this;
@@ -28,6 +29,10 @@ public class TrainManager : MonoBehaviour
 
 
     }
+
+
+   
+    #region SpawnTrainFiller method. Currently not in use, but can be used to spawn trains without questObjective. These trains does not stop at the station.
     public void SpawnTrainFiller(int trainIndex) // Spawn a train without questObjective
     {
         
@@ -42,6 +47,7 @@ public class TrainManager : MonoBehaviour
         // For example, remove signs, or add a "Out of order" sign on the train.
 
     }
+    #endregion
 
 
 }

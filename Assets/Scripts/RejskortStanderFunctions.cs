@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RejskortStanderFunctions : MonoBehaviour
 {
-    public Light Blaatlys; // Reference til lyset p� standeren.RejsekortStanderUD -> Sphere -> Light
+    public Light Blaatlys; // Reference to the light source on the stander
 
     public AudioSource audioSource;
     public AudioClip godkendtClip;
@@ -20,9 +20,9 @@ public class RejskortStanderFunctions : MonoBehaviour
 
     private Material originalMaterial;
    
-    private bool canInteract;
-    private bool isCoroutineRunning = false;
-    public bool checkIndStander;
+    private bool canInteract; // Can the player interact with the stander?
+    private bool isCoroutineRunning = false; 
+    public bool checkIndStander; // If this is a checkInd stander, then this is true. If it is a checkUd stander, then this is false.
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class RejskortStanderFunctions : MonoBehaviour
 
         canInteract = true;
 
-        // Gem originalt materiale
+        // Store original material into originalMaterial variable
         if (ScreenText != null)
         {
             originalMaterial = ScreenText.material;
@@ -116,7 +116,7 @@ public class RejskortStanderFunctions : MonoBehaviour
         audioSource.Play();
         canInteract = false;
         GameManager.instance.hasCheckedIn = true;
-        Debug.Log("Godkendt");
+        Debug.Log("Checked in");
 
         // Change material on ScreenText to OkText
         if (ScreenText != null && checkedIn_GodRejse != null)
@@ -149,7 +149,7 @@ public class RejskortStanderFunctions : MonoBehaviour
         audioSource.Play();
         canInteract = false;
         GameManager.instance.hasCheckedIn = false;
-        Debug.Log("Godkendt");
+        Debug.Log("Checked out");
 
         // Change material on ScreenText to OkText
         if (ScreenText != null && checkedIn_GodRejse != null)
@@ -166,11 +166,11 @@ public class RejskortStanderFunctions : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
        
-      StartCoroutine(ResetLightAndAudio()); //venter X sekunder f�r standeren er klar igen
+      StartCoroutine(ResetLightAndAudio()); // wait x seconds before resetting the light and audio
        
     }
 
-    //Coroutine som resetter standeren
+    //Coroutine to reset the stander
     private IEnumerator ResetLightAndAudio()
     {
         if (!isCoroutineRunning)
