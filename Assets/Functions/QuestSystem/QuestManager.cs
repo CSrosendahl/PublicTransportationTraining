@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        //AcceptQuest();
+        AcceptQuest();
   
      
         questText.text = "";
@@ -70,9 +70,10 @@ public class QuestManager : MonoBehaviour
     public void WrongQuestObjective()
     {
         // Play sound, wrong train.
-       
+
         //audioSource.clip = questFailedSound;
         //audioSource.Play();
+
         GameManager.instance.CompleteQuestArea();
         questCompletedOrFail.text = "Desværre!\r\nDu tog det forkerte tog";
         questText.text = "";
@@ -109,6 +110,7 @@ public class QuestManager : MonoBehaviour
         if(currentQuest.trainID == 0)
         {
             questInfoOnPhone.material = linjeMaterial[0];
+            
         }
         else if(currentQuest.trainID == 1)
         {

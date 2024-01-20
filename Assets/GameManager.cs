@@ -94,14 +94,14 @@ public class GameManager : MonoBehaviour
         }
 
         hasCheckedIn = false;
-
-        if(QuestManager.instance.currentQuest != null)
+         
+        if(QuestManager.instance.currentQuest != null) // If the player has a quest, set it to null
         {
             QuestManager.instance.currentQuest = null;
         }
        
-        QuestManager.instance.AcceptQuest();
-        playerObject.transform.position = spawnIndgang.position;
+        QuestManager.instance.AcceptQuest(); // Accept a new quest
+        playerObject.transform.position = spawnIndgang.position; // Spawn the player at the spawn point
 
       StartCoroutine(EnableHandPhysicsAfterDelay());
 
