@@ -18,8 +18,8 @@ public class TrainManager : MonoBehaviour
     public void SpawnTrain(int trainIndex) // Spawn a train with QuestObjective
     {
 
-        // Create a rotation quaternion with a 90-degree rotation around the y-axis
-        Quaternion rotation = Quaternion.Euler(0f, 90f, 0f);
+        // Create a rotation quaternion with a x-degree rotation around the y-axis
+        Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
 
         GameObject newTrain = Instantiate(trainDataList[trainIndex].trainPrefab, trainDataList[trainIndex].spawnPosition, rotation);
         TrainMover trainMover = newTrain.GetComponent<TrainMover>();

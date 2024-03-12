@@ -50,10 +50,10 @@ MonoBehaviour:
   exitDestination: {fileID: 2836287522099167934, guid: 5db72be9998122f449e95e6c27397291,
     type: 3}
   trainData: {fileID: 11400000, guid: 11a929931b02a494ea693715dda9770f, type: 2}
-  maxSpeed: 1
-  acceleration: 0.5
-  quickDecelerationRate: 2
-  decelerationDistance: 5
+  maxSpeed: 10
+  acceleration: 5
+  quickDecelerationRate: 6
+  decelerationDistance: 15
   stopDistance: 0.1
   waitTime: 10
   currentSpeed: 0
