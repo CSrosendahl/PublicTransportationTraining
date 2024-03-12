@@ -10,6 +10,7 @@ public class TrainMover : MonoBehaviour
     public Transform exitDestination; // The destination of the train when it has been boarded
     private Transform currentDestination; // The current destination of the train
     public TrainData trainData; // TrainData asset
+    
   
 
     public float maxSpeed = 1.0f; // The maximum speed of the train

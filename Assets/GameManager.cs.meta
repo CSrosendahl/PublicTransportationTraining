@@ -3,7 +3,20 @@ guid: 24b7b67c4df57e1449f9a39003fd8927
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerObject: {fileID: 3745514759582680267, guid: 2a6dd2ac5104c2d44900745eaf0b05f6,
+      type: 3}
+  - savedData: {instanceID: 0}
+  - audioMixer: {instanceID: 0}
+  - onButton: {instanceID: 0}
+  - offButton: {instanceID: 0}
+  - NPCButton: {instanceID: 0}
+  - SoundButton: {instanceID: 0}
+  - NPCState: {instanceID: 0}
+  - AudioMixerGameObject: {instanceID: 0}
+  - spawnIndgang: {instanceID: 0}
+  - spawnControlPanel: {instanceID: 0}
+  - completeQuestArea: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

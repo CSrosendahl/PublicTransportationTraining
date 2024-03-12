@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,13 +16,20 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+         //   DontDestroyOnLoad(gameObject);
+           
         }
-
+      
     }
 
     public bool hasCheckedIn; // Boolean to check if the player has checked in
     public float trainSpawnInterval; // Time between each train spawn
     public GameObject playerObject; // Reference to the player gameObject
+    public GameData savedData; // Reference to the GameData asset
+
+    private bool playerInstantiated = false;
+
+
 
     [HideInInspector] public AudioMixer audioMixer;
     [HideInInspector] public Material onButton;
@@ -37,10 +46,28 @@ public class GameManager : MonoBehaviour
    
     private void Start()
     {
-        SpawnControlPanel();
+       // SpawnControlPanel();
         AudioListener.volume = 1f;
-
+        StartGame();
         Debug.Log("Sound is on");
+       
+    }
+
+    public void InitGameManager()
+    {
+     
+        audioMixer = Resources.Load<AudioMixer>("AudioMixer");
+        onButton = Resources.Load<Material>("OnButton");
+        offButton = Resources.Load<Material>("OffButton");
+        NPCButton = GameObject.Find("NPCButton");
+        SoundButton = GameObject.Find("SoundButton");
+        NPCState = GameObject.Find("NPCState");
+        AudioMixerGameObject = GameObject.Find("AudioMixer");
+        spawnIndgang = GameObject.Find("SpawnIndgang").transform;
+        spawnControlPanel = GameObject.Find("SpawnControlPanel").transform;
+        completeQuestArea = GameObject.Find("CompleteQuestArea").transform;
+        handsPhysicsObject = GameObject.FindGameObjectsWithTag("HandsPhysics");
+    
     }
 
     // Disable NPC button
@@ -88,10 +115,10 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
 
-        for (int i = 0; i < handsPhysicsObject.Length; i++)
-        {
-            handsPhysicsObject[i].SetActive(false);
-        }
+        //for (int i = 0; i < handsPhysicsObject.Length; i++)
+        //{
+        //    handsPhysicsObject[i].SetActive(false);
+        //}
 
         hasCheckedIn = false;
          
@@ -101,11 +128,23 @@ public class GameManager : MonoBehaviour
         }
        
         QuestManager.instance.AcceptQuest(); // Accept a new quest
-        playerObject.transform.position = spawnIndgang.position; // Spawn the player at the spawn point
+      //  playerObject.transform.position = spawnIndgang.position; // Spawn the player at the spawn point
 
-      StartCoroutine(EnableHandPhysicsAfterDelay());
+    //  StartCoroutine(EnableHandPhysicsAfterDelay());
 
     }
+
+    public void DisableHands()
+    {
+
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
+        {
+            handsPhysicsObject[i].SetActive(false);
+        }
+
+    }
+
+   
     // Method for teleporting our player to the play area. (Valby st. entrance)
     public void SpawnEntrance()
     {
@@ -156,8 +195,48 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public void SceneChanger()
+    {
+        SceneManager.LoadScene("TrainRide");
+
+        // Check the spawn point's position
+
+        // Set the player's position to the spawnTrainEntranceEntered position
+     
+       
+        Debug.Log("Test SceneChanger called");
+    }
+
+
+    private void Update()
+    {
+        // Check if the "TrainRide" scene is loaded and the player has not been instantiated yet
+        if (SceneManager.GetSceneByName("TrainRide").isLoaded && !playerInstantiated)
+        {
+            // Instantiate the player prefab
+            playerObject.transform.position = savedData.position;
+            playerInstantiated = true; // Set the flag to true to prevent further instantiation
+          
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();
     }
+    public void SetPlayerPosition(Vector3 position)
+    {
+
+        if (playerObject != null)
+        {
+            playerObject.transform.position = position;
+        }
+        else
+        {
+            Debug.LogError("Player object reference is missing!");
+        }
+    }
+  
+ 
+
 }
