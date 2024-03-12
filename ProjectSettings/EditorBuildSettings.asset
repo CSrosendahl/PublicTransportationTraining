@@ -8,15 +8,20 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Map.unity
     guid: 8bcf3ee27d64f48c59c96640fb94c910
   - enabled: 0
     path: Assets/Scenes/Mechs.unity
     guid: 5046bf5cca06cd2438a23027e0378271
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/TrainRide.unity
     guid: f36624bbc5f1fa5449096526a5afba31
+=======
+    path: Assets/Scenes/TrainTour.unity
+    guid: 98e3cd851ae74114c9bbacc7e705d9ec
+>>>>>>> origin/TrainFromValbyToØsterport
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: be1498c6acd23e940850ce8b84e16e70,
       type: 2}
