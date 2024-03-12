@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
+    // Singleton pattern used for QuestManager. This means that there can only be one instance of the QuestManager class
     private void Awake()
     {
         if (instance == null)
@@ -16,11 +17,10 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public List<QuestData> questTemplates; // List of quest templates with different train IDs
+    public List<QuestData> questList; // List of quest with different train IDs
     public QuestData currentQuest; // The player's current quest
-   // public Text questInfoText; // Reference to the Text UI element
-    public TextMeshPro questText;
-    public MeshRenderer questInfoOnPhone;
+    public TextMeshPro questText; // Text description on the phone
+    public MeshRenderer questInfoOnPhone; // This will display the image of the trains line on the phone (f. eks "H" or "F" etc. train)
     public TextMeshPro questCompletedOrFail;
 
     public Material[] linjeMaterial; // Optimize thiiiiiiis!
@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        //AcceptQuest();
+        AcceptQuest();
   
      
         questText.text = "";
@@ -45,21 +45,21 @@ public class QuestManager : MonoBehaviour
         currentQuest = GetRandomQuest();
         DisplayQuestInfo(currentQuest);
        
+
     }
 
     public void CompleteQuest(QuestData quest)
     {
         // Complete quest, and end the game
         // Fade out/Blackscreen/Sound/Prompt....
-        // DisplayQuestInfo(currentQuest);
-
         // Wait 2 second, fade to black into new scene.
       
         GameManager.instance.CompleteQuestArea();
         audioSource.clip = questCompleteSound;
         audioSource.Play();
         questCompletedOrFail.text = "Tillykke!\r\nDu tog det rigtige tog";
-        Debug.Log("COMPLETED QUUUUUEST");
+        Debug.Log("Quest Complete");
+      //  questInfoOnPhone.enabled = false;
         questText.text = "";
       
         currentQuest = null;
@@ -70,13 +70,15 @@ public class QuestManager : MonoBehaviour
     public void WrongQuestObjective()
     {
         // Play sound, wrong train.
-        Debug.Log("Wrong train");
+
         //audioSource.clip = questFailedSound;
         //audioSource.Play();
+
         GameManager.instance.CompleteQuestArea();
         questCompletedOrFail.text = "Desværre!\r\nDu tog det forkerte tog";
         questText.text = "";
         currentQuest = null;
+        Debug.Log("Quest failed, wrong train");
 
     }
 
@@ -84,8 +86,8 @@ public class QuestManager : MonoBehaviour
     {
         questInfoOnPhone.enabled = true;
         // Randomly select a quest template from the list
-        int randomIndex = Random.Range(0, questTemplates.Count);
-        return questTemplates[randomIndex];
+        int randomIndex = Random.Range(0, questList.Count); // Get a random quest based on our questList
+        return questList[randomIndex];
     }
 
     private void DisplayQuestInfo(QuestData quest)
@@ -108,6 +110,7 @@ public class QuestManager : MonoBehaviour
         if(currentQuest.trainID == 0)
         {
             questInfoOnPhone.material = linjeMaterial[0];
+            
         }
         else if(currentQuest.trainID == 1)
         {
@@ -133,8 +136,6 @@ public class QuestManager : MonoBehaviour
 
     }
 
-
-   
 
 }
 
