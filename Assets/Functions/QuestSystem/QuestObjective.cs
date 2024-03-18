@@ -24,7 +24,7 @@ public class QuestObjective : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Triggered");
-            animator.SetBool("doorButtonPressed", true);
+          
           
             QuestManager questManager = QuestManager.instance;
             // Check if the player has a quest
@@ -36,8 +36,10 @@ public class QuestObjective : MonoBehaviour
                     if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
 
                     {
-                        Debug.Log("Correct train, but you are checked in");
-                        animator.SetBool("doorButtonPressed", true);
+                        Debug.Log("Correct train,  you are checked in");
+                      
+                        animator.SetTrigger("doorButtonPressed");
+                        GameManager.instance.restrictedAreaGameObject.SetActive(false);
                         // Play open sound here
 
 
@@ -46,7 +48,9 @@ public class QuestObjective : MonoBehaviour
                     {
                         Debug.Log("Correct train, but you are not checked in");
                        
-                        animator.SetBool("doorButtonPressed", true);
+                      
+                        animator.SetTrigger("doorButtonPressed");
+                        GameManager.instance.restrictedAreaGameObject.SetActive(false);
                     }
                     else
                     {

@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &370287377668502264
 GameObject:
@@ -310,7 +309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &556423619431593321
 GameObject:
@@ -431,7 +429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &596019868893193166
 GameObject:
@@ -635,7 +632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &647017802371212901
 GameObject:
@@ -1040,7 +1036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &1551441803054733767
 GameObject:
@@ -1161,7 +1156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &1634156668377176532
 GameObject:
@@ -1619,7 +1613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &1917684473176074868
 GameObject:
@@ -1740,7 +1733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2011343373982581298
 GameObject:
@@ -1861,7 +1853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2058015324023138520
 GameObject:
@@ -1982,7 +1973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2196155877186695102
 GameObject:
@@ -2103,7 +2093,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2271485870696572191
 GameObject:
@@ -2259,7 +2248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2324950197326920001
 GameObject:
@@ -2380,7 +2368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2375639865339369815
 GameObject:
@@ -2755,7 +2742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &2571987110707982413
 GameObject:
@@ -2911,7 +2897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &3052829234101945106
 GameObject:
@@ -3233,7 +3218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &3484688250651528328
 GameObject:
@@ -3603,7 +3587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &4166922150143748903
 GameObject:
@@ -3724,7 +3707,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &4377816130400956657
 GameObject:
@@ -3845,7 +3827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &4393846862173597069
 GameObject:
@@ -4620,7 +4601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5029261000936306816
 GameObject:
@@ -5078,7 +5058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5325566552981287262
 GameObject:
@@ -5365,7 +5344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5732436012966474512
 GameObject:
@@ -5521,7 +5499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5953885861187635887
 GameObject:
@@ -5642,7 +5619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5975473164751179654
 GameObject:
@@ -6056,7 +6032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &7387258701452446148
 GameObject:
@@ -6177,7 +6152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &7486692288442291888
 GameObject:
@@ -6298,7 +6272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &7490309791895911431
 GameObject:
@@ -6874,7 +6847,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8321021474238850399
 GameObject:
@@ -6995,7 +6967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8388583434013681252
 GameObject:
@@ -7116,7 +7087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8700075001611077779
 GameObject:
@@ -7237,7 +7207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8795824114247013189
 GameObject:
@@ -7695,7 +7664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1001 &8872530562517358634
 PrefabInstance:

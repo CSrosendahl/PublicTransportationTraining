@@ -114,10 +114,6 @@ public class TrainMover : MonoBehaviour
            
             StartCoroutine(WaitAtDestination());
 
-        }else if(!questObjective)
-        {
-            MoveToExitDestination(); // The filler trains move directly through the station without stopping
-                                    // currently not in use since we do not have any filler trains being spawned.
         }
     }
 
