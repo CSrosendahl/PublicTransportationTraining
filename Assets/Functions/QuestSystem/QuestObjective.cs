@@ -5,14 +5,73 @@ using UnityEngine;
 public class QuestObjective : MonoBehaviour
 {
     public Transform parent;
+    public Animator animator;
+
+
+    private void Awake()
+    {
+       
+       animator = GetComponentInParent<Animator>();
+    }
+    private void Start()
+    {
+     
+    }
+
     private void OnTriggerEnter(Collider other)
+    {
+       // OldMethod(other);
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Triggered");
+            animator.SetBool("doorButtonPressed", true);
+          
+            QuestManager questManager = QuestManager.instance;
+            // Check if the player has a quest
+            if(!parent.GetComponent<TrainMover>().isMoving) // Only check if the train is not moving
+            {
+                if (questManager.currentQuest != null)
+                {
+
+                    if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
+
+                    {
+                        Debug.Log("Correct train, but you are checked in");
+                        animator.SetBool("doorButtonPressed", true);
+                        // Play open sound here
+
+
+                    }
+                    else if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
+                    {
+                        Debug.Log("Correct train, but you are not checked in");
+                       
+                        animator.SetBool("doorButtonPressed", true);
+                    }
+                    else
+                    {
+                      
+                        Debug.Log("Wrong train");
+                        // Maybe turn the button red to indicate it is the wrong train?
+                    }
+
+                   
+
+                }
+            }
+          
+        }
+      
+    }
+
+    public void OldMethod(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             // Get a reference to the QuestManager component
             QuestManager questManager = QuestManager.instance;
             // Check if the player has a quest
-            if(!parent.GetComponent<TrainMover>().isMoving) // Only check if the train is not moving
+            if (!parent.GetComponent<TrainMover>().isMoving) // Only check if the train is not moving
             {
                 if (questManager.currentQuest != null)
                 {
@@ -42,8 +101,7 @@ public class QuestObjective : MonoBehaviour
 
                 }
             }
-          
+
         }
-      
     }
 }

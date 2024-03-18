@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class VelocitySoundController : MonoBehaviour
+public class TrainSoundControllers : MonoBehaviour
 {
     public AudioSource movingSound;
     public AudioSource notMovingSound;

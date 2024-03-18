@@ -19,4 +19,4 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
   trainPrefab: {fileID: 3023766884188628932, guid: b5e29efddba0d9443b5e68b0fabae2fd,
     type: 3}
-  spawnPosition: {x: -300, y: -9.42, z: -15.96}
+  spawnPosition: {x: -300, y: -7.2, z: -16.56}

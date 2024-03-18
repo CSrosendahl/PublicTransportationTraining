@@ -22,22 +22,23 @@ public class GameManager : MonoBehaviour
     public float trainSpawnInterval; // Time between each train spawn
     public GameObject playerObject; // Reference to the player gameObject
 
-    [HideInInspector] public AudioMixer audioMixer;
+     public AudioMixer audioMixer;
     [HideInInspector] public Material onButton;
     [HideInInspector] public Material offButton;
     [HideInInspector] public GameObject NPCButton;
     [HideInInspector] public GameObject SoundButton;
     [HideInInspector] public GameObject NPCState;
-    [HideInInspector] public GameObject AudioMixerGameObject;
+    public GameObject AudioMixerGameObject;
     [HideInInspector] public Transform spawnIndgang;
     [HideInInspector] public Transform spawnControlPanel;
     [HideInInspector] public Transform completeQuestArea;
-    [HideInInspector] public GameObject[] handsPhysicsObject;
+    public GameObject[] handsPhysicsObject;
+    public GameObject restrictedAreaGameObject;
 
    
     private void Start()
     {
-        SpawnControlPanel();
+       // SpawnControlPanel();
         AudioListener.volume = 1f;
 
         Debug.Log("Sound is on");
