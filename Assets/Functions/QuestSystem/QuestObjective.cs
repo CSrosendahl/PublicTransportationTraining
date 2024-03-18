@@ -54,7 +54,7 @@ public class QuestObjective : MonoBehaviour
                     }
                     else
                     {
-                      
+                        animator.SetTrigger("doorButtonPressed");
                         Debug.Log("Wrong train");
                         // Maybe turn the button red to indicate it is the wrong train?
                     }
