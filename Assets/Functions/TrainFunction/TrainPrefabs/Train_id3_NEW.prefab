@@ -196,7 +196,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3922440814434787414}
@@ -3428,7 +3428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &3052383113864191315
 GameObject:
@@ -5803,7 +5802,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5259285187042914004
 GameObject:
@@ -6007,7 +6005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &5525838649583094547
 GameObject:
@@ -7435,7 +7432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &6784061902423038298
 GameObject:
@@ -8278,7 +8274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &7324987445519128475
 GameObject:
@@ -9369,7 +9364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8112049733500302441
 GameObject:
@@ -9740,7 +9734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8403255170928190767
 GameObject:
@@ -9861,7 +9854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8406585334868829383
 GameObject:
@@ -10317,7 +10309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3025471690458625258}
-  findParent: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &8827847463153858589
 GameObject:
