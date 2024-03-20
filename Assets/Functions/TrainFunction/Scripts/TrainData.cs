@@ -13,5 +13,5 @@ public class TrainData : ScriptableObject
     public GameObject trainPrefab; // The train prefab, that is spawned when the train is spawned, each train has its own prefab
     public Vector3 spawnPosition; // The position of the train, when it is spawned
 
-
+    public string[] stations;
 }

@@ -20,3 +20,33 @@ MonoBehaviour:
   trainPrefab: {fileID: 1182042261310685787, guid: 6cbb3ad26cfffdf41ac7a53bd2c9531a,
     type: 3}
   spawnPosition: {x: 255, y: -7.112985, z: 3.034}
+  stations:
+  - Farum
+  - "V\xE6rl\xF8se"
+  - Hareskov
+  - Skovbrynet
+  - "Bagsv\xE6rd"
+  - "Steng\xE5rden"
+  - Buddinge
+  - Kildebakke
+  - Vangede
+  - "Dysseg\xE5rd"
+  - Emdrup
+  - Ryparken
+  - "Svanem\xF8llen"
+  - Nordhavn
+  - "\xD8sterport"
+  - "N\xF8rreport"
+  - Vesterport
+  - "K\xF8benhavn H"
+  - "Dybb\xF8lsbro"
+  - Carlsberg
+  - Valby
+  - "Dansh\xF8j"
+  - Hvidovre
+  - "R\xF8dovre"
+  - "Br\xF8ndby\xF8ster"
+  - Glostrup
+  - Albertslund
+  - Taastrup
+  - "H\xF8je Taastrup"
