@@ -3360,11 +3360,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141100f05c8c064429c1fa8b6f239a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingStationName: Herlev
   trainData: {fileID: 11400000, guid: 11a929931b02a494ea693715dda9770f, type: 2}
-  blinkDuration: 4
+  Dottimer: 2
   blinkInterval: 0.5
+  TimeOnStation: 5
   waitOnStation: 5
+  WaitBeforeStart: 5
   stationElements:
   - StationName: {fileID: 1288041074}
     dots:
@@ -3395,11 +3396,11 @@ MonoBehaviour:
     - {fileID: 2142728989}
   - StationName: {fileID: 1906503102}
     dots:
-    - {fileID: 36952899}
-    - {fileID: 1188587294}
-    - {fileID: 108343665}
-    - {fileID: 860126819}
-    - {fileID: 2142728989}
+    - {fileID: 958071196}
+    - {fileID: 1690139069}
+    - {fileID: 1159491610}
+    - {fileID: 435085434}
+    - {fileID: 1083879940}
   - StationName: {fileID: 1687947739}
     dots:
     - {fileID: 1967471968}
@@ -3463,6 +3464,119 @@ MonoBehaviour:
     - {fileID: 1517969676}
     - {fileID: 108561043}
     - {fileID: 1281235903}
+  - StationName: {fileID: 1391580655}
+    dots:
+    - {fileID: 457848011}
+    - {fileID: 2142930667}
+    - {fileID: 147308385}
+    - {fileID: 1244690511}
+    - {fileID: 517953918}
+  - StationName: {fileID: 690844421}
+    dots:
+    - {fileID: 1882489331}
+    - {fileID: 903918231}
+    - {fileID: 1952349683}
+    - {fileID: 1310911562}
+    - {fileID: 1471300732}
+  - StationName: {fileID: 16205349}
+    dots:
+    - {fileID: 168977275}
+    - {fileID: 702172103}
+    - {fileID: 958572170}
+    - {fileID: 15811537}
+    - {fileID: 1302191825}
+  - StationName: {fileID: 1066454876}
+    dots:
+    - {fileID: 629998982}
+    - {fileID: 463667413}
+    - {fileID: 98472091}
+    - {fileID: 1238006196}
+    - {fileID: 912330273}
+  - StationName: {fileID: 110708784}
+    dots:
+    - {fileID: 637224444}
+    - {fileID: 1380189573}
+    - {fileID: 326777680}
+    - {fileID: 4485301}
+    - {fileID: 463309475}
+  - StationName: {fileID: 2061315613}
+    dots:
+    - {fileID: 1494768462}
+    - {fileID: 1756519984}
+    - {fileID: 837107953}
+    - {fileID: 212203646}
+    - {fileID: 390388715}
+  - StationName: {fileID: 1612426449}
+    dots:
+    - {fileID: 2321190}
+    - {fileID: 1479213765}
+    - {fileID: 726375372}
+    - {fileID: 2091097954}
+    - {fileID: 1749418692}
+  - StationName: {fileID: 161203344}
+    dots:
+    - {fileID: 1816074703}
+    - {fileID: 819793275}
+    - {fileID: 1447950586}
+    - {fileID: 470759879}
+    - {fileID: 228209795}
+  - StationName: {fileID: 299596408}
+    dots:
+    - {fileID: 705130623}
+    - {fileID: 1357603029}
+    - {fileID: 1085993301}
+    - {fileID: 140927009}
+    - {fileID: 1613972651}
+  - StationName: {fileID: 1933014126}
+    dots:
+    - {fileID: 1112890649}
+    - {fileID: 788065312}
+    - {fileID: 149838849}
+    - {fileID: 486906573}
+    - {fileID: 598342915}
+  - StationName: {fileID: 895750985}
+    dots:
+    - {fileID: 2132291930}
+    - {fileID: 2007217074}
+    - {fileID: 602665423}
+    - {fileID: 598549365}
+    - {fileID: 2098112419}
+  - StationName: {fileID: 663025745}
+    dots:
+    - {fileID: 831385105}
+    - {fileID: 681227380}
+    - {fileID: 831709050}
+    - {fileID: 912527200}
+    - {fileID: 37976503}
+  - StationName: {fileID: 1921953779}
+    dots:
+    - {fileID: 1907926378}
+    - {fileID: 1310544296}
+    - {fileID: 522809488}
+    - {fileID: 1308219805}
+    - {fileID: 891377510}
+  - StationName: {fileID: 1200796162}
+    dots:
+    - {fileID: 1084690679}
+    - {fileID: 1565434820}
+    - {fileID: 1651973332}
+    - {fileID: 758468843}
+    - {fileID: 244477126}
+  - StationName: {fileID: 309046495}
+    dots:
+    - {fileID: 2009766358}
+    - {fileID: 1884638734}
+    - {fileID: 475743096}
+    - {fileID: 561547165}
+    - {fileID: 634669443}
+  - StationName: {fileID: 1324252694}
+    dots:
+    - {fileID: 1446658646}
+    - {fileID: 1019010580}
+    - {fileID: 1215250006}
+    - {fileID: 1625227903}
+    - {fileID: 1104508722}
+  startingStationName: Herlev
 --- !u!1 &212203646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,37 +6054,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475743096}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &482215232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 482215234}
-  m_Layer: 0
-  m_Name: RejseStatus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &482215234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482215232}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 0.64864945, z: -0.077}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &486906573
 GameObject:
   m_ObjectHideFlags: 0
@@ -8750,7 +8833,7 @@ GameObject:
   - component: {fileID: 705130626}
   - component: {fileID: 705130625}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TinyCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11653,7 +11736,7 @@ GameObject:
   - component: {fileID: 958071199}
   - component: {fileID: 958071198}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TinyCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12767,7 +12850,7 @@ GameObject:
   - component: {fileID: 1084690682}
   - component: {fileID: 1084690681}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TinyCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23387,5 +23470,4 @@ SceneRoots:
   - {fileID: 29652674}
   - {fileID: 647856911}
   - {fileID: 1915731711}
-  - {fileID: 482215234}
   - {fileID: 207694030}
