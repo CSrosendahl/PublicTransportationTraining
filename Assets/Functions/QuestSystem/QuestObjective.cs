@@ -59,7 +59,7 @@ public class QuestObjective : MonoBehaviour
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
                         // Maybe turn the button red to indicate it is the wrong train?
                     }
-
+                    _SceneManager.instance.LoadSceneWithDelay("TrainTrip",2f);
                    
 
                 }

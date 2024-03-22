@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 8bcf3ee27d64f48c59c96640fb94c910
+  - enabled: 1
+    path: Assets/Scenes/TrainTrip.unity
+    guid: 87fad00a35df3fe47a0d2d13dbc72dc4
   - enabled: 0
     path: Assets/Scenes/Mechs.unity
     guid: 5046bf5cca06cd2438a23027e0378271

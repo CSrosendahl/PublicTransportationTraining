@@ -18,6 +18,7 @@ public class TrainManager : MonoBehaviour
 
     public void SpawnTrain(int trainIndex) // Spawn a train with QuestObjective
     {
+        
 
         // Create a rotation quaternion with a x-degree rotation around the y-axis
         Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);

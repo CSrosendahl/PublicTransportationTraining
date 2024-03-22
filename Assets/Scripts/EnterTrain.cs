@@ -31,12 +31,12 @@ public class EnterTrain : MonoBehaviour
             saveData.trainDataEntered = trainData;
             saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
           
-            GameManager.instance.playerObject.transform.position = spawnEntrance.position;
+            //GameManager.instance.playerObject.transform.position = spawnEntrance.position;
 
             saveData.position = other.transform.position;
 
 
-            Invoke("DelayedSceneChange", 2f);
+        
 
         }
     }

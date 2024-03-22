@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,13 +16,19 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
+        else
+        {
+            Destroy(gameObject);
+        }
+        Debug.Log("GameManager Awake");
     }
 
     public bool hasCheckedIn; // Boolean to check if the player has checked in
     public float trainSpawnInterval; // Time between each train spawn
     public GameObject playerObject; // Reference to the player gameObject
+    public bool canSpawnTrains = true;
 
      public AudioMixer audioMixer;
     [HideInInspector] public Material onButton;
@@ -34,14 +42,52 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Transform completeQuestArea;
     public GameObject[] handsPhysicsObject;
     public GameObject restrictedAreaGameObject;
+    public GameData savedData;
 
+
+    public GameObject[] insideTrains;
    
     private void Start()
     {
-       // SpawnControlPanel();
+        if (SceneManager.GetSceneByName("Map").isLoaded)
+        {
+            // Do stuff
+        }
+
+        if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
+        {
+            InsideTrainFunction();
+
+
+
+        }
+
+        // SpawnControlPanel();
         AudioListener.volume = 1f;
 
-        Debug.Log("Sound is on");
+    }
+    public void InsideTrainFunction()
+    {
+        for (int i = 0; i < insideTrains.Length; i++)
+        {
+            RejseStatus rejseStatus = insideTrains[i].GetComponent<RejseStatus>();
+
+            if (rejseStatus != null)
+            {
+                TrainData trainDataInObject = rejseStatus.trainData;
+
+                Debug.Log("TrainData: " + trainDataInObject.trainName);
+
+                if (trainDataInObject.trainID == savedData.trainDataEntered.trainID)
+                {
+                    insideTrains[i].SetActive(true); // Enable the GameObject
+                }
+                else
+                {
+                    insideTrains[i].SetActive(false); // Disable the GameObject
+                }
+            }
+        }
     }
 
     // Disable NPC button
