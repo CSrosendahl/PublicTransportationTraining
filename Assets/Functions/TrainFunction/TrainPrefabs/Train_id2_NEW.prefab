@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 8787987284289259969}
   - component: {fileID: 441491707650825094}
   - component: {fileID: 2699192382576891973}
+  - component: {fileID: 3765419410761210625}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -175,6 +176,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &3765419410761210625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213239557217228315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &238755079973894134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1369,7 @@ GameObject:
   - component: {fileID: 2328691449665805188}
   - component: {fileID: 7223101188076975754}
   - component: {fileID: 7321725891388638251}
+  - component: {fileID: 5233176436269232255}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -1458,6 +1477,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &5233176436269232255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561642829971175852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &1586311649966033067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1507,7 @@ GameObject:
   - component: {fileID: 7103604672900277030}
   - component: {fileID: 3135346232645786870}
   - component: {fileID: 2774076782525290584}
+  - component: {fileID: 3858575295074012139}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -1578,6 +1615,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &3858575295074012139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586311649966033067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &1702658512143600584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1979,7 @@ GameObject:
   - component: {fileID: 6451741553003799061}
   - component: {fileID: 2674631121395387000}
   - component: {fileID: 1685812344354948630}
+  - component: {fileID: 8344911322969232739}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -2032,6 +2087,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &8344911322969232739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907437452869061889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &1950496726301967417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2366,7 @@ GameObject:
   - component: {fileID: 8673540827851615250}
   - component: {fileID: 2668136764960079219}
   - component: {fileID: 6562731049548113810}
+  - component: {fileID: 6844417072480721889}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -2401,6 +2474,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &6844417072480721889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111291544052618584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &2246292051843817643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,6 +3324,7 @@ GameObject:
   - component: {fileID: 7204514732229532148}
   - component: {fileID: 2838782033536806806}
   - component: {fileID: 3486852466090259865}
+  - component: {fileID: 1011682857273079061}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -3341,6 +3432,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &1011682857273079061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875489791611252062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &2949585420928497262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +5859,7 @@ GameObject:
   - component: {fileID: 241505416637628922}
   - component: {fileID: 3239532141269014617}
   - component: {fileID: 6496085887427918365}
+  - component: {fileID: 6555966619125674022}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -5858,6 +5967,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &6555966619125674022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448583290701911684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &5543592740078065268
 GameObject:
   m_ObjectHideFlags: 0
@@ -10675,6 +10801,7 @@ GameObject:
   - component: {fileID: 7724111425597770817}
   - component: {fileID: 5549398906583762933}
   - component: {fileID: 2952200517182618464}
+  - component: {fileID: 3783146598071623851}
   m_Layer: 0
   m_Name: DoorButton (4)
   m_TagString: Untagged
@@ -10782,6 +10909,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7439357038726600230}
   animator: {fileID: 0}
+--- !u!114 &3783146598071623851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9049745938555745140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d69195a10354d4981ecb8a8bf3e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainObject: {fileID: 1182042261310685787}
+  trainData: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  parent: {fileID: 7439357038726600230}
+  spawnEntrance: {fileID: 0}
+  saveData: {fileID: 11400000, guid: c0e25912b616010408926e18e847fb9f, type: 2}
 --- !u!1 &9195308969672868870
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ public class EnterTrain : MonoBehaviour
     public GameObject trainObject;
     public TrainData trainData;
     public Transform parent;
-    public Transform spawnEntrance;
+    public int spawnEntranceNumber;
+
     
     public GameData saveData;
     void Start()
@@ -34,9 +35,9 @@ public class EnterTrain : MonoBehaviour
             //GameManager.instance.playerObject.transform.position = spawnEntrance.position;
 
             saveData.position = other.transform.position;
+            saveData.spawnEntranceNumber = spawnEntranceNumber;
+            
 
-
-        
 
         }
     }

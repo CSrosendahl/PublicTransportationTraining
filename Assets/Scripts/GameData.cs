@@ -9,6 +9,9 @@ public class GameData : ScriptableObject
     public TrainData trainDataEntered;
     public GameObject trainObjectEntered;
     public Transform spawnTrainEntranceEntered;
+    public int spawnEntranceNumber;
+
+   
 
     public Vector3 position;
 

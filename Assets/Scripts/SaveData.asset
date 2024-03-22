@@ -15,4 +15,5 @@ MonoBehaviour:
   trainDataEntered: {fileID: 0}
   trainObjectEntered: {fileID: 0}
   spawnTrainEntranceEntered: {fileID: 0}
+  spawnEntranceNumber: 0
   position: {x: 0, y: 0, z: 0}

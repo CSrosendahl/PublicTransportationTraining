@@ -12,6 +12,9 @@ public class RejseStatus : MonoBehaviour
     public float waitOnStation = 5f; // Time to wait on each station
     public float WaitBeforeStart = 5f; // Time to wait before starting the blinking
     public List<StationElement> stationElements;
+    public int track;
+
+   
 
 
     public string startingStationName = "Valby"; // Station name to start blinking from
@@ -20,6 +23,8 @@ public class RejseStatus : MonoBehaviour
 
     void Start()
     {
+        trainData = GameManager.instance.savedData.trainDataEntered;
+
         PopulateStationNames();
         if (startBlinkingFromIndex != -1)
         {

@@ -74,11 +74,9 @@ public class GameManager : MonoBehaviour
 
             if (rejseStatus != null)
             {
-                TrainData trainDataInObject = rejseStatus.trainData;
+   
 
-                Debug.Log("TrainData: " + trainDataInObject.trainName);
-
-                if (trainDataInObject.trainID == savedData.trainDataEntered.trainID)
+                if (rejseStatus.track == savedData.trainDataEntered.track)
                 {
                     insideTrains[i].SetActive(true); // Enable the GameObject
                 }
