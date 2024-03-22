@@ -8,8 +8,7 @@ public class GameData : ScriptableObject
     // Add variables you want to save here
     public TrainData trainDataEntered;
     public GameObject trainObjectEntered;
-    public Transform spawnTrainEntranceEntered;
-
+    public Transform playersParentInTrain;
     public Vector3 position;
 
     // Example method to reset variables
@@ -17,7 +16,7 @@ public class GameData : ScriptableObject
     {
         trainDataEntered = null;
         trainObjectEntered = null;
-        spawnTrainEntranceEntered = null;
+        playersParentInTrain = null;
         position = Vector3.zero;
     }
 }

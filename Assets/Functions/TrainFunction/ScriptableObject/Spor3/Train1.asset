@@ -20,3 +20,22 @@ MonoBehaviour:
   trainPrefab: {fileID: 3023766884188628932, guid: b5e29efddba0d9443b5e68b0fabae2fd,
     type: 3}
   spawnPosition: {x: -300, y: -7.112, z: -16.028}
+  stations:
+  - Ballerup
+  - Malmparken
+  - Skovlunde
+  - Herlev
+  - Husum
+  - Islev
+  - Jyllingevej
+  - "Vanl\xF8se"
+  - Flintholm
+  - Peter Bangs Vej
+  - Langgade
+  - Valby
+  - Carlsberg
+  - "Dybb\xF8lsbro"
+  - "K\xF8benhavn H"
+  - Vesterport
+  - "N\xF8rreport"
+  - "\xD8sterport"

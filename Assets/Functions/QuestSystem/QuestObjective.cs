@@ -6,12 +6,14 @@ public class QuestObjective : MonoBehaviour
 {
     public Transform parent;
     public Animator animator;
+    public EnterTrain enterTrainScript;
 
 
     private void Awake()
     {
        
        animator = GetComponentInParent<Animator>();
+       enterTrainScript = GetComponent<EnterTrain>();
     }
     private void Start()
     {

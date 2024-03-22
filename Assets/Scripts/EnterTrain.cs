@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnterTrain : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnterTrain : MonoBehaviour
     public TrainData trainData;
     public Transform parent;
     public Transform spawnEntrance;
+   
     
     public GameData saveData;
     void Start()
@@ -30,16 +32,31 @@ public class EnterTrain : MonoBehaviour
             saveData.ResetData();
             saveData.trainDataEntered = trainData;
             saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
-          
-            GameManager.instance.playerObject.transform.position = spawnEntrance.position;
-
-            saveData.position = other.transform.position;
 
 
-            Invoke("DelayedSceneChange", 2f);
+            
+            saveData.playersParentInTrain = spawnEntrance;
+            saveData.position = spawnEntrance.position;
+
+
+           StartCoroutine(LoadScene());
 
         }
     }
 
+
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(3);
+        GameManager.instance.EnableDisableHandsss();
+
+
+        GameManager.instance.playerObject.transform.SetParent(saveData.playersParentInTrain);
+        GameManager.instance.playerObject.transform.position = saveData.position;
+
+    }
+
+
+  
 
 }

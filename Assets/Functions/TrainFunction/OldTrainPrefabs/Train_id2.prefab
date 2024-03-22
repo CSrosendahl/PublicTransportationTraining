@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &157312590776422013
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &778225747418398308
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1193337239746976628
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1306650972987750379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1344539013570399193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1606216438393884337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1666880176753643356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &1734146849518333091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &2310158388231413205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,6 +2252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &2517186504037494019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &2543297956586941849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +2944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &4193782192263577854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &4420176391964367212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,6 +3440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &4766182758377818970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,6 +4069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &5333859542742750023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,6 +4190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &5490360996145100722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,6 +4311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &5496115386614263725
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,6 +4432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &5810195310108788956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,6 +4588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &6043057716585721314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5067,6 +5086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &6301531240870276524
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &6409046645353532111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,6 +5411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &6808706880635401540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5750,6 +5772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &7825762978518364549
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,6 +5893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &7858529517225350671
 GameObject:
   m_ObjectHideFlags: 0
@@ -6073,6 +6097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &8057598735137523819
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,6 +6384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &8423671187133965087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6562,6 +6588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &8468303766950252050
 GameObject:
   m_ObjectHideFlags: 0
@@ -6682,6 +6709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &8499880648261850551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6885,6 +6913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &8702753354902332051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7342,6 +7371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &9054239991407756333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7462,6 +7492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1 &9062345841878686118
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,6 +7696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7233534953003890033}
   animator: {fileID: 0}
+  enterTrainScript: {fileID: 0}
 --- !u!1001 &8872530562517358634
 PrefabInstance:
   m_ObjectHideFlags: 0

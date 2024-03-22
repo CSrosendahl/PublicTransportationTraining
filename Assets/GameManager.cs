@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
     public bool hasCheckedIn; // Boolean to check if the player has checked in
     public float trainSpawnInterval; // Time between each train spawn
     public GameObject playerObject; // Reference to the player gameObject
+    public GameData savedData;
+    bool hasLoadedNewScene = false;
 
      public AudioMixer audioMixer;
     [HideInInspector] public Material onButton;
@@ -42,7 +45,26 @@ public class GameManager : MonoBehaviour
         AudioListener.volume = 1f;
 
         Debug.Log("Sound is on");
+
     }
+    private void Update()
+    {
+        Test();
+    }
+
+    public void Test()
+    {
+        if(SceneManager.GetSceneByName("Map").isLoaded)
+        {
+            Debug.Log("Hello from map");
+        }
+        else if (SceneManager.GetSceneByName("TrainRide").isLoaded)
+        {
+            Debug.Log("Hello from trainride");
+        }
+
+    }
+ 
 
     // Disable NPC button
     public void DisableNPC()
@@ -107,6 +129,11 @@ public class GameManager : MonoBehaviour
       StartCoroutine(EnableHandPhysicsAfterDelay());
 
     }
+
+    public void TrainRideStart()
+    {
+
+    }
     // Method for teleporting our player to the play area. (Valby st. entrance)
     public void SpawnEntrance()
     {
@@ -149,6 +176,27 @@ public class GameManager : MonoBehaviour
     private IEnumerator EnableHandPhysicsAfterDelay() 
     {
         // Wait for a short delay.
+        yield return new WaitForSeconds(1f); // Adjust the duration as needed.
+
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
+        {
+            handsPhysicsObject[i].SetActive(true);
+        }
+
+    }
+    public void EnableDisableHandsss()
+    {
+        
+        StartCoroutine(DisableEnableHands());
+    
+    }
+    private IEnumerator DisableEnableHands()
+    {
+        // Wait for a short delay.
+        for (int i = 0; i < handsPhysicsObject.Length; i++)
+        {
+            handsPhysicsObject[i].SetActive(false);
+        }
         yield return new WaitForSeconds(1f); // Adjust the duration as needed.
 
         for (int i = 0; i < handsPhysicsObject.Length; i++)
