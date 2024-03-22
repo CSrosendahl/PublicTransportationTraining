@@ -14,7 +14,7 @@ public class RejseStatus : MonoBehaviour
     public List<StationElement> stationElements;
 
 
-    public string startingStationName = "Herlev"; // Station name to start blinking from
+    public string startingStationName = "Valby"; // Station name to start blinking from
 
     private int startBlinkingFromIndex = -1;
 
