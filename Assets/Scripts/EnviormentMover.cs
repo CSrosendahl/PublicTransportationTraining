@@ -5,36 +5,39 @@ using UnityEngine;
 
 public class EnviormentMover : MonoBehaviour
 {
-    public Transform boardingDestination; // The destination of the train when it is boarding
-    public Transform exitDestination; // The destination of the train when it has been boarded
-    private Transform currentDestination; // The current destination of the train
-   
+    public List<Transform> destinations; // List of destinations that the train stops at
+    private int currentDestinationIndex = 0; // Index of the current destination in the list
 
+    public float maxSpeed = 1.0f;
+    public float acceleration = 0.5f;
+    public float quickDecelerationRate = 2.0f;
+    public float decelerationDistance = 5.0f;
+    public float stopDistance = 0.1f;
+    public float waitTime = 10.0f;
 
-    public float maxSpeed = 1.0f; // The maximum speed of the train
-    public float acceleration = 0.5f; // How quickly the train accelerates
-    public float quickDecelerationRate = 2.0f; // The rate at which the train decelerates quickly within the deceleration distance
-    public float decelerationDistance = 5.0f; // The distance from the destination at which the train starts to decelerate
-    public float stopDistance = 0.1f; // Distance at which the train considers it has "arrived"
-    public float waitTime = 10.0f; // Time to wait at destination before moving again
+    private float currentSpeed = 0f;
+    private bool isMoving = false;
 
+    public List<GameObject> prefabsToSpawn;
+    public Transform spawnPoint;
+    public float SpawnTimer = 60.0f;
 
-    public float currentSpeed = 0f; // Current speed of the train
-    public bool isMoving = false; // Is the train moving?
-
-    public bool questObjective; // Filler trains will not be a quest objective, and will drive straight through the station
-
+    private float nextDestroyTime = 0f;
+    public float destroyInterval = 30f; // Interval in seconds between each destruction
 
 
 
     void Start()
     {
-       
-        // Set the first destination as the current one and start moving
-        currentDestination = boardingDestination;
+        nextDestroyTime = Time.time + destroyInterval;
+        if (destinations.Count > 0)
+        {
+            // Set the first destination as the current one and start moving
+            SetDestination(0);
+            isMoving = true;
+        }
 
-        isMoving = true;
-       // trainDataID = trainData.trainID;
+        StartCoroutine(SpawnObjectAfterDelay());
     }
 
     void Update()
@@ -42,78 +45,84 @@ public class EnviormentMover : MonoBehaviour
         if (isMoving)
         {
             MoveTrain();
-
         }
+
+        if (Time.time >= nextDestroyTime)
+        {
+            DestroyFirstChild();
+            nextDestroyTime = Time.time + destroyInterval;
+        }
+
 
     }
 
     void MoveTrain()
     {
-        // Calculate the distance to the current destination
-        float distanceToDestination = Vector3.Distance(transform.position, currentDestination.position);
+        float distanceToDestination = Vector3.Distance(transform.position, destinations[currentDestinationIndex].position);
 
-        // Check if the train is within the deceleration distance and above 1f speed
         if (distanceToDestination < decelerationDistance && currentSpeed > 1f)
         {
-            // Decelerate quickly to the speed of 1f
             currentSpeed = Mathf.Max(currentSpeed - quickDecelerationRate * Time.deltaTime, 1f);
-            // Train slowing down, arrival
         }
         else if (currentSpeed < maxSpeed && distanceToDestination >= decelerationDistance)
         {
-            // Accelerate the train until it reaches max speed
             currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, maxSpeed);
         }
 
-        // Move the train towards the current destination
-        transform.position = Vector3.MoveTowards(transform.position, currentDestination.position, currentSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, destinations[currentDestinationIndex].position, currentSpeed * Time.deltaTime);
 
-        // Play train move sound here
-
-        // If the train is close enough to the current destination, stop and start waiting
         if (distanceToDestination <= stopDistance && currentSpeed <= 1f)
         {
-
-
-            isMoving = false; // Stop the train
-
+            isMoving = false;
             StartCoroutine(WaitAtDestination());
-
         }
     }
 
     IEnumerator WaitAtDestination()
     {
-
-        // Set the new destination and reset the speed for acceleration
-
-        if (currentDestination == exitDestination)
-        {
-           // TrainManager.instance.hasSpawned = false; // Allow the train spawner to spawn a new train (currently not being used, should be removed)
-            Destroy(gameObject);
-        }
-        else
-        {
-            yield return new WaitForSeconds(waitTime);
-            if (currentDestination == boardingDestination)
-            {
-                currentDestination = exitDestination;
-            }
-            else
-            {
-                currentDestination = exitDestination;
-            }
-            currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
-            isMoving = true; // Allow the train to start moving again
-            // Play start sound 
-        }
-
-
+        yield return new WaitForSeconds(waitTime);
+        // Move to the next destination in the list
+        currentDestinationIndex = (currentDestinationIndex + 1) % destinations.Count;
+        currentSpeed = 0f;
+        isMoving = true;
     }
-    public void MoveToExitDestination()
+
+    public void SetDestination(int index)
     {
-        currentDestination = exitDestination; // Set the exit destination as the current destination
-        currentSpeed = maxSpeed; // Set the speed to maximum for acceleration
-        isMoving = true; // Allow the train to start moving again
+        if (index >= 0 && index < destinations.Count)
+        {
+            currentDestinationIndex = index;
+        }
     }
+
+
+    IEnumerator SpawnObjectAfterDelay()
+    {
+        yield return new WaitForSeconds(SpawnTimer); // Wait for 1 minute
+
+        if (prefabsToSpawn.Count > 0 && spawnPoint != null)
+        {
+            // Randomly select a prefab from the list
+            int randomIndex = Random.Range(0, prefabsToSpawn.Count);
+            GameObject prefabToSpawn = prefabsToSpawn[randomIndex];
+
+            // Spawn the selected prefab at the spawn point
+            GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+            // Parent the spawned object to the moving object
+            spawnedObject.transform.parent = transform; // Assuming this script is attached to the moving object
+        }
+    }
+
+
+    void DestroyFirstChild()
+    {
+        // Check if the object has any children
+        if (transform.childCount > 0)
+        {
+            // Destroy the first child
+            Destroy(transform.GetChild(0).gameObject);
+        }
+    }
+
 }
