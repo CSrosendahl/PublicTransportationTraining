@@ -3844,7 +3844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardingDestination: {fileID: 7251177582388005855, guid: 00521ec1661277b46a6e57ae9b7c8894,
     type: 3}
-  exitDestination: {fileID: 2836287522099167934, guid: b45c0a7c71eccf14d962e0a095c9e4ef,
+  exitDestination: {fileID: 4003374921205623813, guid: 3b240e342a9f79a4daf7cb450504756c,
     type: 3}
   trainData: {fileID: 11400000, guid: 54859037604efba4f99af010e9c84eae, type: 2}
   maxSpeed: 10
