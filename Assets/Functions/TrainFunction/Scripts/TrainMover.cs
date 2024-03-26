@@ -133,6 +133,7 @@ public class TrainMover : MonoBehaviour
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
             // Play start sound 
+           
         }
 
        
