@@ -98,19 +98,22 @@ public class EnviormentMover : MonoBehaviour
 
     IEnumerator SpawnObjectAfterDelay()
     {
-        yield return new WaitForSeconds(SpawnTimer); // Wait for 1 minute
-
-        if (prefabsToSpawn.Count > 0 && spawnPoint != null)
+        while (true) // Infinite loop to keep spawning objects
         {
-            // Randomly select a prefab from the list
-            int randomIndex = Random.Range(0, prefabsToSpawn.Count);
-            GameObject prefabToSpawn = prefabsToSpawn[randomIndex];
+            yield return new WaitForSeconds(SpawnTimer);
 
-            // Spawn the selected prefab at the spawn point
-            GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+            if (prefabsToSpawn.Count > 0 && spawnPoint != null)
+            {
+                // Randomly select a prefab from the list
+                int randomIndex = Random.Range(0, prefabsToSpawn.Count);
+                GameObject prefabToSpawn = prefabsToSpawn[randomIndex];
 
-            // Parent the spawned object to the moving object
-            spawnedObject.transform.parent = transform; // Assuming this script is attached to the moving object
+                // Spawn the selected prefab at the spawn point
+                GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+                // Parent the spawned object to the moving object
+                spawnedObject.transform.parent = transform; // Assuming this script is attached to the moving object
+            }
         }
     }
 
