@@ -17,6 +17,7 @@ MonoBehaviour:
   trainName: Farum
   trainLineMaterial: {fileID: 2100000, guid: b6c15a03bc6f5b5499ef9a0f945f6ecb, type: 2}
   texture: {fileID: 2800000, guid: c0a09a90146c3194b9175049415a40a3, type: 3}
-  trainPrefab: {fileID: 92816386843259337, guid: cd94ded2f8be5034a8b3614810baa118,
+  trainPrefab: {fileID: 8620344273019375040, guid: e7fb5e7cbc686424c8c08d814c4d76a7,
     type: 3}
   spawnPosition: {x: -300, y: -7.112985, z: -2.94}
+  stations: []

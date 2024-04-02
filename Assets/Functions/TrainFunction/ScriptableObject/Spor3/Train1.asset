@@ -17,7 +17,7 @@ MonoBehaviour:
   trainName: "\xD8sterport"
   trainLineMaterial: {fileID: 2100000, guid: 3f2625dc5816f2d49b3fb6fae0a82dfa, type: 2}
   texture: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
-  trainPrefab: {fileID: 3023766884188628932, guid: b5e29efddba0d9443b5e68b0fabae2fd,
+  trainPrefab: {fileID: 1306538811552001539, guid: 79b8a3126f283bb42a48ed7065b507b3,
     type: 3}
   spawnPosition: {x: -300, y: -7.112, z: -16.028}
   stations:
