@@ -130,6 +130,19 @@ public class TrainMover : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             currentDestination = (currentDestination == boardingDestination) ? exitDestination : boardingDestination;
+
+
+
+            if (currentDestination == boardingDestination)
+            {
+                currentDestination = exitDestination;
+            }
+            else
+            {
+                currentDestination = exitDestination;
+            }
+
+
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
             // Play start sound 
