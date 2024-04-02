@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public bool hasCheckedIn; // Boolean to check if the player has checked in
     public float trainSpawnInterval; // Time between each train spawn
     public GameObject playerObject; // Reference to the player gameObject
+    public GameObject playerObjectIK; // Reference to the playersIK gameObject
     public bool canSpawnTrains = true;
 
      public AudioMixer audioMixer;
@@ -190,7 +191,7 @@ public class GameManager : MonoBehaviour
 
 
     // This methods purpose is to make sure our physical hands do not get stuck on any objects when teleporting.
-    private IEnumerator EnableHandPhysicsAfterDelay() 
+    public IEnumerator EnableHandPhysicsAfterDelay() 
     {
         // Wait for a short delay.
         yield return new WaitForSeconds(1f); // Adjust the duration as needed.

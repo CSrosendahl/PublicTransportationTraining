@@ -20,6 +20,8 @@ public class SpawnEntrances : MonoBehaviour
             if (i == GameManager.instance.savedData.spawnEntranceNumber)
             {
                 GameManager.instance.playerObject.transform.position = spawnEntrances[i].transform.position;
+                GameManager.instance.playerObjectIK.transform.position = spawnEntrances[i].transform.position;
+                GameManager.instance.StartCoroutine(GameManager.instance.EnableHandPhysicsAfterDelay());
                 test.transform.position = spawnEntrances[i].transform.position;
                 Debug.Log("Was called");
             }
