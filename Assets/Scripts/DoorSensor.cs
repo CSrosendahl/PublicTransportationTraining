@@ -6,11 +6,23 @@ public class DoorSensor : MonoBehaviour
 {
     public Animator doorAnimator;
     public bool doorOpen = false;
+    // We could use some sound effects here.
+
+
+    private void Start()
+    {
+        doorAnimator = GetComponentInParent<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered door sensor");
+            if (!doorOpen)
+            {
+                doorAnimator.SetBool("Open", true);
+                doorOpen = true;
+            }
         }
     }
 
@@ -38,7 +50,7 @@ public class DoorSensor : MonoBehaviour
 
     IEnumerator CloseDoorAfterDelay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         doorAnimator.SetBool("Open", false);
         doorOpen = false;
     }
