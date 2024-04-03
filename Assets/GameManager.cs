@@ -57,17 +57,17 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
         {
-            InsideTrainFunction();
+            EnableCorrectTrain();
 
 
 
         }
 
-        // SpawnControlPanel();
+        SpawnControlPanel();
         AudioListener.volume = 1f;
 
     }
-    public void InsideTrainFunction()
+    public void EnableCorrectTrain()
     {
         for (int i = 0; i < insideTrains.Length; i++)
         {
@@ -134,10 +134,10 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
 
-        for (int i = 0; i < handsPhysicsObject.Length; i++)
-        {
-            handsPhysicsObject[i].SetActive(false);
-        }
+        //for (int i = 0; i < handsPhysicsObject.Length; i++)
+        //{
+        //    handsPhysicsObject[i].SetActive(false);
+        //}
 
         hasCheckedIn = false;
          
@@ -149,44 +149,48 @@ public class GameManager : MonoBehaviour
         QuestManager.instance.AcceptQuest(); // Accept a new quest
         playerObject.transform.position = spawnIndgang.position; // Spawn the player at the spawn point
 
-      StartCoroutine(EnableHandPhysicsAfterDelay());
+    //  StartCoroutine(EnableHandPhysicsAfterDelay());
 
     }
     // Method for teleporting our player to the play area. (Valby st. entrance)
     public void SpawnEntrance()
     {
 
-        for (int i = 0; i < handsPhysicsObject.Length; i++)
-        {
-            handsPhysicsObject[i].SetActive(false);
-        }
+        //for (int i = 0; i < handsPhysicsObject.Length; i++)
+        //{
+        //    handsPhysicsObject[i].SetActive(false);
+        //}
 
         playerObject.transform.position = spawnIndgang.position;
 
-        StartCoroutine(EnableHandPhysicsAfterDelay());
+       // StartCoroutine(EnableHandPhysicsAfterDelay());
 
     }
 
     // Method for spawning our player in the control panel area.
     public void SpawnControlPanel()
     {
-        for (int i = 0; i < handsPhysicsObject.Length; i++)
-        {
-            handsPhysicsObject[i].SetActive(false);
-        }
+        //for (int i = 0; i < handsPhysicsObject.Length; i++)
+        //{
+        //    handsPhysicsObject[i].SetActive(false);
+        //}
+
         playerObject.transform.position = spawnControlPanel.position;
-        StartCoroutine(EnableHandPhysicsAfterDelay());
+
+        //StartCoroutine(EnableHandPhysicsAfterDelay());
     }
 
     // Method for spawning our player in the complete quest area.
     public void CompleteQuestArea()
     {
-        for (int i = 0; i < handsPhysicsObject.Length; i++)
-        {
-            handsPhysicsObject[i].SetActive(false);
-        }
+        //for (int i = 0; i < handsPhysicsObject.Length; i++)
+        //{
+        //    handsPhysicsObject[i].SetActive(false);
+        //}
+
         playerObject.transform.position = completeQuestArea.position;
-        StartCoroutine(EnableHandPhysicsAfterDelay());
+
+     //   StartCoroutine(EnableHandPhysicsAfterDelay());
     }
 
 
