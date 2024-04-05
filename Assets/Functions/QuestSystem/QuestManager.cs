@@ -31,11 +31,14 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        AcceptQuest();
-  
-     
-        questText.text = "";
-        questInfoOnPhone.enabled = false;
+        if (SceneManager.GetSceneByName("Map").isLoaded)
+        {
+            // Do stuff
+            AcceptQuest();
+            questText.text = "";
+            questInfoOnPhone.enabled = false;
+
+        }
 
 
     }

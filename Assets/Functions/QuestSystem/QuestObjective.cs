@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class QuestObjective : MonoBehaviour
 {
     public Transform parent;
     public Animator animator;
-
+    
 
     private void Awake()
     {
@@ -61,8 +62,11 @@ public class QuestObjective : MonoBehaviour
                     }
 
                     // Run fade to black here and load the next scene
-                    
-                      _SceneManager.instance.LoadSceneWithDelay("TrainTrip",2f);
+
+                    GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
+                    SceneTransitionManager.instance.GoToScene(1);
+                   // _SceneManager.instance.LoadSceneWithDelay("TrainTrip",3f);
+                      
               
                    
 

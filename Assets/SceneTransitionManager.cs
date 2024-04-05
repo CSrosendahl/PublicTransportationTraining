@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour
 {
+    public static SceneTransitionManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     public FadeScreen fadeScreen;
 
     public void GoToScene(int sceneIndex)

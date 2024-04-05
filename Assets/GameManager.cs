@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
    
     private void Start()
     {
+        playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 2;
+
         if (SceneManager.GetSceneByName("Map").isLoaded)
         {
             // Do stuff
