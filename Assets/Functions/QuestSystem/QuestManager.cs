@@ -54,7 +54,7 @@ public class QuestManager : MonoBehaviour
         // Fade out/Blackscreen/Sound/Prompt....
         // Wait 2 second, fade to black into new scene.
       
-        GameManager.instance.CompleteQuestArea();
+     //   GameManager.instance.CompleteQuestArea();
         audioSource.clip = questCompleteSound;
         audioSource.Play();
         questCompletedOrFail.text = "Tillykke!\r\nDu tog det rigtige tog";
@@ -74,7 +74,7 @@ public class QuestManager : MonoBehaviour
         //audioSource.clip = questFailedSound;
         //audioSource.Play();
 
-        GameManager.instance.CompleteQuestArea();
+        //GameManager.instance.CompleteQuestArea();
         questCompletedOrFail.text = "Desværre!\r\nDu tog det forkerte tog";
         questText.text = "";
         currentQuest = null;

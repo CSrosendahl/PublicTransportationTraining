@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnEntrances : MonoBehaviour
 {
     public Transform[] spawnEntrances;
-    public GameObject test;
+  //  public GameObject test;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class SpawnEntrances : MonoBehaviour
                 GameManager.instance.playerObject.transform.position = spawnEntrances[i].transform.position;
                 GameManager.instance.playerObjectIK.transform.position = spawnEntrances[i].transform.position;
                 GameManager.instance.StartCoroutine(GameManager.instance.EnableHandPhysicsAfterDelay());
-                test.transform.position = spawnEntrances[i].transform.position;
+              //  test.transform.position = spawnEntrances[i].transform.position;
                 Debug.Log("Was called");
             }
         }

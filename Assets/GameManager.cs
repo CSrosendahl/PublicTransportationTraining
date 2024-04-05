@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetSceneByName("Map").isLoaded)
         {
             // Do stuff
+            SpawnControlPanel();
         }
 
         if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        SpawnControlPanel();
+      
         AudioListener.volume = 1f;
 
     }
