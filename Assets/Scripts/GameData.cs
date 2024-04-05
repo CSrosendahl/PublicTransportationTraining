@@ -10,6 +10,7 @@ public class GameData : ScriptableObject
     public GameObject trainObjectEntered;
     public Transform spawnTrainEntranceEntered;
     public int spawnEntranceNumber;
+    public QuestData currentQuest;
 
    
 

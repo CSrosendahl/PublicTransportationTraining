@@ -15,6 +15,7 @@ public class EnvironmentMover : MonoBehaviour
       
     }
     public Transform destination;
+    public GameObject valbyStationGO;
 
     public bool moveForward; // Controls whether the train moves to the forward or backward destination
 
@@ -51,6 +52,7 @@ public class EnvironmentMover : MonoBehaviour
         // Set the initial destination and start moving
         SetDestination(destination);
         isMoving = true;
+        StartCoroutine(DisableValbyStationGameObject(45));
     }
 
     void Update()
@@ -228,6 +230,13 @@ public class EnvironmentMover : MonoBehaviour
 
         // Ensure the train reaches its maximum speed
         currentSpeed = maxSpeed;
+    }
+
+    IEnumerator DisableValbyStationGameObject(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        valbyStationGO.SetActive(false);
+
     }
 
 }

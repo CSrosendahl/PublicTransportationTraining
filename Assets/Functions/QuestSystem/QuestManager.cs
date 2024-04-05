@@ -35,8 +35,15 @@ public class QuestManager : MonoBehaviour
         {
             // Do stuff
             AcceptQuest();
-            questText.text = "";
-            questInfoOnPhone.enabled = false;
+         
+
+        }
+        if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
+        {
+            // Do stuff
+            currentQuest = GameManager.instance.savedData.currentQuest;
+
+            DisplayTrainTripQuest();
 
         }
 
@@ -47,8 +54,46 @@ public class QuestManager : MonoBehaviour
         // Assign a random quest to the player at the start of the game
         currentQuest = GetRandomQuest();
         DisplayQuestInfo(currentQuest);
-       
 
+        GameManager.instance.savedData.currentQuest = currentQuest;
+
+
+    }
+    public void DisplayTrainTripQuest()
+    {
+        if (currentQuest != null)
+        {
+            questInfoOnPhone.enabled = true;
+            questText.text = "Stå af på " + currentQuest.questName + " station";
+        }
+      
+
+        // OPTIMIZE THIS ! Get the data from TrainData instead of the quest
+        if (currentQuest.trainID == 0)
+        {
+            questInfoOnPhone.material = linjeMaterial[0];
+
+        }
+        else if (currentQuest.trainID == 1)
+        {
+            questInfoOnPhone.material = linjeMaterial[1];
+        }
+        else if (currentQuest.trainID == 2)
+        {
+            questInfoOnPhone.material = linjeMaterial[2];
+        }
+        else if (currentQuest.trainID == 3)
+        {
+            questInfoOnPhone.material = linjeMaterial[3];
+        }
+        else if (currentQuest.trainID == 4)
+        {
+            questInfoOnPhone.material = linjeMaterial[4];
+        }
+        else if (currentQuest.trainID == 5)
+        {
+            questInfoOnPhone.material = linjeMaterial[5];
+        }
     }
 
     public void CompleteQuest(QuestData quest)
@@ -60,13 +105,8 @@ public class QuestManager : MonoBehaviour
      //   GameManager.instance.CompleteQuestArea();
         audioSource.clip = questCompleteSound;
         audioSource.Play();
-        questCompletedOrFail.text = "Tillykke!\r\nDu tog det rigtige tog";
         Debug.Log("Quest Complete");
-      //  questInfoOnPhone.enabled = false;
-        questText.text = "";
-      
-        currentQuest = null;
-        
+    
 
     }
 
@@ -74,14 +114,7 @@ public class QuestManager : MonoBehaviour
     {
         // Play sound, wrong train.
 
-        //audioSource.clip = questFailedSound;
-        //audioSource.Play();
-
-        //GameManager.instance.CompleteQuestArea();
-        questCompletedOrFail.text = "Desværre!\r\nDu tog det forkerte tog";
-        questText.text = "";
-        currentQuest = null;
-        Debug.Log("Quest failed, wrong train");
+     
 
     }
 
