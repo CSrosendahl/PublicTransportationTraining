@@ -16,7 +16,7 @@ public class QuestObjective : MonoBehaviour
     }
     private void Start()
     {
-     
+    
     }
 
     private void OnTriggerEnter(Collider other)
