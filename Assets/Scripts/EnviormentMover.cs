@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class EnvironmentMover : MonoBehaviour
 {
+    public static EnvironmentMover instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+      
+    }
     public Transform destination;
 
-    public bool moveForward = true; // Controls whether the train moves to the forward or backward destination
+    public bool moveForward; // Controls whether the train moves to the forward or backward destination
 
     [Header("Movement:")]
     public float maxSpeed = 1.0f;

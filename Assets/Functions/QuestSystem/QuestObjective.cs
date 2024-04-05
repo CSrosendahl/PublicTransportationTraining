@@ -64,8 +64,12 @@ public class QuestObjective : MonoBehaviour
                     // Run fade to black here and load the next scene
 
                     GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
+
+
+
+                    // HER PAWÆ
                     SceneTransitionManager.instance.GoToScene(1);
-                   // _SceneManager.instance.LoadSceneWithDelay("TrainTrip",3f);
+                
                       
               
                    

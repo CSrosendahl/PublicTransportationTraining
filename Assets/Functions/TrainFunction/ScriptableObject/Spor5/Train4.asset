@@ -20,4 +20,36 @@ MonoBehaviour:
   trainPrefab: {fileID: 3423709466865134100, guid: 94226fcff5a5e3b47b511d0641202dbe,
     type: 3}
   spawnPosition: {x: 255, y: -7.112985, z: 3.034}
-  stations: []
+  stations:
+  - 'Frederikssund '
+  - Vinge
+  - "\xD8lstykke"
+  - Egedal
+  - "Stenl\xF8se"
+  - "Veks\xF8"
+  - Kildedal
+  - "M\xE5l\xF8v"
+  - Ballerup
+  - Malmparken
+  - Skovlunde
+  - Herlev
+  - Husum
+  - Islev
+  - Jyllingevej
+  - "Vanl\xF8se"
+  - Flintholm
+  - Peter Bangs Vej
+  - Langgade
+  - Valby
+  - Carlsberg
+  - "Dybb\xF8lsbro"
+  - "K\xF8benhavn H"
+  - Vesterport
+  - "N\xF8rreport"
+  - "\xD8sterport"
+  - Nordhavn
+  - "Svanem\xF8llen"
+  - Hellerup
+  - Charlottenlund
+  - Ordrup
+  - Klampenborg

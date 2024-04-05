@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
         {
             EnableCorrectTrain();
-
+            SceneTransitionManager.instance.fadeScreen.FadeIn();
 
 
         }
@@ -84,13 +84,19 @@ public class GameManager : MonoBehaviour
                 if (rejseStatus.track == savedData.trainDataEntered.track)
                 {
                     insideTrains[i].SetActive(true); // Enable the GameObject
+                    
                 }
                 else
                 {
                     insideTrains[i].SetActive(false); // Disable the GameObject
                 }
             }
+            if(rejseStatus.track == 5)
+            {
+                EnvironmentMover.instance.moveForward = false;
+            }
         }
+       
     }
 
     // Disable NPC button
