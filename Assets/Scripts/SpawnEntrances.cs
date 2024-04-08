@@ -21,6 +21,9 @@ public class SpawnEntrances : MonoBehaviour
             {
                 GameManager.instance.playerObject.transform.position = spawnEntrances[i].transform.position;
                 GameManager.instance.playerObjectIK.transform.position = spawnEntrances[i].transform.position;
+
+                GameManager.instance.playerObject.transform.SetParent(spawnEntrances[i].transform);
+                GameManager.instance.playerObjectIK.transform.SetParent(spawnEntrances[i].transform);
                 GameManager.instance.StartCoroutine(GameManager.instance.EnableHandPhysicsAfterDelay());
               //  test.transform.position = spawnEntrances[i].transform.position;
                 Debug.Log("Was called");

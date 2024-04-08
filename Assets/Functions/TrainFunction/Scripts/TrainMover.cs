@@ -106,7 +106,7 @@ public class TrainMover : MonoBehaviour
         // Play train move sound here
 
         // If the train is close enough to the current destination, stop and start waiting
-        if (distanceToDestination <= stopDistance && currentSpeed <= 1f && questObjective)
+        if (distanceToDestination <= stopDistance && currentSpeed <= 1f )
         {
  
             
@@ -133,14 +133,14 @@ public class TrainMover : MonoBehaviour
 
 
 
-            if (currentDestination == boardingDestination)
-            {
-                currentDestination = exitDestination;
-            }
-            else
-            {
-                currentDestination = exitDestination;
-            }
+            //if (currentDestination == boardingDestination)
+            //{
+            //    currentDestination = exitDestination;
+            //}
+            //else
+            //{
+            //    currentDestination = exitDestination;
+            //}
 
 
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop

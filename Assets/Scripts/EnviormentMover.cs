@@ -63,18 +63,18 @@ public class EnvironmentMover : MonoBehaviour
         }
 
         // Update spawn timer countdown
-        spawnTimerCountdown -= Time.deltaTime;
-        if (spawnTimerCountdown <= 0)
-        {
-            ActivateNextChild();
-            spawnTimerCountdown = SpawnTimer;
-        }
+        //spawnTimerCountdown -= Time.deltaTime;
+        //if (spawnTimerCountdown <= 0)
+        //{
+        //    ActivateNextChild();
+        //    spawnTimerCountdown = SpawnTimer;
+        //}
 
-        if (Time.deltaTime >= nextDestroyTime)
-        {
-            DestroyFirstChild();
-            nextDestroyTime = Time.deltaTime + destroyInterval;
-        }
+        //if (Time.deltaTime >= nextDestroyTime)
+        //{
+        //    DestroyFirstChild();
+        //    nextDestroyTime = Time.deltaTime + destroyInterval;
+        //}
     }
 
     void MoveTrain()
@@ -157,12 +157,12 @@ public class EnvironmentMover : MonoBehaviour
     // Event handler for when the train enters the station
     private void OnEnable()
     {
-        StationCollider.OnTrainEnterStation += HandleTrainEnterStation;
+       // StationCollider.OnTrainEnterStation += HandleTrainEnterStation;
     }
 
     private void OnDisable()
     {
-        StationCollider.OnTrainEnterStation -= HandleTrainEnterStation;
+       // StationCollider.OnTrainEnterStation -= HandleTrainEnterStation;
     }
 
 
