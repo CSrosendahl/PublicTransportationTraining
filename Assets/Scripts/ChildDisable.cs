@@ -11,6 +11,8 @@ public class ChildDisable : MonoBehaviour
     private Transform[] children; // Array to hold references to the children objects
     private int enableIndex = 1; // Index to keep track of which child to enable next
     private int disableIndex = 0; // Index to keep track of which child to disable next
+    public float startDelay = 10f; // Delay before starting the enable/disable routine
+    public GameObject valbyStation;
 
     void Start()
     {
@@ -21,6 +23,16 @@ public class ChildDisable : MonoBehaviour
             children[i] = parentObject.GetChild(i);
         }
 
+        // Start the delayed coroutine to enable/disable children
+        StartCoroutine(DelayedStart());
+    }
+
+    IEnumerator DelayedStart()
+    {
+        // Wait for the specified start delay
+        yield return new WaitForSeconds(startDelay);
+
+        valbyStation.SetActive(false);
         // Start the coroutine to enable/disable children
         StartCoroutine(EnableDisableRoutine());
     }
