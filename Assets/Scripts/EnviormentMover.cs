@@ -73,6 +73,7 @@ public class EnvironmentMover : MonoBehaviour
         //if (Time.deltaTime >= nextDestroyTime)
         //{
         //    DestroyFirstChild();
+
         //    nextDestroyTime = Time.deltaTime + destroyInterval;
         //}
     }
