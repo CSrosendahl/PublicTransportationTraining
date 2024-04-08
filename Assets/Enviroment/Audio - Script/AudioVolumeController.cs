@@ -59,7 +59,7 @@ public class AudioVolumeController : MonoBehaviour
             unmuteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
             audioSource1.volume = 0.0f;
             audioSource2.volume = 1.0f;
-            Debug.Log("Unmuting the train");
+            //Debug.Log("Unmuting the train");
         }
         else if (!insideCollider1 && !insideCollider2 && insideCollider3)
         {

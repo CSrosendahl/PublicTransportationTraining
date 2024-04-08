@@ -31,7 +31,7 @@ public class _SceneManager : MonoBehaviour
     {
         if(SceneManager.GetSceneByName("TrainTrip").isLoaded)
         {
-            Debug.Log("TrainTrip is loaded");
+           // Debug.Log("TrainTrip is loaded");
             GameManager.instance.canSpawnTrains = false;
         }
     }
