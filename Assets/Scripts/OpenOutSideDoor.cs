@@ -42,4 +42,14 @@ public class OpenOutSideDoor : MonoBehaviour
                 animator.SetBool("Open", false);
         }
     }
+
+    public void SetOpenDoors(bool value)
+    {
+        openDoors = value;
+
+        foreach (Animator animator in animators)
+        {
+            animator.SetBool("Open", value);
+        }
+    }
 }

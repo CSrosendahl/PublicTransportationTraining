@@ -69,6 +69,7 @@ public class TrainTripMover : MonoBehaviour
 
     IEnumerator WaitAtDestination()
     {
+        OpenOutSideDoor.instance.SetOpenDoors(true); // Open the doors
         yield return new WaitForSeconds(waitTime);
 
         // Find the index of the current destination in the boardingDestinations array
@@ -88,6 +89,7 @@ public class TrainTripMover : MonoBehaviour
             currentDestination = boardingDestinations[currentIndex];
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
+            OpenOutSideDoor.instance.SetOpenDoors(false); // Close the doors
         }
     }
 
