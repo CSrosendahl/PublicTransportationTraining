@@ -31,13 +31,6 @@ public class TrainTripMover : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Station")
-        {
-            Debug.Log("TEST");
-        }
-    }
 
     void MoveTrain()
     {
