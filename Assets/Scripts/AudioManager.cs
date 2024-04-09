@@ -22,7 +22,10 @@ public class AudioManager : MonoBehaviour
 
 
     public AudioSource allAroundAudioSource;
+
     public AudioClip openDoorSound;
+    public AudioClip trainMoveSound;
+    public AudioClip trainStandStillSound;
     public float waitTime = 60f;
 
     private void Start()

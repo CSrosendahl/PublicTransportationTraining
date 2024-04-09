@@ -16,6 +16,8 @@ public class TrainTripMover : MonoBehaviour
     public float currentSpeed = 0f; // Current speed of the train
     public bool isMoving = false; // Is the train moving?
 
+    public bool playSoundOnce;
+
     void Start()
     {
         // Set the first destination as the current one and start moving
@@ -34,6 +36,11 @@ public class TrainTripMover : MonoBehaviour
 
     void MoveTrain()
     {
+        if(!playSoundOnce)
+        {
+            AudioManager.instance.PlayAudioClip(AudioManager.instance.trainMoveSound);
+            playSoundOnce = true;
+        }
         // Calculate the distance to the current destination
         float distanceToDestination = Vector3.Distance(transform.position, currentDestination.position);
 
@@ -62,9 +69,12 @@ public class TrainTripMover : MonoBehaviour
 
     IEnumerator WaitAtDestination()
     {
-        AudioManager.instance.PlayAudioClip(AudioManager.instance.openDoorSound); // Play the door opening sound
-        OpenOutSideDoor.instance.SetOpenDoors(true); // Open the doors
+        
+
       
+        OpenOutSideDoor.instance.SetOpenDoors(true); // Open the doors
+    
+      //  StartCoroutine(CloseDoorWaitTime());
         yield return new WaitForSeconds(waitTime);
 
         // Find the index of the current destination in the boardingDestinations array
@@ -85,9 +95,13 @@ public class TrainTripMover : MonoBehaviour
             currentDestination = boardingDestinations[currentIndex];
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
-            AudioManager.instance.PlayAudioClip(AudioManager.instance.openDoorSound); // Play the door opening sound
-            OpenOutSideDoor.instance.SetOpenDoors(false); // Close the doors
+            playSoundOnce = false;
+
+            // Play the door opening sound
+
+            //OpenOutSideDoor.instance.SetOpenDoors(false); // Close the doors
         }
     }
+
 
 }

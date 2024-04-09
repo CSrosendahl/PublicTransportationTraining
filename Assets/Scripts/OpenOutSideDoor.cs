@@ -27,11 +27,13 @@ public class OpenOutSideDoor : MonoBehaviour
 
     public void OpenOutsideDoors()
     {
+        AudioManager.instance.PlayAudioClip(AudioManager.instance.openDoorSound);
 
         foreach (Animator animator in animators)
         {
             animator.SetBool("Open", true);
         }
+        StartCoroutine(CloseDoorWait());
 
     }
 
@@ -51,5 +53,13 @@ public class OpenOutSideDoor : MonoBehaviour
         {
             animator.SetBool("Open", value);
         }
+    }
+
+    IEnumerator CloseDoorWait()
+    {
+        
+        yield return new WaitForSeconds(5f);
+        CloseOutSideDoors();
+    
     }
 }
