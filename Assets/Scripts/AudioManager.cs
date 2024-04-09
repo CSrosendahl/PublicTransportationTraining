@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
 
 
     public AudioSource allAroundAudioSource;
+   
 
     public AudioClip openDoorSound;
     public AudioClip trainMoveSound;
@@ -62,8 +63,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudioClip(AudioClip audioClip)
     {
+        if (allAroundAudioSource.isPlaying)
+        {
+            allAroundAudioSource.Stop();
+        }
         allAroundAudioSource.clip = audioClip;
 
         allAroundAudioSource.Play();
+        
+
     }
+
+
 }

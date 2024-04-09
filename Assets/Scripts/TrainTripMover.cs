@@ -23,6 +23,8 @@ public class TrainTripMover : MonoBehaviour
         // Set the first destination as the current one and start moving
         currentDestination = boardingDestinations[0];
         isMoving = true;
+        playSoundOnce = false;
+
     }
 
     void Update()
@@ -69,10 +71,10 @@ public class TrainTripMover : MonoBehaviour
 
     IEnumerator WaitAtDestination()
     {
-        
 
-      
-        OpenOutSideDoor.instance.SetOpenDoors(true); // Open the doors
+
+        
+        OpenOutSideDoor.instance.OpenCloseDoors(); // Open the doors
     
       //  StartCoroutine(CloseDoorWaitTime());
         yield return new WaitForSeconds(waitTime);

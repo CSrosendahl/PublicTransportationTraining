@@ -14,17 +14,17 @@ public class RejseStatus : MonoBehaviour
     public List<StationElement> stationElements;
     public int track;
 
-   
 
 
-    public string startingStationName = "Valby"; // Station name to start blinking from
+
+    public string startingStationName;
 
     private int startBlinkingFromIndex = -1;
 
     void Start()
     {
         trainData = GameManager.instance.savedData.trainDataEntered;
-
+        startingStationName = "Valby"; // Station name to start blinking from
         PopulateStationNames();
         if (startBlinkingFromIndex != -1)
         {
