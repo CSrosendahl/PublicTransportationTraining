@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Primitives;
 
 public class RejseStatus : MonoBehaviour
 {
     public TrainData trainData;
-    public float Dottimer = 2f; // Duration each dot is visible during blinking
+
+    [Header("Timers:")]
+    public float byeDot = 15f;
     public float blinkInterval = 0.2f; // Interval between blinks
-    public float TimeOnStation = 5f; // Time to wait on each station
-    public float waitOnStation = 5f; // Time to wait on each station
+    private float waitOnStation; // Time to wait on each station
     public float WaitBeforeStart = 5f; // Time to wait before starting the blinking
+  
     public List<StationElement> stationElements;
     public int track;
 
@@ -90,7 +93,7 @@ public class RejseStatus : MonoBehaviour
                     if (dot.name == "TinyCube")
                     {
                         float startTime = Time.time;
-                        while (Time.time - startTime < TimeOnStation)
+                        while (Time.time - startTime < waitOnStation)
                         {
                             renderer.enabled = !renderer.enabled;
                             yield return new WaitForSeconds(blinkInterval);
@@ -99,7 +102,7 @@ public class RejseStatus : MonoBehaviour
                     }
                     else
                     {
-                        yield return new WaitForSeconds(Dottimer); // Wait for blink duration
+                        yield return new WaitForSeconds(byeDot); // Wait for blink duration
                         dot.SetActive(false); // Disable Dots after blink duration
                     }
                 }
