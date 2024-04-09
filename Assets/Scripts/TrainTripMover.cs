@@ -16,7 +16,7 @@ public class TrainTripMover : MonoBehaviour
     public float currentSpeed = 0f; // Current speed of the train
     public bool isMoving = false; // Is the train moving?
 
-    public bool playSoundOnce;
+    private bool playSoundOnce;
 
     void Start()
     {

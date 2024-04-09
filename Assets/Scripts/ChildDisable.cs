@@ -62,4 +62,6 @@ public class ChildDisable : MonoBehaviour
             yield return new WaitForSeconds(disableDelay - enableDelay);
         }
     }
+
+  
 }
