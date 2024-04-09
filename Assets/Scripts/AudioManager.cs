@@ -4,8 +4,25 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public static AudioManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+     
+    }
+
     public AudioClip[] audioClips;
     public List<AudioSource> targetAudioSources;
+
+
+
+
+    public AudioSource allAroundAudioSource;
+    public AudioClip openDoorSound;
     public float waitTime = 60f;
 
     private void Start()
@@ -38,5 +55,12 @@ public class AudioManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlayAudioClip(AudioClip audioClip)
+    {
+        allAroundAudioSource.clip = audioClip;
+
+        allAroundAudioSource.Play();
     }
 }
