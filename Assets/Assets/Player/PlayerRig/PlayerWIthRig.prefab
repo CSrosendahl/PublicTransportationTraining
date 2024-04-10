@@ -100,7 +100,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1025,7 +1025,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fcce1858321b8364d935a7fd6a85981d, type: 2}
+  - {fileID: 2100000, guid: b7f7eac620de7d549ae0ce47e0f5d722, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d6ea62818a7544dae67add1b5b8876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOnStart: 0
+  fadeOnStart: 1
   fadeDuration: 2
   fadeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8021676756379801378
