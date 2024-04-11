@@ -22,16 +22,24 @@ public class RejseStatus : MonoBehaviour
 
     public string startingStationName;
 
-    private int startBlinkingFromIndex = -1;
+    public int startBlinkingFromIndex = -1;
+
+
+    private int currentDotIndex = -1; // Track the current dot index to be decremented
 
     void Start()
     {
+        
         trainData = GameManager.instance.savedData.trainDataEntered;
+
+       // waitOnStation = GetComponent<TrainTripMover>().waitTime;
+
         startingStationName = "Valby"; // Station name to start blinking from
         PopulateStationNames();
         if (startBlinkingFromIndex != -1)
         {
-            StartCoroutine(StartBlinkingWithInitialWait(startBlinkingFromIndex));
+            // StartCoroutine(StartBlinkingWithInitialWait(startBlinkingFromIndex));
+            DecrementDot(startBlinkingFromIndex);
         }
     }
 
@@ -124,7 +132,49 @@ public class RejseStatus : MonoBehaviour
         StartCoroutine(BlinkDots(startIndex));
     }
 
+   
+
+    public void DecrementDot(int startIndex)
+    {
+        for (int i = startIndex; i < stationElements.Count; i++)
+        {
+            var stationElement = stationElements[i];
+            foreach (var dot in stationElement.dots)
+            {
+                Renderer renderer = dot.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    if (dot.name == "TinyCube")
+                    {
+                        float startTime = Time.time;
+                        while (Time.time - startTime < waitOnStation)
+                        {
+                            renderer.enabled = !renderer.enabled;
+                          //  yield return new WaitForSeconds(blinkInterval);
+                        }
+                        renderer.enabled = false; // Ensure TinyCube is hidden after blinking
+                    }
+                    else
+                    {
+                      //  yield return new WaitForSeconds(byeDot); // Wait for blink duration
+                        dot.SetActive(false); // Disable Dots after blink duration
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Renderer component not found on the current object.");
+                }
+            }
+          //  yield return new WaitForSeconds(waitOnStation); // Wait for specified time between stations
+        }
+    }
+
+    
+
+
 }
+
+
 
 [System.Serializable]
 public class StationElement
