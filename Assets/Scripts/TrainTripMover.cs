@@ -87,6 +87,8 @@ public class TrainTripMover : MonoBehaviour
         {
             // Set the exit destination
            
+           
+
             isMoving = false; // Stop the train from moving
         }
         else

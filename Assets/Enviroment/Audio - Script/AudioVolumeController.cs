@@ -51,7 +51,7 @@ public class AudioVolumeController : MonoBehaviour
             muteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
             audioSource1.volume = 1.0f;
             audioSource2.volume = 0.0f;
-            Debug.Log("Muting the train");
+          //  Debug.Log("Muting the train");
         }
         else if (insideCollider2 && !insideCollider1 && !insideCollider3)
         {
@@ -67,7 +67,7 @@ public class AudioVolumeController : MonoBehaviour
             muteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
             audioSource1.volume = 1.0f;
             audioSource2.volume = 0.0f;
-            Debug.Log("Muting the train");
+          //  Debug.Log("Muting the train");
         }
         else
         {
@@ -86,7 +86,7 @@ public class AudioVolumeController : MonoBehaviour
 
             // Transition to the unmute snapshot
             unmuteSnapshot.TransitionTo(0.1f); // Adjust transition time as needed
-            Debug.Log("Unmuting the train");
+           // Debug.Log("Unmuting the train");
         }
     }
 }

@@ -13,8 +13,15 @@ public class RejseStatus : MonoBehaviour
     public float blinkInterval = 0.2f; // Interval between blinks
     private float waitOnStation; // Time to wait on each station
     public float WaitBeforeStart = 5f; // Time to wait before starting the blinking
+    private TrainTripMover tripMover;
+    private float timer;
   
     public List<StationElement> stationElements;
+
+    public List<GameObject> dotList;
+
+
+
     public int track;
 
 
@@ -23,24 +30,25 @@ public class RejseStatus : MonoBehaviour
     public string startingStationName;
 
     public int startBlinkingFromIndex = -1;
+    public int currentDotIndex = 1;
 
-
-    private int currentDotIndex = -1; // Track the current dot index to be decremented
 
     void Start()
     {
-        
+        currentDotIndex = 1;
+
+       
+
+        tripMover = GetComponentInParent<TrainTripMover>();
         trainData = GameManager.instance.savedData.trainDataEntered;
-
-       // waitOnStation = GetComponent<TrainTripMover>().waitTime;
-
         startingStationName = "Valby"; // Station name to start blinking from
         PopulateStationNames();
-        if (startBlinkingFromIndex != -1)
-        {
-            // StartCoroutine(StartBlinkingWithInitialWait(startBlinkingFromIndex));
-            DecrementDot(startBlinkingFromIndex);
-        }
+     
+        //if (startBlinkingFromIndex != -1)
+        //{
+        //    // StartCoroutine(StartBlinkingWithInitialWait(startBlinkingFromIndex));
+        //    DecrementDot(startBlinkingFromIndex);
+        //}
     }
 
     void PopulateStationNames()
@@ -82,10 +90,17 @@ public class RejseStatus : MonoBehaviour
             {
                 foreach (var dot in stationElements[i].dots)
                 {
+    
                     dot.SetActive(false);
+
                 }
+            }else
+            {
+                dotList.AddRange(stationElements[i].dots);
             }
+
         }
+        dotList[0].gameObject.GetComponent<Renderer>().enabled = false; // Have to disable valby st. tiny cube at start (RIP)
     }
 
     IEnumerator BlinkDots(int startIndex)
@@ -132,44 +147,57 @@ public class RejseStatus : MonoBehaviour
         StartCoroutine(BlinkDots(startIndex));
     }
 
-   
 
-    public void DecrementDot(int startIndex)
+
+    public void DecrementDot(int decrementIndex)
     {
-        for (int i = startIndex; i < stationElements.Count; i++)
+        if (decrementIndex >= 0 && decrementIndex < dotList.Count)
         {
-            var stationElement = stationElements[i];
-            foreach (var dot in stationElement.dots)
+            var dot = dotList[decrementIndex];
+
+            Renderer renderer = dot.GetComponent<Renderer>();
+            if (renderer != null)
             {
-                Renderer renderer = dot.GetComponent<Renderer>();
-                if (renderer != null)
+
+
+                if (dotList[decrementIndex].name == "TinyCube")
                 {
-                    if (dot.name == "TinyCube")
-                    {
-                        float startTime = Time.time;
-                        while (Time.time - startTime < waitOnStation)
-                        {
-                            renderer.enabled = !renderer.enabled;
-                          //  yield return new WaitForSeconds(blinkInterval);
-                        }
-                        renderer.enabled = false; // Ensure TinyCube is hidden after blinking
-                    }
-                    else
-                    {
-                      //  yield return new WaitForSeconds(byeDot); // Wait for blink duration
-                        dot.SetActive(false); // Disable Dots after blink duration
-                    }
+                 
+  
+                    // Make it so the tiny cube will blink when we reach a station.
+
+                    renderer.enabled = false; // Hide TinyCube
                 }
                 else
                 {
-                    Debug.LogWarning("Renderer component not found on the current object.");
+
+                    dot.SetActive(false); // Disable the dot
+                   
                 }
             }
-          //  yield return new WaitForSeconds(waitOnStation); // Wait for specified time between stations
+            else
+            {
+                Debug.LogWarning("Renderer component not found on the current dot object.");
+            }
+            currentDotIndex++;
+        }
+        else
+        {
+            Debug.LogWarning("Invalid decrement index: " + decrementIndex);
         }
     }
 
-    
+    private IEnumerator Blinker(Renderer renderer)
+    {
+
+
+        renderer.enabled = true;
+        yield return new WaitForSeconds(blinkInterval);
+        renderer.enabled = false; // Ensure TinyCube is hidden after blinking
+        
+    }
+  
+
 
 
 }

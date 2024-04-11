@@ -7,14 +7,20 @@ public class IncrementDotScript : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-        RejseStatus rejseStatusScript = other.GetComponent<RejseStatus>();
+
+        RejseStatus[] rejseStatusScripts = other.GetComponentsInChildren<RejseStatus>();
 
         if(other.CompareTag("Train"))
         {
-            if (rejseStatusScript != null)
+            if (rejseStatusScripts != null)
             {
                 Debug.Log("Triggered");
-                rejseStatusScript.DecrementDot(rejseStatusScript.startBlinkingFromIndex);
+                foreach (var rejseStatusScript in rejseStatusScripts)
+                {
+                    rejseStatusScript.DecrementDot(rejseStatusScript.currentDotIndex);
+     
+                }
+              
             }
         }
     }
