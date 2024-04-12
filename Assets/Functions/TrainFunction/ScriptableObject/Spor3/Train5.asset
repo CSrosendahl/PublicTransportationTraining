@@ -14,42 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainID: 5
   track: 3
-  trainName: "\xD8sterport"
-  trainLineMaterial: {fileID: 2100000, guid: 3f2625dc5816f2d49b3fb6fae0a82dfa, type: 2}
-  texture: {fileID: 2800000, guid: 76d097bac988e2942beb9a20962d3256, type: 3}
+  trainName: Buddinge
+  trainLineMaterial: {fileID: 2100000, guid: bdc98aab7f821f0438620ed0c7dd41f0, type: 2}
+  texture: {fileID: 2800000, guid: 41a8b5463f28e6e4e97b9617c4f7d338, type: 3}
   trainPrefab: {fileID: 1487737097576795639, guid: 4ea963a885d1f724893d49de04792ecf,
     type: 3}
   spawnPosition: {x: -300, y: -7.112, z: -16.028}
   stations:
-  - 'Frederikssund '
-  - Vinge
-  - "\xD8lstykke"
-  - Egedal
-  - "Stenl\xF8se"
-  - "Veks\xF8"
-  - Kildedal
-  - "M\xE5l\xF8v"
-  - Ballerup
-  - Malmparken
-  - Skovlunde
-  - Herlev
-  - Husum
-  - Islev
-  - Jyllingevej
-  - "Vanl\xF8se"
-  - Flintholm
-  - Peter Bangs Vej
-  - Langgade
-  - Valby
-  - Carlsberg
-  - "Dybb\xF8lsbro"
+  - "H\xF8je Taastrup"
+  - Taastrup
+  - 'Albertslund '
+  - 'Glostrup '
+  - "Br\xF8ndby\xF8ster "
+  - "R\xF8dovre "
+  - "Dansh\xF8j "
+  - 'Valby '
+  - 'Carlsberg '
+  - "Dybb\xF8lsbro "
   - "K\xF8benhavn H"
-  - Vesterport
-  - "N\xF8rreport"
-  - "\xD8sterport"
-  - Nordhavn
-  - "Svanem\xF8llen"
-  - Hellerup
-  - Charlottenlund
-  - Ordrup
-  - Klampenborg
+  - 'Vesterport '
+  - "N\xF8rreport "
+  - "\xD8sterport "
+  - 'Nordhavn '
+  - "Svanem\xF8llen "
+  - 'Ryparken '
+  - 'Emdrup '
+  - "Dysseg\xE5rd "
+  - 'Vangede '
+  - 'Kildebakke '
+  - 'Buddinge '
