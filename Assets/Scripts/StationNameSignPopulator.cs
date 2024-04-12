@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class StationNameSignPopulator : MonoBehaviour
 {
-    public List<TextMeshPro> stationNameSign; // Reference to the TextMeshPro objects
+    [System.Serializable]
+    public class StationTextPair
+    {
+        public string stationName;
+        public List<TextMeshPro> textElements = new List<TextMeshPro>();
+    }
+
+    public List<StationTextPair> stationNameSignPairs; // Reference to the station name and associated TextMeshPro objects
     public TrainData trainData; // Reference to the TrainData object
 
     private void Start()
@@ -15,9 +22,9 @@ public class StationNameSignPopulator : MonoBehaviour
 
     public void PopulateStationNameSign()
     {
-        if (stationNameSign == null || trainData == null)
+        if (stationNameSignPairs == null || trainData == null)
         {
-            Debug.LogWarning("stationNameSign or trainData is null. Make sure to assign references.");
+            Debug.LogWarning("stationNameSignPairs or trainData is null. Make sure to assign references.");
             return;
         }
 
@@ -40,9 +47,23 @@ public class StationNameSignPopulator : MonoBehaviour
             int numStationsToPopulate = Mathf.Min(stationNames.Length - startIndex - 1, 6);
             for (int i = 0; i < numStationsToPopulate; i++)
             {
-                if (stationNameSign[i] != null)
+                if (i < stationNameSignPairs.Count)
                 {
-                    stationNameSign[i].text = stationNames[startIndex + i + 1]; // Start from index after "Valby"
+                    string stationName = stationNames[startIndex + i + 1]; // Start from index after "Valby"
+                    stationNameSignPairs[i].stationName = stationName;
+
+                    foreach (TextMeshPro textElement in stationNameSignPairs[i].textElements)
+                    {
+                        if (textElement != null)
+                        {
+                            textElement.text = stationName;
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Insufficient StationTextPair elements for population.");
+                    break;
                 }
             }
         }
@@ -51,7 +72,4 @@ public class StationNameSignPopulator : MonoBehaviour
             Debug.LogWarning("Valby station not found in the train data.");
         }
     }
-
-  
-   
 }
