@@ -15,7 +15,10 @@ public class RejseStatus : MonoBehaviour
     public float WaitBeforeStart = 5f; // Time to wait before starting the blinking
     private TrainTripMover tripMover;
     private float timer;
+
+
   
+
     public List<StationElement> stationElements;
 
     public List<GameObject> dotList;
@@ -41,12 +44,8 @@ public class RejseStatus : MonoBehaviour
         trainData = GameManager.instance.savedData.trainDataEntered;
         startingStationName = "Valby"; // Station name to start blinking from
         PopulateStationNames();
-     
-        //if (startBlinkingFromIndex != -1)
-        //{
-        //    // StartCoroutine(StartBlinkingWithInitialWait(startBlinkingFromIndex));
-        //    DecrementDot(startBlinkingFromIndex);
-        //}
+      
+
     }
 
     void PopulateStationNames()
@@ -194,7 +193,8 @@ public class RejseStatus : MonoBehaviour
         renderer.enabled = false; // Ensure TinyCube is hidden after blinking
         
     }
-  
+
+
 
 
 
