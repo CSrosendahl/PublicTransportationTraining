@@ -240,6 +240,8 @@ public class QuestManager : MonoBehaviour
     public void SubTaskWatchScreen()
     {
         Debug.Log("Watching the info screen");
+        subText_WatchScreen.color = Color.green;
+        checkmark_WatchScreen.SetActive(true);
         completedWatchScreen = true;
         subTaskCompleted++;
     }
@@ -248,6 +250,8 @@ public class QuestManager : MonoBehaviour
         if(GameManager.instance.hasCheckedIn)
         {
             Debug.Log("U managed to check in");
+            subText_CheckIn.color = Color.green;
+            checkmark_CheckIn.SetActive(true);
             completedCheckIn= true;
             subTaskCompleted++;
             
@@ -259,6 +263,8 @@ public class QuestManager : MonoBehaviour
         if (trackID == currentQuest.trainTrack)
         {
             Debug.Log("We are on the correct train track");
+            subText_CorrectTrack.color = Color.green;
+            checkmark_CorrectTrack.SetActive(true);
             completedCorrectTrack= true;
             subTaskCompleted++;
             
@@ -267,6 +273,8 @@ public class QuestManager : MonoBehaviour
     public void SubTaskCorrectTrain()
     {
         Debug.Log("You entered to correct train");
+        subText_CorrectTrain.color = Color.green;
+        checkmark_CorrectTrain.SetActive(true);
         completedCorrectTrain = true;
         subTaskCompleted++;
 
