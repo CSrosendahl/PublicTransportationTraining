@@ -33,6 +33,13 @@ public class QuestManager : MonoBehaviour
     public GameObject checkmark_CorrectTrack;
     public GameObject checkmark_CheckIn;
     public GameObject checkmark_CorrectTrain;
+
+    public bool completedWatchScreen;
+    public bool completedCorrectTrack;
+    public bool completedCheckIn;
+    public bool completedCorrectTrain;
+
+    public int subTaskCompleted;
      
     public MeshRenderer questInfoOnPhone; // This will display the image of the trains line on the phone (f. eks "H" or "F" etc. train)
     public Material[] linjeMaterial; // Optimize thiiiiiiis! (This belongs to questInfoOnPhone)
@@ -49,6 +56,11 @@ public class QuestManager : MonoBehaviour
         if (SceneManager.GetSceneByName("Map").isLoaded)
         {
             // Do stuff
+            completedWatchScreen = false;
+            completedCorrectTrack = false;
+            completedCheckIn = false;
+            completedCorrectTrain = false;
+
             AcceptQuest();
          
 
@@ -57,13 +69,19 @@ public class QuestManager : MonoBehaviour
         {
             // Do stuff
             currentQuest = GameManager.instance.savedData.currentQuest;
+            subTaskCompleted = GameManager.instance.savedData.subTasksCompleted;
 
-            DisplayQuestInfo(currentQuest);
+            DisplayTrainTripQuest();
            
 
         }
 
 
+    }
+
+    private void Update()
+    {
+        SubTasksCompleted();
     }
     public void AcceptQuest()
     {
@@ -80,8 +98,19 @@ public class QuestManager : MonoBehaviour
         if (currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
-            questText0.text = currentQuest.questDescription + "\n";
             questText1.text = currentQuest.exitOnStation + "\n";
+
+            questText0.text = "";        
+            subText_WatchScreen.text = "";
+            subText_CorrectTrack.text = "";
+            subText_CheckIn.text = "";
+            subText_CorrectTrain.text = "";
+
+  
+            checkmark_WatchScreen.SetActive(false);
+            checkmark_CorrectTrack.SetActive(false);
+            checkmark_CheckIn.SetActive(false);
+            checkmark_CorrectTrain.SetActive(false);
         }
       
 
@@ -127,11 +156,15 @@ public class QuestManager : MonoBehaviour
 
     }
 
-    public void WrongQuestObjective()
+    public void EnteredWrongTrain()
     {
         // Play sound, wrong train.
 
-     
+ 
+    }
+
+    public void ExitOnTheWrongStation()
+    {
 
     }
 
@@ -195,24 +228,43 @@ public class QuestManager : MonoBehaviour
     public void SubTaskWatchScreen()
     {
         Debug.Log("Watching the info screen");
+        completedWatchScreen = true;
+        subTaskCompleted++;
     }
     public void SubTaskCheckIn()
     {
-
+        if(GameManager.instance.hasCheckedIn)
+        {
+            Debug.Log("U managed to check in");
+            completedCheckIn= true;
+            subTaskCompleted++;
+            
+        }
     }
     public void SubTaskCorrectTrack(int trackID)
     {
-        if(trackID == currentQuest.trainTrack)
+
+        if (trackID == currentQuest.trainTrack)
         {
             Debug.Log("We are on the correct train track");
+            completedCorrectTrack= true;
+            subTaskCompleted++;
+            
         }
     }
     public void SubTaskCorrectTrain()
     {
+        Debug.Log("You entered to correct train");
+        completedCorrectTrain = true;
+        subTaskCompleted++;
+
 
     }
    
-
+    public void SubTasksCompleted()
+    {
+        Debug.Log("You completed " + subTaskCompleted);
+    }
 
 }
 

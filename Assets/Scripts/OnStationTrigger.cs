@@ -13,6 +13,7 @@ public class OnStationTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered " + stationName);
+            QuestStatus();
             // Fade to black ? 
         }
     }
@@ -21,7 +22,10 @@ public class OnStationTrigger : MonoBehaviour
     {
         if(QuestManager.instance.currentQuest.questName == stationName)
         {
-
+            QuestManager.instance.CompleteQuest(QuestManager.instance.currentQuest);
+        }else
+        {
+            QuestManager.instance.ExitOnTheWrongStation();
         }
     }
 

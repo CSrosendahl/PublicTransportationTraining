@@ -11,6 +11,7 @@ public class GameData : ScriptableObject
     public Transform spawnTrainEntranceEntered;
     public int spawnEntranceNumber;
     public QuestData currentQuest;
+    public int subTasksCompleted;
 
    
 
@@ -23,5 +24,7 @@ public class GameData : ScriptableObject
         trainObjectEntered = null;
         spawnTrainEntranceEntered = null;
         position = Vector3.zero;
+        currentQuest = null;
+        subTasksCompleted = 0;
     }
 }

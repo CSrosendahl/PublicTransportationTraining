@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour
             EnableCorrectTrain();
             SceneTransitionManager.instance.fadeScreen.FadeIn();
 
-
         }
 
       
@@ -75,13 +74,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < insideTrains.Length; i++)
         {
-            RejseStatus rejseStatus = insideTrains[i].GetComponent<RejseStatus>();
+            TrainTrackTracker trainTrackTracker = insideTrains[i].GetComponent<TrainTrackTracker>();
 
-            if (rejseStatus != null)
+            if (trainTrackTracker != null)
             {
    
 
-                if (rejseStatus.track == savedData.trainDataEntered.track)
+                if (trainTrackTracker.track == savedData.trainDataEntered.track)
                 {
                     insideTrains[i].SetActive(true); // Enable the GameObject
                     
@@ -91,10 +90,7 @@ public class GameManager : MonoBehaviour
                     insideTrains[i].SetActive(false); // Disable the GameObject
                 }
             }
-            if(rejseStatus.track == 5)
-            {
-                EnvironmentMover.instance.moveForward = false;
-            }
+       
         }
        
     }

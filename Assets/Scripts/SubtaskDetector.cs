@@ -11,24 +11,22 @@ public class SubtaskDetector : MonoBehaviour
         {
             if(this.gameObject.name == "SubTask_WatchScreen")
             {
-                QuestManager.instance.SubTaskWatchScreen();
+                if (!QuestManager.instance.completedWatchScreen)
+                {
+                    QuestManager.instance.SubTaskWatchScreen();
+                }
+               
             }
             if (this.gameObject.name == "SubTask_CorrectTrack")
             {
+                if (!QuestManager.instance.completedCorrectTrack)
+                {
+                    QuestManager.instance.SubTaskCorrectTrack(trainTrack);
+                }
+
+
+            }
     
-               QuestManager.instance.SubTaskCorrectTrack(trainTrack);
-               
-            }
-            if (this.gameObject.name == "SubTask_CorrectCheckIn")
-            {
-
-
-                QuestManager.instance.SubTaskCheckIn();
-            }
-            if (this.gameObject.name == "SubTask_CorrectTrain")
-            {
-                QuestManager.instance.SubTaskCorrectTrain();
-            }
 
         }
     }

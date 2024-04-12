@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b84f7568eb22541872de2a962e2f8a, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  trainDataEntered: {fileID: 0}
-  trainObjectEntered: {fileID: 0}
+  trainDataEntered: {fileID: 11400000, guid: f1c543b3789a44346a9ce77ac9262522, type: 2}
+  trainObjectEntered: {fileID: 2518957668994077430, guid: 80688fca7d0515a458ad62800f32f056,
+    type: 3}
   spawnTrainEntranceEntered: {fileID: 0}
-  spawnEntranceNumber: 0
+  spawnEntranceNumber: 3
   currentQuest:
     questName: 
-    stationName: 
     questDescription: 
+    stationName: 
+    exitOnStation: 
     trainID: 0
-  position: {x: 0, y: 0, z: 0}
+    trainTrack: 0
+  subTasksCompleted: 1
+  position: {x: -23.638424, y: -5.352049, z: 4.849885}

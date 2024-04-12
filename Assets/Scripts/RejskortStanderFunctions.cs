@@ -116,6 +116,11 @@ public class RejskortStanderFunctions : MonoBehaviour
         audioSource.Play();
         canInteract = false;
         GameManager.instance.hasCheckedIn = true;
+
+        if (!QuestManager.instance.completedCheckIn)
+        {
+            QuestManager.instance.SubTaskCheckIn();
+        }
         Debug.Log("Checked in");
 
         // Change material on ScreenText to OkText

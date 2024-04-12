@@ -31,7 +31,8 @@ public class EnterTrain : MonoBehaviour
             saveData.ResetData();
             saveData.trainDataEntered = trainData;
             saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
-            
+
+            saveData.subTasksCompleted = QuestManager.instance.subTaskCompleted;
           
             //GameManager.instance.playerObject.transform.position = spawnEntrance.position;
 

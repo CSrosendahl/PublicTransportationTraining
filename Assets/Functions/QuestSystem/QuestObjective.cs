@@ -36,20 +36,32 @@ public class QuestObjective : MonoBehaviour
 
                     if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
 
-                    {
+                    {      
                         Debug.Log("Correct train,  you are checked in");
-                      
+
+                        if (QuestManager.instance.completedCorrectTrain)
+                        {
+                            QuestManager.instance.SubTaskCorrectTrain();
+
+                        }
+
                         animator.SetTrigger("doorButtonPressed");
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
                         // Play open sound here
-
+                       
 
                     }
                     else if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
                     {
                         Debug.Log("Correct train, but you are not checked in");
-                       
-                      
+
+
+                        if (QuestManager.instance.completedCorrectTrain)
+                        {
+                            QuestManager.instance.SubTaskCorrectTrain();
+
+                        }
+
                         animator.SetTrigger("doorButtonPressed");
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
                     }
@@ -110,7 +122,7 @@ public class QuestObjective : MonoBehaviour
                         }
                         else
                         {
-                            questManager.WrongQuestObjective();
+                            questManager.EnteredWrongTrain();
                             Debug.Log("Wrong train");
                         }
                     }

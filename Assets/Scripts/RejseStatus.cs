@@ -22,8 +22,6 @@ public class RejseStatus : MonoBehaviour
 
 
 
-    public int track;
-
 
 
 
