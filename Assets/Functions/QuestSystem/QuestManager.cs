@@ -16,15 +16,30 @@ public class QuestManager : MonoBehaviour
             instance = this;
         }
     }
-
+    [Header("Quest Data")]
     public List<QuestData> questList; // List of quest with different train IDs
     public QuestData currentQuest; // The player's current quest
-    public TextMeshPro questText; // Text description on the phone
+
+    [Header("UI Elements for phone")]
+    public TextMeshPro questText0; // Text description on the phone (Tag toget i reting af)
+    public TextMeshPro questText1; // Text description on the phone (Stå af på)
+
+    public TextMeshPro subText_WatchScreen; // Text description on the phone (Watch the screen)
+    public TextMeshPro subText_CorrectTrack;  // Text description on the phone (Find the correct track)
+    public TextMeshPro subText_CheckIn; // Text description on the phone (Check in)
+    public TextMeshPro subText_CorrectTrain; // Text description on the phone (Find the correct train)
+
+    public GameObject checkmark_WatchScreen;
+    public GameObject checkmark_CorrectTrack;
+    public GameObject checkmark_CheckIn;
+    public GameObject checkmark_CorrectTrain;
+     
     public MeshRenderer questInfoOnPhone; // This will display the image of the trains line on the phone (f. eks "H" or "F" etc. train)
+    public Material[] linjeMaterial; // Optimize thiiiiiiis! (This belongs to questInfoOnPhone)
+
+
+    [Header("Random stuff")]
     public TextMeshPro questCompletedOrFail;
-
-    public Material[] linjeMaterial; // Optimize thiiiiiiis!
-
     public AudioClip questFailedSound;
     public AudioClip questCompleteSound;
     public AudioSource audioSource;
@@ -43,7 +58,8 @@ public class QuestManager : MonoBehaviour
             // Do stuff
             currentQuest = GameManager.instance.savedData.currentQuest;
 
-            DisplayTrainTripQuest();
+            DisplayQuestInfo(currentQuest);
+           
 
         }
 
@@ -64,7 +80,8 @@ public class QuestManager : MonoBehaviour
         if (currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
-            questText.text = "Stå af på " + currentQuest.stationName + " station";
+            questText0.text = currentQuest.questDescription + "\n";
+            questText1.text = currentQuest.exitOnStation + "\n";
         }
       
 
@@ -133,7 +150,9 @@ public class QuestManager : MonoBehaviour
         if(currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
-            questText.text = quest.questDescription + "\n";
+            questText0.text = quest.questDescription + "\n";
+            questText1.text = quest.exitOnStation + "\n";
+
         }
         else
         {
@@ -171,6 +190,25 @@ public class QuestManager : MonoBehaviour
      
 
     }
+
+
+    public void SubTaskWatchScreen()
+    {
+
+    }
+    public void SubTaskCheckIn()
+    {
+
+    }
+    public void SubTaskCorrectTrack()
+    {
+
+    }
+    public void SubTaskCorrectTrain()
+    {
+
+    }
+   
 
 
 }
