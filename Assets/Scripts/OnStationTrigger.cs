@@ -13,6 +13,8 @@ public class OnStationTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered " + stationName);
+            other.transform.SetParent(null);
+
             QuestStatus();
             // Fade to black ? 
         }

@@ -47,8 +47,10 @@ public class QuestObjective : MonoBehaviour
 
                         animator.SetTrigger("doorButtonPressed");
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
+                        GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
+                        SceneTransitionManager.instance.GoToScene(1);
                         // Play open sound here
-                       
+
 
                     }
                     else if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
@@ -64,27 +66,19 @@ public class QuestObjective : MonoBehaviour
 
                         animator.SetTrigger("doorButtonPressed");
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
+                        GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
+                        SceneTransitionManager.instance.GoToScene(1);
                     }
                     else
                     {
                         animator.SetTrigger("doorButtonPressed");
-                        Debug.Log("Wrong train");
-                        GameManager.instance.restrictedAreaGameObject.SetActive(false);
+                        StartCoroutine(WrongTrain());
+                       
+                        
                         // Maybe turn the button red to indicate it is the wrong train?
                     }
 
-                    // Run fade to black here and load the next scene
-
-                    GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
-
-
-
-                    // HER PAWÆ
-                    SceneTransitionManager.instance.GoToScene(1);
-                
-                      
-              
-                   
+         
 
                 }
             }
@@ -93,44 +87,17 @@ public class QuestObjective : MonoBehaviour
       
     }
 
-    public void OldMethod(Collider other)
+    IEnumerator WrongTrain()
     {
-        if (other.CompareTag("Player"))
-        {
-            // Get a reference to the QuestManager component
-            QuestManager questManager = QuestManager.instance;
-            // Check if the player has a quest
-            if (!parent.GetComponent<TrainMover>().isMoving) // Only check if the train is not moving
-            {
-                if (questManager.currentQuest != null)
-                {
-                    if (parent.GetComponent<TrainMover>().questObjective) // Check if the train has a quest objective
-                    {
-                        if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && GameManager.instance.hasCheckedIn)
+        GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
 
-                        {
-                            // Complete the quest
-                            Debug.Log("Correct train and you are checked in");
-                            questManager.CompleteQuest(questManager.currentQuest);
 
-                        }
-                        else if (questManager.currentQuest.trainID == parent.GetComponent<TrainMover>().trainData.trainID && !GameManager.instance.hasCheckedIn)
-                        {
-                            Debug.Log("Correct train, but you are not checked in");
-                            questManager.CompleteQuest(questManager.currentQuest);
-                            // TODO: Make new function for this.
-                        }
-                        else
-                        {
-                            questManager.EnteredWrongTrain();
-                            Debug.Log("Wrong train");
-                        }
-                    }
-                    // Check if the player's quest is the same as the objective's quest
+        // Fadetoblack
+        SceneTransitionManager.instance.FadeToBlack_OUT();
+        yield return new WaitForSeconds(2);
+        QuestManager.instance.EnteredWrongTrain();
 
-                }
-            }
-
-        }
     }
+
+    
 }

@@ -52,15 +52,12 @@ public class SceneTransitionManager : MonoBehaviour
         operation.allowSceneActivation = true;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void FadeToBlack_IN()
     {
-
+        fadeScreen.FadeIn();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void FadeToBlack_OUT()
     {
-
+        fadeScreen.FadeOut();
     }
 }

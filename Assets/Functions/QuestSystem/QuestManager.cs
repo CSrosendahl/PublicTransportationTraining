@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class QuestManager : MonoBehaviour
 {
@@ -159,13 +160,18 @@ public class QuestManager : MonoBehaviour
     public void EnteredWrongTrain()
     {
         // Play sound, wrong train.
+        Debug.Log("You entered the wrong train");
+        // Display a prompt here
+        SceneTransitionManager.instance.FadeToBlack_IN();
+        GameManager.instance.SpawnEntrance();
+        GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 2;
 
- 
+
     }
 
     public void ExitOnTheWrongStation()
     {
-
+        Debug.Log("You exited on the wrong station");
     }
 
     private QuestData GetRandomQuest()
