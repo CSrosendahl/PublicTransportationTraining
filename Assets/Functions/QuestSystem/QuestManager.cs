@@ -64,7 +64,7 @@ public class QuestManager : MonoBehaviour
         if (currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
-            questText.text = "Stå af på " + currentQuest.questName + " station";
+            questText.text = "Stå af på " + currentQuest.stationName + " station";
         }
       
 
