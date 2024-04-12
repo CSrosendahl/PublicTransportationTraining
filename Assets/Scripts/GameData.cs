@@ -24,7 +24,7 @@ public class GameData : ScriptableObject
         trainObjectEntered = null;
         spawnTrainEntranceEntered = null;
         position = Vector3.zero;
-        currentQuest = null;
+      
         subTasksCompleted = 0;
     }
 }

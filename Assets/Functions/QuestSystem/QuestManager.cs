@@ -62,6 +62,11 @@ public class QuestManager : MonoBehaviour
             completedCheckIn = false;
             completedCorrectTrain = false;
 
+            if(GameManager.instance.savedData.currentQuest != null)
+            {
+                GameManager.instance.savedData.currentQuest = null;
+            }
+
             AcceptQuest();
          
 
@@ -91,6 +96,7 @@ public class QuestManager : MonoBehaviour
         DisplayQuestInfo(currentQuest);
 
         GameManager.instance.savedData.currentQuest = currentQuest;
+        
 
 
     }
