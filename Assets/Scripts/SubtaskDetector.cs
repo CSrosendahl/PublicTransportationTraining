@@ -15,10 +15,14 @@ public class SubtaskDetector : MonoBehaviour
             }
             if (this.gameObject.name == "SubTask_CorrectTrack")
             {
-                QuestManager.instance.SubTaskCorrectTrack();
+    
+               QuestManager.instance.SubTaskCorrectTrack(trainTrack);
+               
             }
             if (this.gameObject.name == "SubTask_CorrectCheckIn")
             {
+
+
                 QuestManager.instance.SubTaskCheckIn();
             }
             if (this.gameObject.name == "SubTask_CorrectTrain")

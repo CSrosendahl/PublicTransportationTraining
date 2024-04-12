@@ -194,15 +194,18 @@ public class QuestManager : MonoBehaviour
 
     public void SubTaskWatchScreen()
     {
-
+        Debug.Log("Watching the info screen");
     }
     public void SubTaskCheckIn()
     {
 
     }
-    public void SubTaskCorrectTrack()
+    public void SubTaskCorrectTrack(int trackID)
     {
-
+        if(trackID == currentQuest.trainTrack)
+        {
+            Debug.Log("We are on the correct train track");
+        }
     }
     public void SubTaskCorrectTrain()
     {

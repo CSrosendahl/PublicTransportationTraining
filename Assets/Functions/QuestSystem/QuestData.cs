@@ -9,5 +9,6 @@ public class QuestData
     public string stationName;
     public string exitOnStation;
     public int trainID;
+    public int trainTrack;
     // Add other quest-related data as needed
 }
