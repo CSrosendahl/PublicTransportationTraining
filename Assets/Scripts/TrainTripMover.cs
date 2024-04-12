@@ -22,7 +22,7 @@ public class TrainTripMover : MonoBehaviour
     {
         // Set the first destination as the current one and start moving
         currentDestination = boardingDestinations[0];
-        isMoving = true;
+        StartCoroutine(WaitToStart(10));
         playSoundOnce = false;
 
     }
@@ -107,5 +107,10 @@ public class TrainTripMover : MonoBehaviour
         }
     }
 
+    IEnumerator WaitToStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        isMoving = true;
+    }
 
 }
