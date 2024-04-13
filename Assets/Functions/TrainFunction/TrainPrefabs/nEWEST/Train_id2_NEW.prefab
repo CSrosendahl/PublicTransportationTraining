@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4512140164103020803}
-  - component: {fileID: 5288688301753655405}
   m_Layer: 0
   m_Name: LineName+Image Door 4
   m_TagString: Untagged
@@ -34,21 +33,6 @@ Transform:
   - {fileID: 4141895250894024266}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5288688301753655405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30532457824307043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &191004079319199181
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +841,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3533603592000380970}
-  - component: {fileID: 4067317821767739594}
   m_Layer: 0
   m_Name: LineName+Image Door 4 Other Side
   m_TagString: Untagged
@@ -882,21 +865,6 @@ Transform:
   - {fileID: 2869245100764267903}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4067317821767739594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234810461615638144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &1242368446601648045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5140,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4205362768250352265}
-  - component: {fileID: 7967380093794572548}
   m_Layer: 0
   m_Name: LineName+Image Door 1
   m_TagString: Untagged
@@ -5197,37 +5164,6 @@ Transform:
   - {fileID: 2100155631176061230}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7967380093794572548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3863911296778561306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers:
-  - {fileID: 8574677143842130661}
-  - {fileID: 3565388625367298176}
-  - {fileID: 6719322155605680756}
-  - {fileID: 8941236640667954078}
-  - {fileID: 1051802667747400564}
-  - {fileID: 3785331695369397422}
-  - {fileID: 7473782524772772214}
-  - {fileID: 6694883872587969166}
-  trainNameTexts:
-  - {fileID: 1859199383701328267}
-  - {fileID: 4285219649446401756}
-  - {fileID: 4759255436633443278}
-  - {fileID: 7157994726852621401}
-  - {fileID: 6564733876664813260}
-  - {fileID: 5404831412283614675}
-  - {fileID: 8484386524749050644}
-  - {fileID: 1816195375324001910}
 --- !u!1 &3971240723136559538
 GameObject:
   m_ObjectHideFlags: 0
@@ -8710,7 +8646,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7700980285494851957}
-  - component: {fileID: 5599883758279746224}
   m_Layer: 0
   m_Name: 'LineName+Image Door 1 Other Side '
   m_TagString: Untagged
@@ -8735,21 +8670,6 @@ Transform:
   - {fileID: 1211383229967240382}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5599883758279746224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6406020008744281400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &6431880109749141318
 GameObject:
   m_ObjectHideFlags: 0
@@ -10055,7 +9975,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8630211681466630106}
-  - component: {fileID: 2564132992062759977}
   m_Layer: 0
   m_Name: 'LineName+Image Door 2 Other Side '
   m_TagString: Untagged
@@ -10080,21 +9999,6 @@ Transform:
   - {fileID: 8572987488150241693}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2564132992062759977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128487834122232196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &7183702734661697686
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,7 +10513,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535596102657498569}
-  - component: {fileID: 5365807605035882241}
   m_Layer: 0
   m_Name: LineName+Image Door 2
   m_TagString: Untagged
@@ -10634,21 +10537,6 @@ Transform:
   - {fileID: 531568030382545379}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5365807605035882241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7510724349978175792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &7541514765678204662
 GameObject:
   m_ObjectHideFlags: 0
@@ -10658,7 +10546,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6190624661403712268}
-  - component: {fileID: 2740054160212748781}
   m_Layer: 0
   m_Name: 'LineName+Image Door 3 Other Side '
   m_TagString: Untagged
@@ -10683,21 +10570,6 @@ Transform:
   - {fileID: 246786446850201093}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2740054160212748781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541514765678204662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &7568014973261601182
 GameObject:
   m_ObjectHideFlags: 0
@@ -13476,7 +13348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4723117885818222087}
-  - component: {fileID: 5647933802481513578}
   m_Layer: 0
   m_Name: LineName+Image Door 3
   m_TagString: Untagged
@@ -13501,21 +13372,6 @@ Transform:
   - {fileID: 326195283201123824}
   m_Father: {fileID: 779276699332448233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5647933802481513578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8924916386190368792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06acaa82e1ab7c4a804c7b5d8d3f4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainData: {fileID: 0}
-  quadRenderers: []
-  trainNameTexts: []
 --- !u!1 &9153326987631657770
 GameObject:
   m_ObjectHideFlags: 0
