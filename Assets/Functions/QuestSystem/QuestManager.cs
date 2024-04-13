@@ -174,7 +174,7 @@ public class QuestManager : MonoBehaviour
         // Fade out/Blackscreen/Sound/Prompt....
         // Wait 2 second, fade to black into new scene.
       
-     //   GameManager.instance.CompleteQuestArea();
+        GameManager.instance.CompleteQuestArea();
         audioSource.clip = questCompleteSound;
         audioSource.Play();
         Debug.Log("Quest Complete");
