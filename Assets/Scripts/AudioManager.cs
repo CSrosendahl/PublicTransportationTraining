@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -18,12 +19,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] audioClips;
     public List<AudioSource> targetAudioSources;
 
-
-
-
     public AudioSource allAroundAudioSource;
    
-
     public AudioClip openDoorSound;
     public AudioClip trainMoveSound;
     public AudioClip trainStandStillSound;
@@ -31,7 +28,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(PlayRandomAudioEveryMinute());
+        if (SceneManager.GetSceneByName("Map").isLoaded)
+        {
+            StartCoroutine(PlayRandomAudioEveryMinute());
+        }
+       
     }
 
     IEnumerator PlayRandomAudioEveryMinute()
