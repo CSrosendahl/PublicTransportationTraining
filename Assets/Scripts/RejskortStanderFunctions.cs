@@ -162,7 +162,16 @@ public class RejskortStanderFunctions : MonoBehaviour
             ScreenText.material = checkedOut_GodRejse;
         }
 
+        if (!QuestManager.instance.completedCheckIn)
+        {
+            QuestManager.instance.completedCheckIn = false;
+            QuestManager.instance.subTaskCompleted--;
+            QuestManager.instance.subText_CheckIn.color = Color.white;
+            QuestManager.instance.checkmark_CheckIn.SetActive(false);
+        }
+
         StartCoroutine(ResetLightAndAudio());
+     
     }
 
 
