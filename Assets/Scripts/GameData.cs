@@ -21,6 +21,9 @@ public class GameData : ScriptableObject
     public bool completedCorrectTrain;
     public bool completedWatchScreen;
 
+
+    public bool NPCDisabled;
+    public bool SoundDisabled;
     // Example method to reset variables
     public void ResetData()
     {
@@ -35,7 +38,11 @@ public class GameData : ScriptableObject
         completedCheckIn = false;
         completedCorrectTrain = false;
         completedWatchScreen = false;
-        currentQuest = null;
+        currentQuest.ResetQuest();
+        
+
+        NPCDisabled = false;
+        SoundDisabled = false;
 
     }
 }

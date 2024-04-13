@@ -152,8 +152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0999985, y: -79.60004}
-  m_SizeDelta: {x: 85.97168, y: -18.518997}
+  m_AnchoredPosition: {x: -0.70000076, y: -70.7}
+  m_SizeDelta: {x: -41.94, y: -18.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5165880820414173781
 CanvasRenderer:
@@ -211,8 +211,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -671,8 +671,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -805,8 +805,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1269,9 +1269,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nMellem finger knappen: \nXXXXXX\n\nH\xF8jre pegefinger knap: \nSkolekort\n\nVenstre
-    pegefinger knap:\nTelefon (mission)\n\nVenstre analog:\nBev\xE6g spiller\n\nH\xF8jre
-    analog:\nRoter spiller\n"
+  m_text: "\n\nH\xF8jre pegefinger knap: \nSkolekort\n\nVenstre pegefinger knap:\nTelefon
+    (mission)\n\nVenstre analog:\nBev\xE6g spiller\n\nH\xF8jre analog:\nRoter spiller\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1298,8 +1297,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1776,8 +1775,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3159,7 +3158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293989528767982652}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 433.64813, y: -8.447792, z: 109.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3676,6 +3675,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6954194743883531835, guid: 8d43b3fffb7bbdb4aae50b724de150bf,
+        type: 3}
+      propertyPath: buttonID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7623990337777160839, guid: 8d43b3fffb7bbdb4aae50b724de150bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3857,6 +3861,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c9812986996030649997e45cac26147a, type: 2}
+    - target: {fileID: 5408783431064875782, guid: 2db3106c352d4d84b8edb8f7c59187f4,
+        type: 3}
+      propertyPath: buttonID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6406164834723363847, guid: 2db3106c352d4d84b8edb8f7c59187f4,
         type: 3}
       propertyPath: m_LocalPosition.x

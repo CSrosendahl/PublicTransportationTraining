@@ -37,7 +37,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Material offButton;
     [HideInInspector] public GameObject NPCButton;
     [HideInInspector] public GameObject SoundButton;
-    [HideInInspector] public GameObject NPCState;
+    public GameObject[] NPCState;
+    public bool NPCDisabled;
+    public bool soundDisabled;
+ 
     public GameObject AudioMixerGameObject;
     [HideInInspector] public Transform spawnIndgang;
     [HideInInspector] public Transform spawnControlPanel;
@@ -62,6 +65,22 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
         {
+          
+            if(savedData.NPCDisabled)
+            {
+                for (int i = 0; i < NPCState.Length; i++)
+                {
+                    NPCState[i].SetActive(false);
+                }
+                
+            }
+            if (savedData.SoundDisabled)
+            {
+
+                AudioListener.volume = 0f;
+               
+
+            }
             EnableCorrectTrain();
             SceneTransitionManager.instance.fadeScreen.FadeIn();
 
@@ -99,18 +118,28 @@ public class GameManager : MonoBehaviour
     // Disable NPC button
     public void DisableNPC()
     {
-        NPCState.SetActive(!NPCState.activeSelf);
-
-        if (NPCState.activeSelf == true)
+      
+        for (int i = 0; i < NPCState.Length; i++)
         {
-            
-            NPCButton.GetComponent<Renderer>().material = offButton;
-        }
-        else
-        {
-            NPCButton.GetComponent<Renderer>().material = onButton;
-        }
+            NPCState[i].SetActive(!NPCState[i].activeSelf);
 
+            if (NPCState[i].activeSelf == true)
+            {
+                NPCDisabled = true;
+                savedData.NPCDisabled = true;
+                NPCButton.GetComponent<Renderer>().material = offButton;
+            }
+            else
+            {
+                savedData.NPCDisabled = false;
+                NPCDisabled = false;
+                NPCButton.GetComponent<Renderer>().material = onButton;
+            }
+        }
+      
+
+      
+       
        
     }
     // Disable audio button
@@ -126,10 +155,14 @@ public class GameManager : MonoBehaviour
 
         if (AudioListener.volume == 1f)
         {
+            savedData.SoundDisabled = true;
+            soundDisabled = true;
             SoundButton.GetComponent<Renderer>().material = offButton;
         }
         else
         {
+            savedData.SoundDisabled = false;
+            soundDisabled = false;
             SoundButton.GetComponent<Renderer>().material = onButton;
            
         }
