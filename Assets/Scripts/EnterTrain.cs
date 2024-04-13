@@ -31,7 +31,7 @@ public class EnterTrain : MonoBehaviour
             if(trainData.trainID == QuestManager.instance.currentQuest.trainID)
             {
                 Debug.Log("Correct train, populate savedata");
-                //saveData.ResetData();
+                
                 saveData.trainDataEntered = trainData;
                 saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
 

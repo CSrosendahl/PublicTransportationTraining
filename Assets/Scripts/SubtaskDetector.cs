@@ -26,8 +26,27 @@ public class SubtaskDetector : MonoBehaviour
 
 
             }
-    
+ 
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("Player"))
+        {
+         
+            if (this.gameObject.name == "SubTask_CorrectTrack")
+            {
+                if(QuestManager.instance.completedCorrectTrack)
+                {
+                    QuestManager.instance.completedCorrectTrack = false;
+                    QuestManager.instance.subTaskCompleted--;
+                    QuestManager.instance.subText_CorrectTrack.color = Color.white;
+                    QuestManager.instance.checkmark_CorrectTrack.SetActive(false);
+                }
+                
+            }
         }
     }
 }

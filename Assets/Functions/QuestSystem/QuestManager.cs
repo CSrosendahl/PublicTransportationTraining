@@ -61,16 +61,7 @@ public class QuestManager : MonoBehaviour
             completedCorrectTrack = false;
             completedCheckIn = false;
             completedCorrectTrain = false;
-            //GameManager.instance.savedData.completedWatchScreen= false;
-            //GameManager.instance.savedData.completedCorrectTrack = false;
-            //GameManager.instance.savedData.completedCheckIn = false;
-            //GameManager.instance.savedData.completedCorrectTrain = false;
-
-
-            //if (GameManager.instance.savedData.currentQuest != null)
-            //{
-            //    GameManager.instance.savedData.currentQuest = null;
-            //}
+         
            
 
             AcceptQuest();
