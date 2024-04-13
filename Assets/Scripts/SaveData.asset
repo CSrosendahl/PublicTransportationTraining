@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b84f7568eb22541872de2a962e2f8a, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  trainDataEntered: {fileID: 11400000, guid: 11a929931b02a494ea693715dda9770f, type: 2}
+  trainDataEntered: {fileID: 11400000, guid: 6cb05f66b72370841b57d06985a34c75, type: 2}
   trainObjectEntered: {fileID: 0}
-  spawnTrainEntranceEntered: {fileID: 0}
   spawnEntranceNumber: 0
   currentQuest:
     questName: 
@@ -25,3 +24,7 @@ MonoBehaviour:
     trainTrack: 0
   subTasksCompleted: 0
   position: {x: 0, y: 0, z: 0}
+  completedCorrectTrack: 0
+  completedCheckIn: 0
+  completedCorrectTrain: 0
+  completedWatchScreen: 0
