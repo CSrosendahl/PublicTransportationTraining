@@ -7,8 +7,8 @@ public class QuestObjective : MonoBehaviour
 {
     public Transform parent;
     public Animator animator;
-    
 
+    private bool doorAnimPlayed;
     private void Awake()
     {
        
@@ -16,7 +16,7 @@ public class QuestObjective : MonoBehaviour
     }
     private void Start()
     {
-    
+        doorAnimPlayed = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,8 +44,8 @@ public class QuestObjective : MonoBehaviour
                             QuestManager.instance.SubTaskCorrectTrain();
 
                         }
-
-                        animator.SetTrigger("doorButtonPressed");
+                     
+                        
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
                         GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
                         SceneTransitionManager.instance.GoToScene(1);
@@ -64,21 +64,25 @@ public class QuestObjective : MonoBehaviour
 
                         }
 
-                        animator.SetTrigger("doorButtonPressed");
+                       
                         GameManager.instance.restrictedAreaGameObject.SetActive(false);
                         GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 0;
                         SceneTransitionManager.instance.GoToScene(1);
                     }
                     else
                     {
-                        animator.SetTrigger("doorButtonPressed");
+                        
                         StartCoroutine(WrongTrain());
                        
                         
                         // Maybe turn the button red to indicate it is the wrong train?
                     }
 
-         
+                    if (!doorAnimPlayed)
+                    {
+                        animator.SetTrigger("doorButtonPressed");
+                        doorAnimPlayed = true;
+                    }
 
                 }
             }
