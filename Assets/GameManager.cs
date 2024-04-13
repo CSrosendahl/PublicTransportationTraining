@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetSceneByName("Map").isLoaded)
         {
             // Do stuff
+            savedData.ResetData();
             SpawnControlPanel();
         }
 

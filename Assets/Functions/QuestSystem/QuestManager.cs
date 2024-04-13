@@ -61,11 +61,17 @@ public class QuestManager : MonoBehaviour
             completedCorrectTrack = false;
             completedCheckIn = false;
             completedCorrectTrain = false;
+            //GameManager.instance.savedData.completedWatchScreen= false;
+            //GameManager.instance.savedData.completedCorrectTrack = false;
+            //GameManager.instance.savedData.completedCheckIn = false;
+            //GameManager.instance.savedData.completedCorrectTrain = false;
 
-            if(GameManager.instance.savedData.currentQuest != null)
-            {
-                GameManager.instance.savedData.currentQuest = null;
-            }
+
+            //if (GameManager.instance.savedData.currentQuest != null)
+            //{
+            //    GameManager.instance.savedData.currentQuest = null;
+            //}
+           
 
             AcceptQuest();
          
@@ -105,21 +111,43 @@ public class QuestManager : MonoBehaviour
         if (currentQuest != null)
         {
             questInfoOnPhone.enabled = true;
+
+            questText0.text = currentQuest.questDescription + "\n";
             questText1.text = currentQuest.exitOnStation + "\n";
 
-            questText0.text = "";        
-            subText_WatchScreen.text = "";
-            subText_CorrectTrack.text = "";
-            subText_CheckIn.text = "";
-            subText_CorrectTrain.text = "";
+            //questText0.text = "";        
+            //subText_WatchScreen.text = "";
+            //subText_CorrectTrack.text = "";
+            //subText_CheckIn.text = "";
+            //subText_CorrectTrain.text = "";
 
   
-            checkmark_WatchScreen.SetActive(false);
-            checkmark_CorrectTrack.SetActive(false);
-            checkmark_CheckIn.SetActive(false);
-            checkmark_CorrectTrain.SetActive(false);
+          
         }
-      
+        if (GameManager.instance.savedData.completedWatchScreen)
+        {
+            subText_WatchScreen.color = Color.green;
+            checkmark_WatchScreen.SetActive(true);
+           
+        }
+        if (GameManager.instance.savedData.completedCorrectTrack)
+        {
+            subText_CorrectTrack.color = Color.green;
+            checkmark_CorrectTrack.SetActive(true);
+        }
+        if (GameManager.instance.savedData.completedCheckIn)
+        {
+            subText_CheckIn.color = Color.green;
+            checkmark_CheckIn.SetActive(true);
+        }
+        if (GameManager.instance.savedData.completedCorrectTrain)
+        {
+            subText_CorrectTrain.color = Color.green;
+            checkmark_CorrectTrain.SetActive(true);
+
+
+        }
+
 
         // OPTIMIZE THIS ! Get the data from TrainData instead of the quest
         if (currentQuest.trainID == 0)
@@ -243,6 +271,7 @@ public class QuestManager : MonoBehaviour
         subText_WatchScreen.color = Color.green;
         checkmark_WatchScreen.SetActive(true);
         completedWatchScreen = true;
+        GameManager.instance.savedData.completedWatchScreen = completedWatchScreen;
         subTaskCompleted++;
     }
     public void SubTaskCheckIn()
@@ -253,6 +282,7 @@ public class QuestManager : MonoBehaviour
             subText_CheckIn.color = Color.green;
             checkmark_CheckIn.SetActive(true);
             completedCheckIn= true;
+            GameManager.instance.savedData.completedCheckIn = completedCheckIn;
             subTaskCompleted++;
             
         }
@@ -266,6 +296,7 @@ public class QuestManager : MonoBehaviour
             subText_CorrectTrack.color = Color.green;
             checkmark_CorrectTrack.SetActive(true);
             completedCorrectTrack= true;
+            GameManager.instance.savedData.completedCorrectTrack = completedCorrectTrack;
             subTaskCompleted++;
             
         }
@@ -276,6 +307,8 @@ public class QuestManager : MonoBehaviour
         subText_CorrectTrain.color = Color.green;
         checkmark_CorrectTrain.SetActive(true);
         completedCorrectTrain = true;
+        GameManager.instance.savedData.completedCorrectTrain = completedCorrectTrain;
+
         subTaskCompleted++;
 
 

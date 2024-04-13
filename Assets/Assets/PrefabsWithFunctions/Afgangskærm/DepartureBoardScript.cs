@@ -17,10 +17,12 @@ public class DepartureBoardScript : MonoBehaviour
     private List<int> currentDepartureIndices;
     private float timer;
     public bool canSpawn;
-   
+
+    public bool firstSpawn;
 
     void Start()
     {
+        firstSpawn = true;
         InitializeDepartureDisplay();
         UpdateDepartureDisplay();
 
@@ -97,38 +99,48 @@ public class DepartureBoardScript : MonoBehaviour
         if (timer >= changeInterval)
         {
             timer = 0f;
-         
-            
-                // Get the index of the train to spawn (the top index)
-                int topIndex = currentDepartureIndices[0];
 
-                // Increment the top index to point to the next train
+
+            // Get the index of the train to spawn (the top index)
+            int topIndex = currentDepartureIndices[0];
+
+            if (firstSpawn)
+            {
+              
+                topIndex = (topIndex) % TrainManager.instance.trainDataList.Count;
+                firstSpawn = false;
+            }
+            else
+            {
                 topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
+            }
+            // Increment the top index to point to the next train
+            //  topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
 
-                // Find the ID of the train to be spawned
-                int trainID = TrainManager.instance.trainDataList[topIndex].trainID;
+            // Find the ID of the train to be spawned
+            int trainID = TrainManager.instance.trainDataList[topIndex].trainID;
 
-                lastSpawnedTrainID = trainID; // currently not used, it is used for filler trains.
+            lastSpawnedTrainID = trainID; // currently not used, it is used for filler trains.
 
-                // Update the departure indices with the new top index
-                for (int i = 0; i < currentDepartureIndices.Count; i++)
-                {
-                    currentDepartureIndices[i] = topIndex;
+            // Update the departure indices with the new top index
+            for (int i = 0; i < currentDepartureIndices.Count; i++)
+            {
+                currentDepartureIndices[i] = topIndex;
 
-                    // Increment the top index for the next iteration
-                    topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
-                }
+                // Increment the top index for the next iteration
+                topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
+            }
 
-                // Spawn the train at the new top index
-                if(canSpawn)
-                {
-                    TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at the top index
-                }
-             
-     
+            // Spawn the train at the new top index
+            if (canSpawn)
+            {
+                TrainManager.instance.SpawnTrain(currentDepartureIndices[0]); // Spawn the train at the top index
+            }
+
+
             // Update the departure display
             UpdateDepartureDisplay();
-           
+
         }
         changeInterval = GameManager.instance.trainSpawnInterval;
     }

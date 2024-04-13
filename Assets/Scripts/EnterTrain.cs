@@ -28,16 +28,25 @@ public class EnterTrain : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            saveData.ResetData();
-            saveData.trainDataEntered = trainData;
-            saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
+            if(trainData.trainID == QuestManager.instance.currentQuest.trainID)
+            {
+                Debug.Log("Correct train, populate savedata");
+                //saveData.ResetData();
+                saveData.trainDataEntered = trainData;
+                saveData.trainObjectEntered = trainData.trainPrefab.gameObject;
 
-            saveData.subTasksCompleted = QuestManager.instance.subTaskCompleted;
-          
-            //GameManager.instance.playerObject.transform.position = spawnEntrance.position;
+                saveData.subTasksCompleted = QuestManager.instance.subTaskCompleted;
 
-            saveData.position = other.transform.position;
-            saveData.spawnEntranceNumber = spawnEntranceNumber;
+                //GameManager.instance.playerObject.transform.position = spawnEntrance.position;
+
+                saveData.position = other.transform.position;
+                saveData.spawnEntranceNumber = spawnEntranceNumber;
+            }
+            else
+            {
+                Debug.Log("Wrong train, Do not populate savedata");
+            }
+           
             
 
 
