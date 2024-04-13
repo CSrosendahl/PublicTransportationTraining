@@ -43,6 +43,12 @@ public class ButtonClick : MonoBehaviour
                 GameManager.instance.StartGame();
 
                 break;
+
+           case 4:
+               // Handling for knap 4
+                Debug.Log("Exit Game");
+                GameManager.instance.QuitGame();
+                break;
             default:
                 Debug.Log("Unhandled button click");
                 break;
