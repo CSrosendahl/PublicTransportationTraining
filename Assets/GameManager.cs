@@ -65,8 +65,9 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetSceneByName("TrainTrip").isLoaded)
         {
-          
-            if(savedData.NPCDisabled)
+            EnableCorrectTrain();
+
+            if (savedData.NPCDisabled)
             {
                 for (int i = 0; i < NPCState.Length; i++)
                 {
@@ -81,8 +82,8 @@ public class GameManager : MonoBehaviour
                
 
             }
-            EnableCorrectTrain();
-            SceneTransitionManager.instance.fadeScreen.FadeIn();
+          
+           // SceneTransitionManager.instance.fadeScreen.FadeIn();
 
         }
 

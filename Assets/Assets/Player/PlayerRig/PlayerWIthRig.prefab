@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 6726480035970160634}
   - component: {fileID: 8072037138060275355}
   - component: {fileID: 7248077356734603611}
-  - component: {fileID: 7347421567092576751}
+  - component: {fileID: 7638919483309689131}
   m_Layer: 0
   m_Name: FaderScreen
   m_TagString: Untagged
@@ -1047,7 +1047,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7347421567092576751
+--- !u!114 &7638919483309689131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

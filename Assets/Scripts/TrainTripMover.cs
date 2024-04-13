@@ -18,9 +18,12 @@ public class TrainTripMover : MonoBehaviour
 
     private bool playSoundOnce;
 
+    public Transform doorAnimParent;
+    private OpenOutSideDoor openDoorScript;
     void Start()
     {
         // Set the first destination as the current one and start moving
+        openDoorScript = doorAnimParent.GetComponent<OpenOutSideDoor>();
         currentDestination = boardingDestinations[0];
         StartCoroutine(WaitToStart(10));
         playSoundOnce = false;
@@ -73,8 +76,9 @@ public class TrainTripMover : MonoBehaviour
     {
 
 
-        
-        OpenOutSideDoor.instance.OpenCloseDoors(); // Open the doors
+
+
+        openDoorScript.OpenCloseDoors(); // Open the doors
     
       //  StartCoroutine(CloseDoorWaitTime());
         yield return new WaitForSeconds(waitTime);

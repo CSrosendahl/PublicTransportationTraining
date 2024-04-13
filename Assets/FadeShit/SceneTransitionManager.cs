@@ -19,6 +19,10 @@ public class SceneTransitionManager : MonoBehaviour
     }
     public FadeScreen fadeScreen;
 
+    public void GoToSceneWithOutFade(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
     public void GoToScene(int sceneIndex)
     {
         StartCoroutine(GoToSceneRoutine(sceneIndex));

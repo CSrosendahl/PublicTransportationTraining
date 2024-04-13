@@ -106,7 +106,7 @@ public class DepartureBoardScript : MonoBehaviour
 
             if (firstSpawn)
             {
-              
+
                 topIndex = (topIndex) % TrainManager.instance.trainDataList.Count;
                 firstSpawn = false;
             }
@@ -115,7 +115,7 @@ public class DepartureBoardScript : MonoBehaviour
                 topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
             }
             // Increment the top index to point to the next train
-            //  topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
+            //topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
 
             // Find the ID of the train to be spawned
             int trainID = TrainManager.instance.trainDataList[topIndex].trainID;
