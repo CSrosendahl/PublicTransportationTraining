@@ -17,12 +17,15 @@ public class DepartureBoardScript : MonoBehaviour
     private List<int> currentDepartureIndices;
     private float timer;
     public bool canSpawn;
+    
 
     public bool firstSpawn;
+   
 
     void Start()
     {
         firstSpawn = true;
+     
         InitializeDepartureDisplay();
         UpdateDepartureDisplay();
 
@@ -106,16 +109,18 @@ public class DepartureBoardScript : MonoBehaviour
 
             if (firstSpawn)
             {
-
+                // Make sure we spawn the first train in the list on the first iteration
                 topIndex = (topIndex) % TrainManager.instance.trainDataList.Count;
                 firstSpawn = false;
             }
             else
+
             {
+                // Increment the top index to point to the next train
                 topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
             }
-            // Increment the top index to point to the next train
-            //topIndex = (topIndex + 1) % TrainManager.instance.trainDataList.Count;
+            
+           
 
             // Find the ID of the train to be spawned
             int trainID = TrainManager.instance.trainDataList[topIndex].trainID;
@@ -138,13 +143,22 @@ public class DepartureBoardScript : MonoBehaviour
             }
 
 
-            // Update the departure display
-            UpdateDepartureDisplay();
+          
+            // This is hard coded. The 5 seconds is just done by testing what feels right.
+            StartCoroutine(WaitToUpdateDepartureDisplay(5));
+            // UpdateDepartureDisplay();
 
         }
         changeInterval = GameManager.instance.trainSpawnInterval;
     }
 
+    IEnumerator WaitToUpdateDepartureDisplay(float waitTime)
+    {
+       // Wait to update display while train is on station.
+        yield return new WaitForSeconds(waitTime);
+        UpdateDepartureDisplay();
+
+    }
 
     //private IEnumerator SpawnDelayedTrainsAfterTopID() // These are filler trains for immersion
     //{
