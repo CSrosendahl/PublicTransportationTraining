@@ -174,13 +174,13 @@ public class QuestManager : MonoBehaviour
         // Complete quest, and end the game
         // Fade out/Blackscreen/Sound/Prompt....
         // Wait 2 second, fade to black into new scene.
-
+        AudioManager.instance.allAroundAudioSource.enabled = false;
         SceneTransitionManager.instance.FadeToBlack_OUT();
         StartCoroutine(WaitTime(3));
         SceneTransitionManager.instance.FadeToBlack_IN();
         GameManager.instance.CompleteQuestArea();
 
-        AudioManager.instance.allAroundAudioSource.enabled = false;
+      
 
         delOpgaverCompleted.text = "Delopgaver udført: " + subTaskCompleted + "/4";
         audioSource.clip = questCompleteSound;
@@ -320,6 +320,7 @@ public class QuestManager : MonoBehaviour
         checkmark_CorrectTrain.SetActive(true);
         completedCorrectTrain = true;
         GameManager.instance.savedData.completedCorrectTrain = completedCorrectTrain;
+        
 
         subTaskCompleted++;
 

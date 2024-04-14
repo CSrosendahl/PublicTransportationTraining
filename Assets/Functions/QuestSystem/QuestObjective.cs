@@ -39,7 +39,7 @@ public class QuestObjective : MonoBehaviour
                     {      
                         Debug.Log("Correct train,  you are checked in");
 
-                        if (QuestManager.instance.completedCorrectTrain)
+                        if (!QuestManager.instance.completedCorrectTrain)
                         {
                             QuestManager.instance.SubTaskCorrectTrain();
 
@@ -58,7 +58,7 @@ public class QuestObjective : MonoBehaviour
                         Debug.Log("Correct train, but you are not checked in");
 
 
-                        if (QuestManager.instance.completedCorrectTrain)
+                        if (!QuestManager.instance.completedCorrectTrain)
                         {
                             QuestManager.instance.SubTaskCorrectTrain();
 
