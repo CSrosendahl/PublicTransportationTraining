@@ -205,8 +205,9 @@ public class GameManager : MonoBehaviour
         //}
 
         playerObject.transform.position = spawnIndgang.position;
+        playerObject.transform.rotation = completeQuestArea.rotation;
 
-       // StartCoroutine(EnableHandPhysicsAfterDelay());
+        // StartCoroutine(EnableHandPhysicsAfterDelay());
 
     }
 
@@ -219,6 +220,7 @@ public class GameManager : MonoBehaviour
         //}
 
         playerObject.transform.position = spawnControlPanel.position;
+        playerObject.transform.rotation = completeQuestArea.rotation;
 
         //StartCoroutine(EnableHandPhysicsAfterDelay());
     }
