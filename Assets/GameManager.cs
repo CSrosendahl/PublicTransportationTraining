@@ -232,6 +232,7 @@ public class GameManager : MonoBehaviour
         //}
 
         playerObject.transform.position = completeQuestArea.position;
+        playerObject.transform.rotation = completeQuestArea.rotation;
 
      //   StartCoroutine(EnableHandPhysicsAfterDelay());
     }
