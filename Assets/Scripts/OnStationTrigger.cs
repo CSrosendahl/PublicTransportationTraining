@@ -19,9 +19,8 @@ public class OnStationTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered " + stationName);
-            //trainTripMover.isMoving = false;
-            //GameManager.instance.playerObject.transform.SetParent(this.gameObject.transform);
-            //GameManager.instance.playerObjectIK.transform.SetParent(this.gameObject.transform);
+
+            trainTripMover.enabled = false; // Stop the trains functionality when we enter the station
 
             QuestStatus();
             // Fade to black ? 

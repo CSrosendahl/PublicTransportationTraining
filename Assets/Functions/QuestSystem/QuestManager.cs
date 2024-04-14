@@ -51,6 +51,7 @@ public class QuestManager : MonoBehaviour
     public AudioClip questFailedSound;
     public AudioClip questCompleteSound;
     public AudioSource audioSource;
+    public TextMeshPro delOpgaverCompleted;
 
     private void Start()
     {
@@ -173,8 +174,12 @@ public class QuestManager : MonoBehaviour
         // Complete quest, and end the game
         // Fade out/Blackscreen/Sound/Prompt....
         // Wait 2 second, fade to black into new scene.
-      
+
+        SceneTransitionManager.instance.FadeToBlack_OUT();
+        StartCoroutine(WaitTime(3));
+        SceneTransitionManager.instance.FadeToBlack_IN();
         GameManager.instance.CompleteQuestArea();
+        delOpgaverCompleted.text = "Delopgaver udført: " + subTaskCompleted + "/4";
         audioSource.clip = questCompleteSound;
         audioSource.Play();
         Debug.Log("Quest Complete");
@@ -197,6 +202,11 @@ public class QuestManager : MonoBehaviour
     public void ExitOnTheWrongStation()
     {
         Debug.Log("You exited on the wrong station");
+        SceneTransitionManager.instance.FadeToBlack_OUT();
+        StartCoroutine(WaitTime(3));
+        SceneTransitionManager.instance.FadeToBlack_IN();
+        GameManager.instance.FailQuestArea();
+
     }
 
     private QuestData GetRandomQuest()
@@ -308,6 +318,14 @@ public class QuestManager : MonoBehaviour
     public void SubTasksCompleted()
     {
         Debug.Log("You completed " + subTaskCompleted);
+    }
+
+    IEnumerator WaitTime(float waitTime)
+    {
+        
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("Waited for " + waitTime + " seconds");
+    
     }
 
 }

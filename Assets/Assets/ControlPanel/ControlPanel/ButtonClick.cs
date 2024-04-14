@@ -49,6 +49,11 @@ public class ButtonClick : MonoBehaviour
                 Debug.Log("Exit Game");
                 GameManager.instance.QuitGame();
                 break;
+            case 5:
+                // Handling for knap 4
+                Debug.Log("Restart Sim");
+                SceneTransitionManager.instance.GoToScene(0);
+                break;
             default:
                 Debug.Log("Unhandled button click");
                 break;

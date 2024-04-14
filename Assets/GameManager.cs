@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour
     public GameObject AudioMixerGameObject;
     [HideInInspector] public Transform spawnIndgang;
     [HideInInspector] public Transform spawnControlPanel;
-    [HideInInspector] public Transform completeQuestArea;
+    public Transform completeQuestArea;
+    public Transform failQuestarea;
+
     public GameObject[] handsPhysicsObject;
     public GameObject restrictedAreaGameObject;
     public GameData savedData;
@@ -232,6 +234,10 @@ public class GameManager : MonoBehaviour
         playerObject.transform.position = completeQuestArea.position;
 
      //   StartCoroutine(EnableHandPhysicsAfterDelay());
+    }
+    public void FailQuestArea()
+    {
+        playerObject.transform.position = failQuestarea.position;
     }
 
 
