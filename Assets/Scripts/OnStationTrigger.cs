@@ -6,12 +6,11 @@ public class OnStationTrigger : MonoBehaviour
 {
     // Det er vigtigt stationname er det samme som Questname 
     public string stationName;
-    private TrainTripMover trainTripMover;
+   
 
     private void Start()
     {
-        trainTripMover = GameObject.FindGameObjectWithTag("Train").GetComponent<TrainTripMover>();
-        Debug.Log(trainTripMover.gameObject.name);
+      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,8 +18,9 @@ public class OnStationTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered " + stationName);
+            other.GetComponentInParent<TrainTripMover>().enabled = false; // Stop the train from moving
 
-            trainTripMover.enabled = false; // Stop the trains functionality when we enter the station
+           // trainTripMover.enabled = false; // Stop the trains functionality when we enter the station
 
             QuestStatus();
             // Fade to black ? 
@@ -29,7 +29,7 @@ public class OnStationTrigger : MonoBehaviour
 
     public void QuestStatus()
     {
-        if(QuestManager.instance.currentQuest.questName == stationName)
+        if(QuestManager.instance.currentQuest.exitOnStation == stationName)
         {
             QuestManager.instance.CompleteQuest(QuestManager.instance.currentQuest);
 

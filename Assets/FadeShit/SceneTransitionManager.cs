@@ -18,6 +18,7 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
     public FadeScreen fadeScreen;
+    
 
     public void GoToSceneWithOutFade(int sceneIndex)
     {

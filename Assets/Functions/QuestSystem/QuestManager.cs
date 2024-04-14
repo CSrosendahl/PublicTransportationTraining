@@ -179,6 +179,9 @@ public class QuestManager : MonoBehaviour
         StartCoroutine(WaitTime(3));
         SceneTransitionManager.instance.FadeToBlack_IN();
         GameManager.instance.CompleteQuestArea();
+
+        AudioManager.instance.allAroundAudioSource.enabled = false;
+
         delOpgaverCompleted.text = "Delopgaver udført: " + subTaskCompleted + "/4";
         audioSource.clip = questCompleteSound;
         audioSource.Play();
@@ -186,6 +189,22 @@ public class QuestManager : MonoBehaviour
     
 
     }
+    public void ExitOnTheWrongStation()
+    {
+        Debug.Log("You exited on the wrong station");
+        AudioManager.instance.allAroundAudioSource.enabled = false;
+        SceneTransitionManager.instance.FadeToBlack_OUT();
+        StartCoroutine(WaitTime(3));
+        SceneTransitionManager.instance.FadeToBlack_IN();
+        GameManager.instance.FailQuestArea();
+
+    }
+
+
+
+
+
+
 
     public void EnteredWrongTrain()
     {
@@ -199,15 +218,7 @@ public class QuestManager : MonoBehaviour
 
     }
 
-    public void ExitOnTheWrongStation()
-    {
-        Debug.Log("You exited on the wrong station");
-        SceneTransitionManager.instance.FadeToBlack_OUT();
-        StartCoroutine(WaitTime(3));
-        SceneTransitionManager.instance.FadeToBlack_IN();
-        GameManager.instance.FailQuestArea();
-
-    }
+   
 
     private QuestData GetRandomQuest()
     {
