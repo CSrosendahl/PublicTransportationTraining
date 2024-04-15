@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public GameObject AudioMixerGameObject;
     [HideInInspector] public Transform spawnIndgang;
     [HideInInspector] public Transform spawnControlPanel;
+    public Transform RetryRoom;
     public Transform completeQuestArea;
     public Transform failQuestarea;
 
@@ -269,9 +270,15 @@ public class GameManager : MonoBehaviour
 
         playerObject.transform.position = spawnIndgang.position;
         playerObject.transform.rotation = spawnIndgang.rotation;
-
+    
     
 
+    }
+
+    public void ReTryRome()
+    {
+        playerObject.transform.position = RetryRoom.position;
+        playerObject.transform.rotation = RetryRoom.rotation;
     }
 
     // Method for spawning our player in the control panel area.

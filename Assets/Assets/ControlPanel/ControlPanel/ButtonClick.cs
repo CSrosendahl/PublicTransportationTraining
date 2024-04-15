@@ -54,6 +54,13 @@ public class ButtonClick : MonoBehaviour
                 Debug.Log("Restart Sim");
                 SceneTransitionManager.instance.GoToScene(0);
                 break;
+
+            case 6:
+                // Handling for knap 4
+                Debug.Log("Spawn ved indgang");
+                GameManager.instance.SpawnEntrance();
+                break;
+
             default:
                 Debug.Log("Unhandled button click");
                 break;

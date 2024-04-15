@@ -53,6 +53,8 @@ public class QuestManager : MonoBehaviour
     public AudioSource audioSource;
     public TextMeshPro delOpgaverCompleted;
 
+   
+
     private void Start()
     {
         if (SceneManager.GetSceneByName("Map").isLoaded)
@@ -212,7 +214,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("You entered the wrong train");
         // Display a prompt here
         SceneTransitionManager.instance.FadeToBlack_IN();
-        GameManager.instance.SpawnEntrance();
+        GameManager.instance.ReTryRome();
         GameManager.instance.playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 2;
 
 
@@ -340,6 +342,21 @@ public class QuestManager : MonoBehaviour
     
     }
 
+   IEnumerator FadeIn(AudioSource audioSource, float duration)
+    {
+        float timer = 0f;
+        audioSource.volume = 0f;
+        audioSource.Play();
+
+        while (timer < duration)
+        {
+            audioSource.volume = Mathf.Lerp(0, 1, timer / duration);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        audioSource.volume = 1;
+    }
+   
 }
 
 
