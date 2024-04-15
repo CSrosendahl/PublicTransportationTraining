@@ -69,10 +69,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
 
-        canPressButton = true;
-        NPCEnabled = true;
-        soundEnabled = true;
-        startButton = false;
+        
+       
 
         playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 2;
 
@@ -80,6 +78,13 @@ public class GameManager : MonoBehaviour
         {
             // Do stuff
             savedData.ResetData();
+
+            canPressButton = true;
+            NPCEnabled = true;
+            soundEnabled = true;
+            startButton = false;
+            savedData.NPCEnabled = true;
+            savedData.soundEnabled = true;
             SpawnControlPanel();
         }
 
@@ -94,6 +99,13 @@ public class GameManager : MonoBehaviour
                     NPCState[i].SetActive(false);
                 }
                 
+            }
+            else
+            {
+                for (int i = 0; i < NPCState.Length; i++)
+                {
+                    NPCState[i].SetActive(true);
+                }
             }
             if (!savedData.soundEnabled)
             {

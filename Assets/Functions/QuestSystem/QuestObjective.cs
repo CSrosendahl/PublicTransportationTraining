@@ -80,8 +80,9 @@ public class QuestObjective : MonoBehaviour
 
                     if (!doorAnimPlayed)
                     {
-                        AudioManager.instance.PlayAudioClip(AudioManager.instance.openDoorSound);
                         animator.SetTrigger("doorButtonPressed");
+                        AudioManager.instance.PlayAudioClip(AudioManager.instance.openDoorSound);
+                        
                         
                         doorAnimPlayed = true;
                     }
