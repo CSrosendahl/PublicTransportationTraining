@@ -36,9 +36,16 @@ public class TrainMover : MonoBehaviour
     public int trainDataID;
 
 
+    public AudioSource movingSound;
+    public AudioSource notMovingSound;
+    private bool hasPlayedOnce;
+    
+    private float fadeDuration = 1.0f; // Adjust the fade duration as needed
+
 
     void Start()
     {
+       hasPlayedOnce = false;
  
         for (int i = 0; i < stationText.Length; i++)
         {
@@ -79,11 +86,24 @@ public class TrainMover : MonoBehaviour
             MoveTrain();
 
         }
-      
+
+
+
     }
    
     void MoveTrain()
     {
+
+        if(!hasPlayedOnce)
+        {
+            //   movingSound.Play();
+            //StartCoroutine(FadeIn(notMovingSound, fadeDuration));
+            //StartCoroutine(FadeOut(movingSound, fadeDuration));
+            notMovingSound.Stop();
+            movingSound.Play();
+           
+            hasPlayedOnce = true;
+        }
         // Calculate the distance to the current destination
         float distanceToDestination = Vector3.Distance(transform.position, currentDestination.position);
 
@@ -111,8 +131,24 @@ public class TrainMover : MonoBehaviour
  
             
             isMoving = false; // Stop the train
-           
+
+            //  notMovingSound.Play();
+
+            hasPlayedOnce = false;
+
+
+            if (!hasPlayedOnce)
+            {
+                //StartCoroutine(FadeIn(movingSound, fadeDuration));
+                //StartCoroutine(FadeOut(notMovingSound, fadeDuration));
+                movingSound.Stop();
+                notMovingSound.Play();
+               
+                hasPlayedOnce = true;
+            }
             StartCoroutine(WaitAtDestination());
+
+         
 
         }
     }
@@ -141,10 +177,11 @@ public class TrainMover : MonoBehaviour
             //{
             //    currentDestination = exitDestination;
             //}
-
+          
 
             currentSpeed = 0f; // Reset speed to 0 to start acceleration from a full stop
             isMoving = true; // Allow the train to start moving again
+            hasPlayedOnce = false;
             // Play start sound 
         }
 
@@ -158,10 +195,33 @@ public class TrainMover : MonoBehaviour
     }
 
 
-    //IEnumerator StartMoving()
-    //{
-    //    // Wait before starting to move
-    //    yield return new WaitForSeconds(waitTime);
-    //    isMoving = true;
-    //}
+    IEnumerator FadeIn(AudioSource audioSource, float duration)
+    {
+        float timer = 0f;
+        audioSource.volume = 0f;
+        audioSource.Play();
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(0f, 1f, timer / duration);
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut(AudioSource audioSource, float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+
+            timer += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(1f, 0f, timer / duration);
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = 1f; // Reset volume to avoid audio glitches
+    }
 }
