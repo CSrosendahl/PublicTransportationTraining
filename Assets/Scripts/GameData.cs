@@ -22,8 +22,8 @@ public class GameData : ScriptableObject
     public bool completedWatchScreen;
 
 
-    public bool NPCDisabled;
-    public bool SoundDisabled;
+    public bool NPCEnabled;
+    public bool soundEnabled;
     // Example method to reset variables
     public void ResetData()
     {
@@ -41,8 +41,8 @@ public class GameData : ScriptableObject
         currentQuest.ResetQuest();
         
 
-        NPCDisabled = false;
-        SoundDisabled = false;
+        NPCEnabled = false;
+        soundEnabled = false;
 
     }
 }

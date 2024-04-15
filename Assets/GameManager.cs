@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -37,10 +38,21 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Material offButton;
     [HideInInspector] public GameObject NPCButton;
     [HideInInspector] public GameObject SoundButton;
+    public Animator npcButtonAnim;
+    public Animator soundButtonAnim;
+   // public Animator soundButtonAnim;
+       
+
+    public Animator startButtonAnim;
     public GameObject[] NPCState;
-    public bool NPCDisabled;
-    public bool soundDisabled;
- 
+    public bool NPCEnabled;
+    public bool soundEnabled;
+    private bool canPressButton;
+    private bool startButton;
+    public TextMeshPro npc_ONOFF_TEXT;
+    public TextMeshPro sound_ONOFF_TEXT;
+  
+
     public GameObject AudioMixerGameObject;
     [HideInInspector] public Transform spawnIndgang;
     [HideInInspector] public Transform spawnControlPanel;
@@ -56,6 +68,12 @@ public class GameManager : MonoBehaviour
    
     private void Start()
     {
+
+        canPressButton = true;
+        NPCEnabled = true;
+        soundEnabled = true;
+        startButton = false;
+
         playerObject.GetComponent<DynamicMoveProvider>().moveSpeed = 2;
 
         if (SceneManager.GetSceneByName("Map").isLoaded)
@@ -69,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             EnableCorrectTrain();
 
-            if (savedData.NPCDisabled)
+            if (!savedData.NPCEnabled)
             {
                 for (int i = 0; i < NPCState.Length; i++)
                 {
@@ -77,7 +95,7 @@ public class GameManager : MonoBehaviour
                 }
                 
             }
-            if (savedData.SoundDisabled)
+            if (!savedData.soundEnabled)
             {
 
                 AudioListener.volume = 0f;
@@ -122,53 +140,88 @@ public class GameManager : MonoBehaviour
     public void DisableNPC()
     {
       
-        for (int i = 0; i < NPCState.Length; i++)
+    
+        
+        if(canPressButton)
         {
-            NPCState[i].SetActive(!NPCState[i].activeSelf);
-
-            if (NPCState[i].activeSelf == true)
+            if (NPCEnabled)
             {
-                NPCDisabled = true;
-                savedData.NPCDisabled = true;
-                NPCButton.GetComponent<Renderer>().material = offButton;
+                for (int i = 0; i < NPCState.Length; i++)
+                {
+                    NPCState[i].SetActive(false);
+                }
+                npc_ONOFF_TEXT.text = "/OFF";
+                savedData.NPCEnabled = false;
+                NPCEnabled = false;
+                npcButtonAnim.Play("ButtonOFF");
+                canPressButton = false;
+                StartCoroutine(ButtonCoolDown());
+
             }
             else
             {
-                savedData.NPCDisabled = false;
-                NPCDisabled = false;
-                NPCButton.GetComponent<Renderer>().material = onButton;
+                for (int i = 0; i < NPCState.Length; i++)
+                {
+                    NPCState[i].SetActive(true);
+                }
+                npc_ONOFF_TEXT.text = "/ON";
+                NPCEnabled = true;
+                savedData.NPCEnabled = true;
+                npcButtonAnim.Play("ButtonON");
+                canPressButton = false;
+                StartCoroutine(ButtonCoolDown());
+
             }
         }
+
+        Debug.Log(canPressButton);
       
 
-      
-       
-       
     }
+
+    IEnumerator ButtonCoolDown()
+    {
+       
+        yield return new WaitForSeconds(2);
+        canPressButton = true;
+    }
+
     // Disable audio button
     public void DisableAudioMixer()
     {
 
-        // Toggle the audio listener's volume between 0 and 1
-        AudioListener.volume = 1 - AudioListener.volume;
+        //// Toggle the audio listener's volume between 0 and 1
+        //AudioListener.volume = 1 - AudioListener.volume;
 
-        Debug.Log("Sound is " + (AudioListener.volume > 0 ? "on" : "off"));
+        //Debug.Log("Sound is " + (AudioListener.volume > 0 ? "on" : "off"));
 
+        if(canPressButton)
+        {
+          
+            if (soundEnabled)
+                {
+                AudioListener.volume = 0f;
+                savedData.soundEnabled = false;
+                soundEnabled = false;
+                soundButtonAnim.Play("ButtonOFF");
+                sound_ONOFF_TEXT.text = "/OFF";
+                canPressButton = false;
+                StartCoroutine(ButtonCoolDown());
+            }
+            else
+                {
+                AudioListener.volume = 1f;
+                savedData.soundEnabled = true;
+                soundEnabled = true;
+                sound_ONOFF_TEXT.text = "/ON";
+                soundButtonAnim.Play("ButtonON");
+                canPressButton = false;
+                StartCoroutine(ButtonCoolDown());
+            }
+        
+        }
         
 
-        if (AudioListener.volume == 1f)
-        {
-            savedData.SoundDisabled = true;
-            soundDisabled = true;
-            SoundButton.GetComponent<Renderer>().material = offButton;
-        }
-        else
-        {
-            savedData.SoundDisabled = false;
-            soundDisabled = false;
-            SoundButton.GetComponent<Renderer>().material = onButton;
-           
-        }
        
     }
 
@@ -177,66 +230,57 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
 
-        //for (int i = 0; i < handsPhysicsObject.Length; i++)
-        //{
-        //    handsPhysicsObject[i].SetActive(false);
-        //}
-
         hasCheckedIn = false;
          
         if(QuestManager.instance.currentQuest != null) // If the player has a quest, set it to null
         {
             QuestManager.instance.currentQuest = null;
         }
-       
-        QuestManager.instance.AcceptQuest(); // Accept a new quest
-        playerObject.transform.position = spawnIndgang.position; // Spawn the player at the spawn point
 
-    //  StartCoroutine(EnableHandPhysicsAfterDelay());
+        if(!startButton)
+        {
+            startButtonAnim.Play("startButtonStart");
+            startButton = true;
+            StartCoroutine(WaitToStart(3));
+            
+        }
+       
+       
+
+   
 
     }
     // Method for teleporting our player to the play area. (Valby st. entrance)
     public void SpawnEntrance()
     {
 
-        //for (int i = 0; i < handsPhysicsObject.Length; i++)
-        //{
-        //    handsPhysicsObject[i].SetActive(false);
-        //}
 
         playerObject.transform.position = spawnIndgang.position;
         playerObject.transform.rotation = spawnIndgang.rotation;
 
-        // StartCoroutine(EnableHandPhysicsAfterDelay());
+    
 
     }
 
     // Method for spawning our player in the control panel area.
     public void SpawnControlPanel()
     {
-        //for (int i = 0; i < handsPhysicsObject.Length; i++)
-        //{
-        //    handsPhysicsObject[i].SetActive(false);
-        //}
-
+    
         playerObject.transform.position = spawnControlPanel.position;
         playerObject.transform.rotation = spawnControlPanel.rotation;
 
-        //StartCoroutine(EnableHandPhysicsAfterDelay());
+      
     }
 
     // Method for spawning our player in the complete quest area.
     public void CompleteQuestArea()
     {
-        //for (int i = 0; i < handsPhysicsObject.Length; i++)
-        //{
-        //    handsPhysicsObject[i].SetActive(false);
-        //}
+
 
         playerObject.transform.position = completeQuestArea.position;
         playerObject.transform.rotation = completeQuestArea.rotation;
 
-     //   StartCoroutine(EnableHandPhysicsAfterDelay());
+     
     }
     public void FailQuestArea()
     {
@@ -255,6 +299,17 @@ public class GameManager : MonoBehaviour
         {
             handsPhysicsObject[i].SetActive(true);
         }
+
+    }
+
+    public IEnumerator WaitToStart(float waitTime)
+    {
+        // Wait for a short delay.
+        SceneTransitionManager.instance.FadeToBlack_OUT();
+        yield return new WaitForSeconds(waitTime); // Adjust the duration as needed.
+        SceneTransitionManager.instance.FadeToBlack_IN();
+        QuestManager.instance.AcceptQuest(); // Accept a new quest
+        SpawnEntrance();
 
     }
     public void QuitGame()
