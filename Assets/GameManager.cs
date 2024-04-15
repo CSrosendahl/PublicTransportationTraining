@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
                 savedData.soundEnabled = false;
                 soundEnabled = false;
                 soundButtonAnim.Play("ButtonOFF");
-                sound_ONOFF_TEXT.text = "/OFF";
+                sound_ONOFF_TEXT.text = "OFF";
                 canPressButton = false;
                 StartCoroutine(ButtonCoolDown());
             }
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
                 AudioListener.volume = 1f;
                 savedData.soundEnabled = true;
                 soundEnabled = true;
-                sound_ONOFF_TEXT.text = "/ON";
+                sound_ONOFF_TEXT.text = "ON";
                 soundButtonAnim.Play("ButtonON");
                 canPressButton = false;
                 StartCoroutine(ButtonCoolDown());
