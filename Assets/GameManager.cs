@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
                 {
                     NPCState[i].SetActive(false);
                 }
-                npc_ONOFF_TEXT.text = "/OFF";
+                npc_ONOFF_TEXT.text = "OFF";
                 savedData.NPCEnabled = false;
                 NPCEnabled = false;
                 npcButtonAnim.Play("ButtonOFF");
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
                 {
                     NPCState[i].SetActive(true);
                 }
-                npc_ONOFF_TEXT.text = "/ON";
+                npc_ONOFF_TEXT.text = "ON";
                 NPCEnabled = true;
                 savedData.NPCEnabled = true;
                 npcButtonAnim.Play("ButtonON");
