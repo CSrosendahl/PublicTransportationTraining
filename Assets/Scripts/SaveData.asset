@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b84f7568eb22541872de2a962e2f8a, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  trainDataEntered: {fileID: 11400000, guid: 54859037604efba4f99af010e9c84eae, type: 2}
-  trainObjectEntered: {fileID: 0}
-  spawnEntranceNumber: -1
+  trainDataEntered: {fileID: 11400000, guid: f2506eb843a521c44a3ae4dcbce3f753, type: 2}
+  trainObjectEntered: {fileID: 3423709466865134100, guid: 94226fcff5a5e3b47b511d0641202dbe,
+    type: 3}
+  spawnEntranceNumber: 2
   currentQuest:
     questName: Take a trip to
-    questDescription: "H\xF8je Taastrup"
-    stationName: Albertslund
-    exitOnStation: Albertslund
-    trainID: 2
+    questDescription: Frederikssund
+    stationName: "Vanl\xF8se"
+    exitOnStation: "Vanl\xF8se"
+    trainID: 4
     trainTrack: 5
-  subTasksCompleted: 0
-  position: {x: 0, y: 0, z: 0}
-  completedCorrectTrack: 0
+  subTasksCompleted: 3
+  position: {x: -35.68997, y: -5.3303533, z: 4.9179554}
+  completedCorrectTrack: 1
   completedCheckIn: 0
-  completedCorrectTrain: 0
-  completedWatchScreen: 0
+  completedCorrectTrain: 1
+  completedWatchScreen: 1
   NPCEnabled: 1
   soundEnabled: 1
