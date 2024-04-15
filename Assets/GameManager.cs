@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
             startButton = false;
             savedData.NPCEnabled = true;
             savedData.soundEnabled = true;
+            AudioListener.volume = 1f;
             SpawnControlPanel();
         }
 
@@ -114,6 +115,9 @@ public class GameManager : MonoBehaviour
                 AudioListener.volume = 0f;
                
 
+            }else
+            {
+                AudioListener.volume = 1f;
             }
           
            // SceneTransitionManager.instance.fadeScreen.FadeIn();
@@ -121,7 +125,7 @@ public class GameManager : MonoBehaviour
         }
 
       
-        AudioListener.volume = 1f;
+      
 
     }
     public void EnableCorrectTrain()
@@ -157,6 +161,7 @@ public class GameManager : MonoBehaviour
         
         if(canPressButton)
         {
+            AudioManager.instance.PressButton(AudioManager.instance.buttonPress);
             if (NPCEnabled)
             {
                 for (int i = 0; i < NPCState.Length; i++)
@@ -185,6 +190,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(ButtonCoolDown());
 
             }
+           
         }
 
         Debug.Log(canPressButton);
@@ -210,7 +216,8 @@ public class GameManager : MonoBehaviour
 
         if(canPressButton)
         {
-          
+            AudioManager.instance.PressButton(AudioManager.instance.buttonPress);
+
             if (soundEnabled)
                 {
                 AudioListener.volume = 0f;
@@ -231,7 +238,7 @@ public class GameManager : MonoBehaviour
                 canPressButton = false;
                 StartCoroutine(ButtonCoolDown());
             }
-        
+           
         }
         
 
@@ -252,6 +259,7 @@ public class GameManager : MonoBehaviour
 
         if(!startButton)
         {
+            AudioManager.instance.PressButton(AudioManager.instance.buttonPress);
             startButtonAnim.Play("startButtonStart");
             startButton = true;
             StartCoroutine(WaitToStart(3));

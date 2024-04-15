@@ -43,6 +43,7 @@ public class TrainTripMover : MonoBehaviour
     {
         if(!playSoundOnce)
         {
+            AudioManager.instance.allAroundAudioSource.volume = 1f;
             AudioManager.instance.PlayAudioClip(AudioManager.instance.trainMoveSound);
             playSoundOnce = true;
         }

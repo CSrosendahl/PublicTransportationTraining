@@ -8,7 +8,7 @@ public class GameData : ScriptableObject
     // Add variables you want to save here
     public TrainData trainDataEntered;
     public GameObject trainObjectEntered;
-  //  public Transform spawnTrainEntranceEntered;
+
     public int spawnEntranceNumber;
     public QuestData currentQuest;
     public int subTasksCompleted;
@@ -29,11 +29,11 @@ public class GameData : ScriptableObject
     {
         trainDataEntered = null;
         trainObjectEntered = null;
-       // spawnTrainEntranceEntered = null;
+   
         position = Vector3.zero;
       
         subTasksCompleted = 0;
-
+        spawnEntranceNumber = -1;
         completedCorrectTrack = false;
         completedCheckIn = false;
         completedCorrectTrain = false;

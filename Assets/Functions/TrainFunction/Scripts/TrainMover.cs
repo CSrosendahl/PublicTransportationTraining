@@ -99,6 +99,7 @@ public class TrainMover : MonoBehaviour
             //   movingSound.Play();
             //StartCoroutine(FadeIn(notMovingSound, fadeDuration));
             //StartCoroutine(FadeOut(movingSound, fadeDuration));
+            AudioManager.instance.allAroundAudioSource.volume = 1f;
             notMovingSound.Stop();
             movingSound.Play();
            
@@ -141,6 +142,7 @@ public class TrainMover : MonoBehaviour
             {
                 //StartCoroutine(FadeIn(movingSound, fadeDuration));
                 //StartCoroutine(FadeOut(notMovingSound, fadeDuration));
+                AudioManager.instance.allAroundAudioSource.volume = 1f;
                 movingSound.Stop();
                 notMovingSound.Play();
                

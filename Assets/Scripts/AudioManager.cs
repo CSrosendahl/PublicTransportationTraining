@@ -20,6 +20,9 @@ public class AudioManager : MonoBehaviour
     public List<AudioSource> targetAudioSources;
 
     public AudioSource allAroundAudioSource;
+
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonPress;
    
     public AudioClip openDoorSound;
     public AudioClip trainMoveSound;
@@ -71,7 +74,17 @@ public class AudioManager : MonoBehaviour
         allAroundAudioSource.clip = audioClip;
 
         allAroundAudioSource.Play();
-        
+
+    }
+    public void PressButton(AudioClip audioClip)
+    {
+        if (buttonAudioSource.isPlaying)
+        {
+            buttonAudioSource.Stop();
+        }
+        buttonAudioSource.clip = audioClip;
+
+        buttonAudioSource.Play();
 
     }
 

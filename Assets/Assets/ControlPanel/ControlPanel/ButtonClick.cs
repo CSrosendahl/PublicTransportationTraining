@@ -28,19 +28,28 @@ public class ButtonClick : MonoBehaviour
                 // Handling for knap 1
                 Debug.Log("Disable Sound");
                 //animator.SetTrigger("ChangeColorTrigger");
+             
                 GameManager.instance.DisableAudioMixer();
+              
+
                 break;
             case 2:
                 // Handling for knap 2
                 Debug.Log("Disable NPC");
                 //  animator.SetTrigger("ChangeColorTrigger");
+                
                 GameManager.instance.DisableNPC();
+             
+
                 break;
             case 3:
                 // Handling for knap 3
                 Debug.Log("Start Game");
-               // animator.SetTrigger("ChangeColorTrigger");
+                // animator.SetTrigger("ChangeColorTrigger");
+               
                 GameManager.instance.StartGame();
+                
+
 
                 break;
 
@@ -52,6 +61,8 @@ public class ButtonClick : MonoBehaviour
             case 5:
                 // Handling for knap 4
                 Debug.Log("Restart Sim");
+
+                AudioManager.instance.PressButton(AudioManager.instance.buttonPress);
                 SceneTransitionManager.instance.GoToScene(0);
                 break;
 

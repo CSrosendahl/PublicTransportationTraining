@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b84f7568eb22541872de2a962e2f8a, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  trainDataEntered: {fileID: 0}
+  trainDataEntered: {fileID: 11400000, guid: 54859037604efba4f99af010e9c84eae, type: 2}
   trainObjectEntered: {fileID: 0}
-  spawnEntranceNumber: 0
+  spawnEntranceNumber: -1
   currentQuest:
-    questName: 
-    questDescription: 
-    stationName: 
-    exitOnStation: 
-    trainID: 0
-    trainTrack: 0
+    questName: Take a trip to
+    questDescription: "H\xF8je Taastrup"
+    stationName: Albertslund
+    exitOnStation: Albertslund
+    trainID: 2
+    trainTrack: 5
   subTasksCompleted: 0
   position: {x: 0, y: 0, z: 0}
   completedCorrectTrack: 0
   completedCheckIn: 0
   completedCorrectTrain: 0
   completedWatchScreen: 0
-  NPCDisabled: 0
-  SoundDisabled: 0
+  NPCEnabled: 1
+  soundEnabled: 1
