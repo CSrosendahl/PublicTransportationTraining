@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b84f7568eb22541872de2a962e2f8a, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  trainDataEntered: {fileID: 11400000, guid: f2506eb843a521c44a3ae4dcbce3f753, type: 2}
+  trainDataEntered: {fileID: 0}
   trainObjectEntered: {fileID: 0}
   spawnEntranceNumber: -1
   currentQuest:
