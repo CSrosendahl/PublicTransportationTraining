@@ -1,4 +1,4 @@
-Pull from Backup_Christian (This is the true main)
+Pull from the branch Backup_Christian (This is the true main)
 
 Valby Station Virtual Reality
 
