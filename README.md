@@ -1,5 +1,7 @@
 Valby Station Virtual Reality
 
+Pull from Backup_Christian - That is the true main
+
 Intro:
 Dette spil i virtual reality er en offentlig transport-simulation, der foregår på Valby Station.
 Spillets formål er, at spilleren ved hjælp af guider og egen indsats skal finde det "rigtige”, tog for at gennemføre spillet.
