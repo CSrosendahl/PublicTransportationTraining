@@ -34,13 +34,17 @@ Trigger: Skolekort spawn
 
 
 OBS: Spillet kan ikke buildes direkte til HMD. Skal køres via Questlink fra computer.
+For at starte spillet 
 
-
-Forbindelse til spillet
+Opret forbindelse via. HMD
 Forbindelsen oprettes ved at følge disse trin:
 -	Forbind din pc til HMD via. Kablet forbindelse
 -	Tryk på ”Quick settings” til venstre i task baren
 -	Klik ”Quest link” > Launch
+
+Naviger til mappen "Build" og åben applications filen "TrainSimulator - MED6"
+
+
 -	Start applikationen på computeren
 -	Så er du klar til at spille
 
