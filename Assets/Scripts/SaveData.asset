@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainDataEntered: {fileID: 0}
   trainObjectEntered: {fileID: 0}
-  spawnEntranceNumber: -1
+  spawnEntranceNumber: 0
   currentQuest:
-    questName: Take a trip to
-    questDescription: Buddinge
-    stationName: Vesterport
-    exitOnStation: Vesterport
-    trainID: 5
-    trainTrack: 3
+    questName: 
+    questDescription: 
+    stationName: 
+    exitOnStation: 
+    trainID: 0
+    trainTrack: 0
   subTasksCompleted: 0
   position: {x: 0, y: 0, z: 0}
   completedCorrectTrack: 0
   completedCheckIn: 0
   completedCorrectTrain: 0
   completedWatchScreen: 0
-  NPCEnabled: 1
-  soundEnabled: 1
+  NPCEnabled: 0
+  soundEnabled: 0
